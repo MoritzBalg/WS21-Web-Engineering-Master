@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 2.1</title>
+    <style>
+        body{
+            margin: 1vw 2vw 1vw 2vw;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        body > div{
+            margin: 0.5vw;
+        }
+
+        #head{
+            width: 100%;
+            height: 27vh;
+        }
+
+        #left, #right{
+            width: 25%;
+            height: 65vh;
+        }
+
+        #center{
+            width: calc(50% - 3vw);
+            height: 65vh;
+        }
+
+        @media only screen and (max-width: 1200px) {
+
+            #right{
+                width: 100%;
+                height: 25vw;
+            }
+
+            #left{
+                height: 75vh;
+            }
+
+            #center{
+                width: calc(75% - 2vw);
+                height: 75vh;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+	
+			body{
+				margin: 0;
+			}
+			
+			body > div{
+				margin: 0;
+			}
+
+            #head, #right, #left{
+                width: 100%;
+                height: 25vw;
+            }
+
+            #center{
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="head" style="background-color: red"></div>
+    <div id="left" style="background-color: #00ff00"></div>
+    <div id="center" style="background-color: blue"></div>
+    <div id="right" style="background-color: magenta"></div>
+</body>
+</html>

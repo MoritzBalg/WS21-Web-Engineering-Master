@@ -2,76 +2,130 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Aufgabe 2.1</title>
+    <title>WEM WS21 Balg</title>
     <style>
-        body{
-            margin: 1vw 2vw 1vw 2vw;
+        :root{
+            --primary_color:#34495E;
+            --primary_color_hover: #3498DB;
+            --secondary_color:#e5e8ec;
+        }
+
+        html,body{
+            margin: 0;
+            height: 100%;
+            font-family: sans-serif;
+        }
+
+        #webcontainer{
+            height: 100%;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header{
+            background-color: var(--primary_color);
+            padding: 1em 1em 0.5em 1em;
+            color: var(--secondary_color);
+            text-align: center;
+        }
+
+        header #menu{
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-between;
+            border-top: 1px solid var(--secondary_color);
+
+
         }
 
-        body > div{
-            margin: 0.5vw;
+        header > #menu > span{
+            background-color: var(--primary_color);
+            padding: 1em;
+            flex: 1 1 4em;
+
+            text-align: center;
+            font-size: larger;
+
         }
 
-        #head{
-            width: 100%;
-            height: 27vh;
+        header > #menu > span:hover{
+            background-color: var(--primary_color_hover);
         }
 
-        #left, #right{
-            width: 25%;
-            height: 65vh;
+        #content{
+            background-color: var(--secondary_color);
+            height: 100%;
+            padding: 1em;
+            flex: 1 60vh;
+            overflow: auto;
         }
 
-        #center{
-            width: calc(50% - 3vw);
-            height: 65vh;
+        #content > h1{
+            text-align: center;
         }
 
-        @media only screen and (max-width: 1200px) {
-
-            #right{
-                width: 100%;
-                height: 25vw;
-            }
-
-            #left{
-                height: 75vh;
-            }
-
-            #center{
-                width: calc(75% - 2vw);
-                height: 75vh;
-            }
-        }
-
-        @media only screen and (max-width: 600px) {
-	
-			body{
-				margin: 0;
-			}
-			
-			body > div{
-				margin: 0;
-			}
-
-            #head, #right, #left{
-                width: 100%;
-                height: 25vw;
-            }
-
-            #center{
-                width: 100%;
-            }
+        footer{
+            background-color: var(--primary_color);
+            color: var(--secondary_color);
+            padding: 1em;
+            text-align: center;
         }
 
     </style>
 </head>
-<body>
-    <div id="head" style="background-color: red"></div>
-    <div id="left" style="background-color: #00ff00"></div>
-    <div id="center" style="background-color: blue"></div>
-    <div id="right" style="background-color: magenta"></div>
-</body>
+<div id="webcontainer">
+    <header>
+        <h1>Web-Engineering Master WS 2021</h1>
+        <div id="menu">
+            <span>Übung 1</span>
+            <span>Übung 2</span>
+            <span>Übung 3</span>
+            <span>Übung 4</span>
+            <span>Übung 5</span>
+            <span>Übung 6</span>
+            <span>Übung 7</span>
+            <span>Übung 8</span>
+            <span>Übung 9</span>
+            <span>Übung 10</span>
+            <span>Übung 11</span>
+            <span>Übung 12</span>
+        </div>
+    </header>
+    <div id="content">
+    <h1>Herzlich Wilkommen!</h1>
+        <h2>Über diese Webseite</h2>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+        Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+
+        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.
+
+        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+        <h2>Weiter Info's</h2>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
+
+        <h2>Sonstiges</h2>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+        Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+
+        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.
+
+        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+
+
+    </div>
+    <footer>&copy Moritz Balg 2021</footer>
+</div>
 </html>

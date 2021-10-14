@@ -25,7 +25,6 @@
 
         header{
             background-color: var(--primary_color);
-            padding: 0 1em 0 1em;
             color: var(--secondary_color);
             text-align: center;
 
@@ -76,44 +75,38 @@
         }
 
     </style>
+
+    <script>
+        function content_loader(a, path) {
+            document.getElementById("content").innerHTML= "<h1>" + a.textContent + "</h1>"  + '<object type="text/html" data="Aufgabe_1/Abschnitt1.html" ></object>';
+        }
+    </script>
 </head>
 <div id="webcontainer">
     <header>
         <h1>Web-Engineering Master WS 2021</h1>
         <div id="menu">
-            <span>Übung 1</span>
-            <span>Übung 2</span>
-            <span>Übung 3</span>
-            <span>Übung 4</span>
-            <span>Übung 5</span>
-            <span>Übung 6</span>
-            <span>Übung 7</span>
-            <span>Übung 8</span>
-            <span>Übung 9</span>
-            <span>Übung 10</span>
-            <span>Übung 11</span>
-            <span>Übung 12</span>
+            <span onclick="content_loader(this)">Übung 1</span>
+            <span onclick="content_loader(this)">Übung 2</span>
+            <span onclick="content_loader(this)">Übung 3</span>
+            <span onclick="content_loader(this)">Übung 4</span>
+            <span onclick="content_loader(this)">Übung 5</span>
+            <span onclick="content_loader(this)">Übung 6</span>
+            <span onclick="content_loader(this)">Übung 7</span>
+            <span onclick="content_loader(this)">Übung 8</span>
+            <span onclick="content_loader(this)">Übung 9</span>
+            <span onclick="content_loader(this)">Übung 10</span>
+            <span onclick="content_loader(this)">Übung 11</span>
+            <span onclick="content_loader(this)">Übung 12</span>
+
         </div>
     </header>
 
     <div id="content">
     <h1>Herzlich Wilkommen!</h1>
         <h2>Über diese Webseite</h2>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-
-        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-
-        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-
-        Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-
-        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.
-
-        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-        <h2>Weiter Info's</h2>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-
-        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
+        Auf dieser Webseite werden die von mir im Rahmen der Lehrveranstaltung <i>Web-Engineering</i> erlangten Kenntnisse präsentiert und strukturiert dargestellt. Diese Webseite wird über GitHub-Pages bereitgestellt. Das zugehörige Repository ist <a href="#!">hier</a> zu finden. Für Fragen können Sie mich gerne über den GitHub-Messenger kontaktieren.<br>
+        Die Gliederung dieser Seite orientiert sich an den bereitgestellten Übungsaufgaben. Jede Woche wurde eine dieser Aufgaben veröffentlicht und bearbeitet. Meine Lösungsansätze sind auf den einzelnen Unterseiten zu finden.
 
         <h2>Sonstiges</h2>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.

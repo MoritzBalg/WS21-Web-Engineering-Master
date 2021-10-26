@@ -1,8 +1,12 @@
 :root{
-    --primary_color:#34495E;
-    --primary_color_hover: #3498DB;
+    --primary_color: #4A6E4CFF;
+    --primary_color_hover: #52ab58;
     --secondary_color:#e5e8ec;
     --radius: 7px;
+
+    --color_html:#f2672e;
+    --color_css:#30aadd;
+    --color_js:#f2bf26;
 }
 
 html,body{
@@ -70,30 +74,49 @@ footer{
 
 .codeBox{
     background-color: var(--primary_color);
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr auto;
     padding: .3em;
     border-radius: var(--radius);
     color: whitesmoke;
     box-shadow: 1px 1px 10px black;
-    margin: 2em auto 1em;
+    margin: 2em 0 1em;
     font-size: large;
+
 
 }
 
-.codeBox > .language{
-    width: 30%;
+.codeBox > .language_html {
+    grid-column-start: 3;
     text-align: right;
-    color: var(--primary_color_hover);
+    color: var(--color_html);
+    font-weight: bold;
+}
+
+.codeBox > .language_js {
+    grid-column-start: 3;
+    text-align: right;
+    color: var(--color_js);
+    font-weight: bold;
+}
+
+.codeBox > .language_css {
+    grid-column-start: 3;
+    text-align: right;
+    color: var(--color_css);
     font-weight: bold;
 }
 
 .codeBox > .title{
-    width: 70%;
+    grid-column-start: 1 span;
+
 }
 
 .codeBox > code{
-    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 4;
+
     margin-top: 1em;
 
 }

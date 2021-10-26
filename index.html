@@ -1,92 +1,23 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" style="height: 100%;">
 <head>
     <meta charset="UTF-8">
     <title>WEM WS21 Balg</title>
-    <style>
-        :root{
-            --primary_color:#34495E;
-            --primary_color_hover: #3498DB;
-            --secondary_color:#e5e8ec;
-        }
+    <link rel="stylesheet" href="layout.css">
 
-        html,body{
-            margin: 0;
-            height: 100%;
-            font-family: "Arial" ,sans-serif;
-        }
-
-        #webcontainer{
-            height: 100%;
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header{
-            background-color: var(--primary_color);
-            color: var(--secondary_color);
-            text-align: center;
-
-        }
-
-        header #menu{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            border-top: 1px solid var(--secondary_color);
-
-
-        }
-
-        header > #menu > span{
-            background-color: var(--primary_color);
-            padding: 1em;
-            flex: 1 1 4em;
-
-            text-align: center;
-            font-size: larger;
-
-        }
-
-        header > #menu > span:hover{
-            background-color: var(--primary_color_hover);
-        }
-
-        #content{
-            background-color: var(--secondary_color);
-            height: 100%;
-            padding: 1em;
-            flex: 1;
-            overflow: auto;
-
-        }
-
-        #content > h1{
-            text-align: center;
-        }
-
-        footer{
-            background-color: var(--primary_color);
-            color: var(--secondary_color);
-            padding: 0.2em;
-            text-align: center;
-
-        }
-
-    </style>
 
     <script>
         function content_loader(a, path) {
-            document.getElementById("content").innerHTML= "<h1>" + a.textContent + "</h1>"  + '<object type="text/html" data="Aufgabe_1/Abschnitt1.html" ></object>';
+            document.getElementById("content").innerHTML= "<h1>" + a.textContent + "</h1>"  + '<object style="width: 99vw; height:69vh;" type="text/html" data="Aufgabe_1/Abschnitt1.html" ></object>';
         }
     </script>
 </head>
+<body style="height: 100%;">
 <div id="webcontainer">
     <header>
         <h1>Web-Engineering Master WS 2021</h1>
         <div id="menu">
-            <span onclick="content_loader(this)">Übung 1</span>
+            <span onclick="content_loader(this, )">Übung 1</span>
             <span onclick="content_loader(this)">Übung 2</span>
             <span onclick="content_loader(this)">Übung 3</span>
             <span onclick="content_loader(this)">Übung 4</span>
@@ -103,6 +34,7 @@
     </header>
 
     <div id="content">
+
     <h1>Herzlich Wilkommen!</h1>
         <h2>Über diese Webseite</h2>
         Auf dieser Webseite werden die von mir im Rahmen der Lehrveranstaltung <i>Web-Engineering</i> erlangten Kenntnisse präsentiert und strukturiert dargestellt. Diese Webseite wird über GitHub-Pages bereitgestellt. Das zugehörige Repository ist <a href="#!">hier</a> zu finden. Für Fragen können Sie mich gerne über den GitHub-Messenger kontaktieren.<br>
@@ -113,9 +45,29 @@
 
         At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
 
+<div class="codeBox" style="width: 30%">
+    <div class="title">Hallo Welt Programm:</div>
+    <div class="language">HTML</div>
+    <code>
+        <pre>
+public Class Test{
+    public static void main (String[] args){
+        System.out.println("Hallo Welt");
+    }
+}
+        </pre>
+    </code>
+</div>
+
+
+
+
+
+
 
     </div>
     <footer>&copy 2021 Moritz Balg </footer>
 
 </div>
+</body>
 </html>

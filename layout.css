@@ -88,21 +88,21 @@ footer{
 }
 
 .codeBox > .language_html {
-    grid-column-start: 3;
+    grid-column-start: 2;
     text-align: right;
     color: var(--color_html);
     font-weight: bold;
 }
 
 .codeBox > .language_js {
-    grid-column-start: 3;
+    grid-column-start: 2;
     text-align: right;
     color: var(--color_js);
     font-weight: bold;
 }
 
 .codeBox > .language_css {
-    grid-column-start: 3;
+    grid-column-start: 2;
     text-align: right;
     color: var(--color_css);
     font-weight: bold;

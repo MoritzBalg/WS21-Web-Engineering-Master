@@ -7,7 +7,7 @@
 
 
     <script>
-        function content_loader(a, path) {
+        async function content_loader(a, path) {
             const htmlContent = await (await fetch(path)).text();
             document.getElementById("content").innerHTML= "<h1>" + a.textContent + "</h1>"  + htmlContent;
         }

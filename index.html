@@ -8,7 +8,8 @@
 
     <script>
         function content_loader(a, path) {
-            document.getElementById("content").innerHTML= "<h1>" + a.textContent + "</h1>"  + '<object style="width: 99vw; height:69vh;" type="text/html" data="' + path + '" ></object>';
+            const htmlContent = await (await fetch(path)).getText();
+            document.getElementById("content").innerHTML= "<h1>" + a.textContent + "</h1>"  + htmlContent;
         }
     </script>
 </head>

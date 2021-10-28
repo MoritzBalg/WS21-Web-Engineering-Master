@@ -8,7 +8,7 @@
 
     <script>
         function content_loader(a, path) {
-            document.getElementById("content").innerHTML= "<h1>" + a.textContent + "</h1>"  + '<object style="width: 99vw; height:69vh;" type="text/html" data="Aufgabe3.html" ></object>';
+            document.getElementById("content").innerHTML= "<h1>" + a.textContent + "</h1>"  + '<object style="width: 99vw; height:69vh;" type="text/html" data="' + path + '" ></object>';
         }
     </script>
 </head>
@@ -17,7 +17,7 @@
     <header>
         <h1>Web-Engineering Master WS 2021</h1>
         <div id="menu">
-            <span onclick="content_loader(this, )">Übung 1</span>
+            <span onclick="content_loader(this, 'Aufgabe1.html')">Übung 1</span>
             <span onclick="content_loader(this)">Übung 2</span>
             <span onclick="content_loader(this)">Übung 3</span>
             <span onclick="content_loader(this)">Übung 4</span>

@@ -31,7 +31,7 @@ header{
 header #menu{
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     border-top: 1px solid var(--secondary_color);
 
 
@@ -40,7 +40,7 @@ header #menu{
 header > #menu > span{
     background-color: var(--primary_color);
     padding: 1em;
-    flex: 0 1 4em;
+    flex: 0 1 5em;
 
     text-align: center;
     font-size: larger;

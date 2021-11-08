@@ -14,9 +14,10 @@
             const content = document.getElementById("content");
             if(path){
                 const htmlContent = await (await fetch(path)).text();
-                const headline = document.getElementById("Headline");
+                const headline = document.createElement('h1');
                 headline.textContent += " " + a.textContent; 
                 content.innerHTML = htmlContent;
+                content.appendChild(headline);
             } else{
                  content.innerHTML= "<h1>" + a.textContent + "</h1>"  + "<h2>Seite nicht verfügbar!</h2>";
             }

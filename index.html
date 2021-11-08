@@ -14,7 +14,9 @@
             const content = document.getElementById("content");
             if(path){
                 const htmlContent = await (await fetch(path)).text();
-                content.innerHTML= "<h1>" + a.textContent + "</h1>"  + htmlContent;
+                const headline = document.getElementById("Headline");
+                headline.textContent += " " + a.textContent; 
+                content.innerHTML = htmlContent;
             } else{
                  content.innerHTML= "<h1>" + a.textContent + "</h1>"  + "<h2>Seite nicht verfügbar!</h2>";
             }

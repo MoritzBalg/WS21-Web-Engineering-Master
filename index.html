@@ -12,6 +12,7 @@
     <script>
         async function content_loader(a, path) {
             const content = document.getElementById("content");
+            const navItems = document.querySelector("#menu span");
             a.style.backgroundColor = "#56b0b7";
             if(path){
                 const htmlContent = await (await fetch(path)).text();

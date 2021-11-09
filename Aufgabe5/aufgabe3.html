@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        let pb, button, worker, ul;
+        window.addEventListener("load",()=>{
+            pb = document.getElementById("pb");
+            button = document.getElementById("button")
+            worker = new Worker("Aufgabe3_Worker.js");
+            ul = document.getElementById("primes");
+
+            button.addEventListener("click", ()=>{
+                button.style.visibility = "hidden"
+                getTime();
+                pb.style.display = "block";
+                ul.innerHTML = "";
+                worker.postMessage(document.getElementById("input").value);
+            });
+            worker.addEventListener("message", e=>{
+                let element = document.createElement("li");
+                element.innerText = e.data;
+                ul.appendChild(element);
+                pb.style.display = "none";
+                button.style.visibility = "visible";
+            });
+        });
+
+        function getTime(){
+            let time = new Date();
+            console.log(time.toISOString())
+        }
+
+    </script>
+</head>
+<body>
+<h1>Webworker Beispiel</h1>
+Mit einem klick auf dem Button werden alle Primzahlen berechnet, die kleiner als die angegebene Zahl sind!
+<br>
+<br>
+<input id="input" type="number" placeholder="Bitte Nummer eingeben" style="width: 20em"></input> <button id="button">Berechnen</button>
+<br>
+<progress id="pb" indeterminate="true" style="display: none"></progress>
+<ul id="primes"></ul>
+</body>
+</html>

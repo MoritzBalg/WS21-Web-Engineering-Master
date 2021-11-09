@@ -78,10 +78,11 @@ footer{
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr auto;
     padding: .3em;
+    width: max-content;
     border-radius: var(--radius);
     color: whitesmoke;
     box-shadow: 1px 1px 10px black;
-    margin: 2em 0 1em;
+    margin: 2em auto 1em;
     font-size: large;
 
 

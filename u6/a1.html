@@ -14,7 +14,9 @@
             font-family: sans-serif;
             font-size: larger;
             font-weight: bold;
+            text-align: center;
         }
+
 
         svg{
             margin: 1em auto 0;
@@ -71,6 +73,8 @@
     </style>
 </head>
 <body>
+<h2>Sitzverteilung im Bundestag <a href="https://www.bundestag.de/parlament/plenum/sitzverteilung_20wp">link</a></h2>
+<h3 id="sitzplaetze">Klicken Sie auf einen Balken um die genaue Anzahl an Sitzplätzen angezeigt zu bekommen.</h3>
 <svg id="balkenDiagramm" width="1030"></svg>
 <script>
     let obj, svgContainer;
@@ -84,7 +88,7 @@
     async function printParty(){
          obj = await fetchJSON("a1.json");
          svgContainer = document.getElementById("balkenDiagramm");
-
+         const sp = document.getElementById("sitzplaetze");
          let i = 0;
          let maxSeats = -1;
          for(let key in obj){
@@ -105,6 +109,7 @@
             label.setAttribute('text-anchor', "left");
             label.innerHTML = obj[key].name;
             svgContainer.appendChild(label);
+            bar.addEventListener("click",()=>sp.innerText = "Die Partei: '" + obj[key].fullName + "' hat " + obj[key].seats + " Plätze im deutschen Bundestag");
 
             i++;
         }

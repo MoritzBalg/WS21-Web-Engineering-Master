@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 1</title>
+    <style>
+        :root{
+            --radius:  10px;
+        }
+
+
+        body{
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        svg{
+            margin: 1em auto 0;
+
+            display: block;
+            background-color: #ececec;
+            border-radius: var(--radius);
+            box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.47);
+
+        }
+
+        svg > rect{
+            opacity: 0.6;
+            animation-name: inc;
+            animation-duration: 2s;
+        }
+
+        @keyframes inc {
+            0%{
+                width: 0px;
+            }
+        }
+        svg > rect:hover{
+            opacity: 1;
+        }
+
+        #spd{
+            fill: #e3010f;
+        }
+
+        #cdu{
+            fill: #8a8a8a;
+        }
+
+        #gruenen{
+            fill: #47c21b;
+        }
+
+        #fdp{
+            fill: #e8e511;
+        }
+
+        #afd{
+            fill: #189dec;
+        }
+
+        #linke{
+            fill: #ec18d0;
+        }
+
+        #fraktionslos{
+            fill: #b9b7b7;
+        }
+    </style>
+</head>
+<body>
+<svg id="balkenDiagramm" width="1030"></svg>
+<script>
+    let obj, svgContainer;
+    async function fetchJSON(url){
+        const request = await fetch(url);
+        if(request.ok){
+            return await request.json();
+        }
+    }
+
+    async function printParty(){
+         obj = await fetchJSON("a1.json");
+         svgContainer = document.getElementById("balkenDiagramm");
+
+         let i = 0;
+         let maxSeats = -1;
+         for(let key in obj){
+            const seats = obj[key].seats;
+            if(seats>maxSeats){
+                maxSeats = seats;
+            }
+            const bar = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+            bar.setAttribute('fill', obj[key].color);
+            bar.setAttribute('x', "200");
+            bar.setAttribute('y', 20 + i*120);
+            bar.setAttribute('width', seats * 4);
+            bar.setAttribute('height', "100");
+            svgContainer.appendChild(bar);
+            const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            label.setAttribute('x', "20");
+            label.setAttribute('y', 75 + i*120);
+            label.setAttribute('text-anchor', "left");
+            label.innerHTML = obj[key].name;
+            svgContainer.appendChild(label);
+
+            i++;
+        }
+        const height = i * 125;
+         const width = maxSeats * 5;
+        const xAxis = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        xAxis.setAttribute("x1",200);
+        xAxis.setAttribute("y1",height - 10);
+        xAxis.setAttribute("x2",width-10);
+        xAxis.setAttribute("y2",height - 10);
+        xAxis.setAttribute("stroke","black");
+        const maxLable = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        maxLable.setAttribute('x', width - 50);
+        maxLable.setAttribute('y', height+ 10);
+        maxLable.setAttribute('text-anchor', "left");
+        maxLable.innerHTML = maxSeats;
+        svgContainer.appendChild(maxLable);
+        svgContainer.appendChild(xAxis);
+        svgContainer.setAttribute("height", height + 30);
+        svgContainer.setAttribute("width", width);
+
+    }
+
+    printParty();
+
+
+
+</script>
+</body>
+</html>

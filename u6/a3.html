@@ -17,13 +17,15 @@
                 margin: 0 auto 0;
                 width: 80vw;
                 height: 75vh;
-                animation-name: inc;
-                animation-duration: 0.5s;
+            }
 
+            .wish{
+                animation-name: inc;
+                animation-duration: 1s;
             }
 
             @keyframes inc {
-                0%{
+                50%{
                     height: 0px;
                 }
             }
@@ -95,7 +97,20 @@
                 drawArea = document.getElementById("drawArea");
                 colorPicker = document.getElementById("colorPicker");
 
-                btnClear.addEventListener("click", e=>drawArea.innerHTML = "");
+                btnClear.addEventListener("click", e=>{
+                    drawArea.classList.add("wish");
+
+                    void drawArea.offsetX;
+                    setTimeout(()=>{
+                        drawArea.innerHTML = "";
+                    },500);
+                    setTimeout(()=>drawArea.classList.remove("wish"),1000);
+
+
+
+
+
+                });
                 drawArea.addEventListener("mousedown", start);
                 document.addEventListener("mouseup", stop); //Dokument, damit auch Mouse-Up außerhalb des Containers erkannt wird
             });

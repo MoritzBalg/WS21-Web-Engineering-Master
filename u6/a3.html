@@ -78,7 +78,7 @@
                 }
                 this.getLineString = ()=>{
                     let s = "";
-                    this.points.forEach(point => s += this.convertValues(point.x) + "," + this.convertValues(point.y) + ",");
+                    this.points.forEach(point => s += this.convertValues(point.x) + "," + this.convertValues(point.y) + " ");
                     return s;
                 }
                 this.drawLine = ()=>{

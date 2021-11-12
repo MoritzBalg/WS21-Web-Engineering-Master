@@ -51,26 +51,38 @@
                 cursor: pointer;
             }
 
+            #btnClear:disabled{
+                background-color: #c5bfbf;
+                color: #5e5e60;
+                cursor: pointer;
+            }
+
             #colorPicker{
-                display: block;
-                margin: 1em auto 0;
-                width: 81.5vw;
+                display: inline;
+                margin: 0 auto 1em;
+                width: 4.5vw;
                 height: 2em;
                 border: none;
+                border-radius: 10px;
+            }
+
+            h2{
+                display: inline;
             }
         </style>
         <script>
-            let btnClear, drawArea, colorPicker, path;
+            let btnClear, drawArea, colorPicker, path, sizePicker;
 
             function punkte(x, y) {
                 this.x = x;
                 this.y = y;
             }
 
-            function Line(svgContainer, color){
+            function Line(svgContainer, color, size){
                 this.color = color;
+                this.size = size;
                 this.element = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
-                this.element.setAttribute("style", "fill:none; stroke:" + this.color + "; stroke-width:3");
+                this.element.setAttribute("style", "fill:none; stroke:" + this.color + "; stroke-width:"+ this.size );
                 this.points = new Array();
                 this.parent = svgContainer;
                 this.addPoint = (p)=>{
@@ -96,6 +108,7 @@
                 btnClear = document.getElementById("btnClear");
                 drawArea = document.getElementById("drawArea");
                 colorPicker = document.getElementById("colorPicker");
+                sizePicker = document.getElementById("sizePicker");
 
                 btnClear.addEventListener("click", e=>{
                     drawArea.classList.add("wish");
@@ -104,11 +117,10 @@
                     setTimeout(()=>{
                         drawArea.innerHTML = "";
                     },500);
-                    setTimeout(()=>drawArea.classList.remove("wish"),1000);
-
-
-
-
+                    setTimeout(()=>{
+                        drawArea.classList.remove("wish");
+                        btnClear.disabled = true;
+                    },1000);
 
                 });
                 drawArea.addEventListener("mousedown", start);
@@ -121,7 +133,8 @@
             }
 
             function start(){
-                path = new Line(drawArea, colorPicker.value);
+                btnClear.disabled = false;
+                path = new Line(drawArea, colorPicker.value, sizePicker.value );
                 path.drawLine();
                 drawArea.addEventListener("mousemove",draw);
             }
@@ -133,8 +146,12 @@
     </head>
     <body>
         <h1>SVG-Kalligraphie</h1>
-        <svg id="drawArea"></svg>
-        <button id="btnClear">Clear</button>
+        <label for="colorPicker"><h2>Farbe:</h2></label>
         <input id="colorPicker" type="color">
+        <label for="sizePicker"><h2>Größe:</h2></label>
+        <input id="sizePicker" type="number" max="100"  min="1" value="3">
+        <svg id="drawArea"></svg>
+        <button id="btnClear" type="button" disabled>Clear</button>
+
     </body>
 </html>

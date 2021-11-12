@@ -96,8 +96,8 @@
                 colorPicker = document.getElementById("colorPicker");
 
                 btnClear.addEventListener("click", e=>drawArea.innerHTML = "");
-                drawArea.addEventListener("touchstart", start);
-                document.addEventListener("touchend", stop); //Dokument, damit auch Mouse-Up außerhalb des Containers erkannt wird
+                drawArea.addEventListener("mousedown", start);
+                document.addEventListener("mouseup", stop); //Dokument, damit auch Mouse-Up außerhalb des Containers erkannt wird
             });
 
             function draw(event){
@@ -108,11 +108,11 @@
             function start(){
                 path = new Line(drawArea, colorPicker.value);
                 path.drawLine();
-                drawArea.addEventListener("touchmove",draw);
+                drawArea.addEventListener("mousemove",draw);
             }
 
             function stop(){
-                drawArea.removeEventListener("touchmove", draw);
+                drawArea.removeEventListener("mousemove", draw);
             }
         </script>
     </head>

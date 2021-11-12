@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>SVG-Kalligraphie</title>
+        <style>
+            body{
+                text-align: center;
+                font-family: sans-serif;
+            }
+
+            #drawArea{
+                background-color: #ececec;
+                border-radius: 10px;
+                padding: 1em;
+                display: block;
+                margin: 0 auto 0;
+                width: 80vw;
+                height: 75vh;
+                animation-name: inc;
+                animation-duration: 0.5s;
+
+            }
+
+            @keyframes inc {
+                0%{
+                    height: 0px;
+                }
+            }
+
+            #drawArea:hover{
+                cursor: crosshair;
+            }
+
+            #btnClear{
+                background-color: #4b93d7;
+                border: none;
+                color: white;
+                width: 81.5vw;
+                height: 1.5em;
+                border-radius: 10px;
+                font-size: x-large;
+                display: block;
+                margin: 1em auto 0;
+            }
+
+            #btnClear:hover{
+                background-color: #1870c7;
+                cursor: pointer;
+            }
+
+            #colorPicker{
+                display: block;
+                margin: 1em auto 0;
+                width: 81.5vw;
+                height: 2em;
+                border: none;
+            }
+        </style>
+        <script>
+            let btnClear, drawArea, colorPicker, path;
+
+            function punkte(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+
+            function Line(svgContainer, color){
+                this.color = color;
+                this.element = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+                this.element.setAttribute("style", "fill:none; stroke:" + this.color + "; stroke-width:3");
+                this.points = new Array();
+                this.parent = svgContainer;
+                this.addPoint = (p)=>{
+                    this.points.push(p);
+                }
+                this.getLineString = ()=>{
+                    let s = "";
+                    this.points.forEach(point => s += this.convertValues(point.x) + "," + this.convertValues(point.y) + ",");
+                    return s;
+                }
+                this.drawLine = ()=>{
+                    this.element.setAttribute("points", this.getLineString())
+                    this.parent.appendChild(this.element);
+                }
+
+                this.convertValues = (x)=>{
+                    return x - 15;
+                }
+            }
+
+            //Auf das DOM warten
+            window.addEventListener("load",()=>{
+                btnClear = document.getElementById("btnClear");
+                drawArea = document.getElementById("drawArea");
+                colorPicker = document.getElementById("colorPicker");
+
+                btnClear.addEventListener("click", e=>drawArea.innerHTML = "");
+                drawArea.addEventListener("mousedown", start);
+                document.addEventListener("mouseup", stop); //Dokument, damit auch Mouse-Up außerhalb des Containers erkannt wird
+            });
+
+            function draw(event){
+                path.addPoint(new punkte(event.offsetX,event.offsetY));
+                path.drawLine();
+            }
+
+            function start(){
+                path = new Line(drawArea, colorPicker.value);
+                path.drawLine();
+                drawArea.addEventListener("mousemove",draw);
+            }
+
+            function stop(){
+                drawArea.removeEventListener("mousemove", draw);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>SVG-Kalligraphie</h1>
+        <svg id="drawArea"></svg>
+        <button id="btnClear">Clear</button>
+        <input id="colorPicker" type="color">
+    </body>
+</html>

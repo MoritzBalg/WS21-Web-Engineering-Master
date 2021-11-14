@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            font-family: "Trebuchet MS";
+            padding-top: 3em;
+        }
+
+
+        .code_section{
+            border: 1px solid #d5d5d5;
+            display: block;
+            padding: 1em 1em;
+            width: fit-content;
+            margin: 2em;
+        }
+
+        .code_headWrapper{
+            margin-top: -2em;
+            background-color: white;
+        }
+
+        .code_headline{
+            margin: 0;
+        }
+
+        .code_span{
+            text-transform: uppercase;
+            text-align: right;
+            margin-top: 0.2em;
+            font-size: x-large;
+            font-weight: bold;
+            color: #d5d5d5;
+        }
+
+        .code_button{
+            background-color: #4fc458;
+            color: white;
+            height: 2em;
+            width: 5em;
+            border: 0;
+            border-radius: 30px;
+            box-shadow: 1px 1px 5px #1a1a1a;
+        }
+
+        .code_button:hover{
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%{
+                background-color: #4fc458;
+            }
+            50%{
+                background-color: #1ea129;
+            }
+            100%{
+                background-color: #4fc458;
+            }
+        }
+
+
+    </style>
+
+    <script>
+
+        async function loadCodeFile(url){
+            const response = await fetch(url);
+            if(response.ok){
+                return await response.text();
+            }
+        }
+
+        async function printCode(parentElement, headline, language, src, playable){
+            const codeFile = await loadCodeFile(src);
+            if(!codeFile){
+                return;
+            }
+            const section = document.createElement("section");
+            const div = document.createElement("div");
+            const h2 = document.createElement("h2");
+            const code = document.createElement("code");
+            const span = document.createElement("span");
+            const pre = document.createElement("pre");
+            section.setAttribute("class", "code_section");
+            div.setAttribute("class", "code_headWrapper");
+            h2.setAttribute("class", "code_headline");
+            span.setAttribute("class", "code_span");
+            switch (language.toUpperCase()){
+                case "JS": span.setAttribute("style", 'color: #ff00ff');break;
+                case "HTML": span.setAttribute("class", "code_span_html");break;
+                case "CSS": span.setAttribute("class", "code_span_css");break;
+                case "JAVA": span.setAttribute("class", "code_span_java");break;
+                default : span.setAttribute("class", "code_span");
+            }
+
+            h2.innerHTML = headline;
+            span.innerHTML = language;
+            pre.innerHTML = codeFile;
+
+            section.appendChild(div);
+            div.appendChild(h2);
+            section.appendChild(span);
+            section.appendChild(code);
+            code.appendChild(pre);
+            if(playable){
+                const button = document.createElement("button");
+                button.setAttribute("class", "code_button");
+                button.innerHTML = "&#9654; Play";
+                section.appendChild(button);
+            }
+            parentElement.appendChild(section);
+        }
+
+        printCode("Test", "java", "src/code.java", false);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

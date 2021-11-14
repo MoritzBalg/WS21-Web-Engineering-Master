@@ -5,21 +5,25 @@
     <title>Title</title>
     <style>
         body{
-            font-family: "Trebuchet MS";
+            font-family:  Sans;
             padding-top: 3em;
         }
 
+        .code_wrap{
+            padding: 1em 1em;
+            border: 1px solid #d5d5d5;
+        }
 
         .code_section{
             border: 1px solid #d5d5d5;
             display: block;
-            padding: 1em 1em;
-            width: fit-content;
-            margin: 2em;
+            padding: 1em;
+            margin-top: 1em;
         }
 
         .code_headWrapper{
             margin-top: -2em;
+            position: absolute;
             background-color: white;
         }
 
@@ -31,19 +35,20 @@
             text-transform: uppercase;
             text-align: right;
             margin-top: 0.2em;
-            font-size: x-large;
+            font-size: large;
             font-weight: bold;
             color: #d5d5d5;
         }
 
         .code_button{
-            background-color: #4fc458;
+            background-color: #37509b;
             color: white;
             height: 2em;
-            width: 5em;
+            width: 8em;
             border: 0;
             border-radius: 30px;
             box-shadow: 1px 1px 5px #1a1a1a;
+            margin-right: 1em;
         }
 
         .code_button:hover{
@@ -51,15 +56,20 @@
             animation: pulse 2s infinite;
         }
 
+        .code_iframe{
+            margin-top: 1em;
+            border: 1px solid #d5d5d5;
+        }
+
         @keyframes pulse {
             0%{
-                background-color: #4fc458;
+                background-color: #37509b;
             }
             50%{
-                background-color: #1ea129;
+                background-color: #26386b;
             }
             100%{
-                background-color: #4fc458;
+                background-color: #37509b;
             }
         }
 
@@ -80,28 +90,32 @@
             if(!codeFile){
                 return;
             }
+            const wrap = document.createElement("div");
             const section = document.createElement("section");
             const div = document.createElement("div");
             const h2 = document.createElement("h2");
             const code = document.createElement("code");
             const span = document.createElement("span");
             const pre = document.createElement("pre");
+            wrap.setAttribute("class", "code_wrap");
             section.setAttribute("class", "code_section");
             div.setAttribute("class", "code_headWrapper");
             h2.setAttribute("class", "code_headline");
             span.setAttribute("class", "code_span");
+            let color = "#0a9cff";
             switch (language.toUpperCase()){
-                case "JS": span.setAttribute("style", 'color: #ff00ff');break;
-                case "HTML": span.setAttribute("class", "code_span_html");break;
-                case "CSS": span.setAttribute("class", "code_span_css");break;
-                case "JAVA": span.setAttribute("class", "code_span_java");break;
-                default : span.setAttribute("class", "code_span");
+                case "JS": color = "#d59200";break;
+                case "CSS": color = "#11a6d0";break;
+                case "HTML": color = "#ff6108";break;
+                case "JAVA": color = "#7920fc";break;
+                default: color = "#b7b7b7";break;
             }
+            span.setAttribute("style", 'color: '+ color);
+
 
             h2.innerHTML = headline;
             span.innerHTML = language;
-            pre.innerHTML = codeFile;
-
+            pre.innerText = codeFile;
             section.appendChild(div);
             div.appendChild(h2);
             section.appendChild(span);
@@ -112,16 +126,28 @@
                 button.setAttribute("class", "code_button");
                 button.innerHTML = "&#9654; Play";
                 section.appendChild(button);
-            }
-            parentElement.appendChild(section);
-        }
+                button.addEventListener("click",()=>{
+                    const cancel_btn = document.createElement("button");
+                    cancel_btn.innerHTML = "&#10006; Ausblenden";
+                    cancel_btn.setAttribute("class", "code_button");
 
-        printCode("Test", "java", "src/code.java", false);
+                    section.appendChild(cancel_btn);
+                    const iframe = document.createElement("iframe");
+                    iframe.setAttribute("class", "code_iframe");
+                    iframe.setAttribute("src", src);
+                    iframe.setAttribute("width", section.offsetWidth.toString());
+                    wrap.appendChild(iframe);
+                });
+            }
+            wrap.appendChild(section)
+            parentElement.appendChild(wrap);
+        }
     </script>
 </head>
 <body>
 
 printCode(document.body, "Hello World Programm", "js", "test.java", true);
-
+<br>
+<br>
 </body>
 </html>

@@ -1,157 +1,162 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <title>SVG-Kalligraphie</title>
-        <style>
-            body{
-                text-align: center;
-                font-family: sans-serif;
-            }
+<head>
+    <meta charset="UTF-8">
+    <title>SVG-Kalligraphie</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: sans-serif;
+        }
 
-            #drawArea{
-                background-color: #ececec;
-                border-radius: 10px;
-                padding: 1em;
-                display: block;
-                margin: 0 auto 0;
-                width: 80vw;
-                height: 75vh;
-            }
+        #drawArea{
+            background-color: #ececec;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto 0;
+            width: 80vw;
+            height: 75vh;
+        }
 
-            .wish{
-                animation-name: inc;
-                animation-duration: 1s;
-            }
+        .wish{
+            animation-name: inc;
+            animation-duration: 1s;
+        }
 
-            @keyframes inc {
-                50%{
-                    height: 0px;
+        @keyframes inc {
+            50%{
+                height: 0px;
+            }
+        }
+
+        #drawArea:hover{
+            cursor: crosshair;
+        }
+
+        #btnClear{
+            background-color: #4b93d7;
+            border: none;
+            color: white;
+            width: 80vw;
+            height: 1.5em;
+            border-radius: 10px;
+            font-size: x-large;
+            display: block;
+            margin: 1em auto 0;
+        }
+
+        #btnClear:hover{
+            background-color: #1870c7;
+            cursor: pointer;
+        }
+
+        #btnClear:disabled{
+            background-color: #c5bfbf;
+            color: #5e5e60;
+            cursor: pointer;
+        }
+
+        #colorPicker{
+            display: inline;
+            margin: 0 auto 1em;
+            width: 4.5vw;
+            height: 2em;
+            border: none;
+            border-radius: 10px;
+        }
+
+        h2{
+            display: inline;
+        }
+    </style>
+    <script>
+        let btnClear, drawArea, colorPicker, path, sizePicker;
+
+
+        function Line(svgContainer){
+            this.points = new Array();
+            this.times = new Array();
+            this.parent = svgContainer;
+            this.addPoint = (p)=>{
+                this.points.push(p);
+                this.times.push((new Date()).getMilliseconds());
+            }
+            this.drawLine = ()=>{
+                let element = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                element.setAttribute("style", "fill:none; stroke:" + colorPicker.value + ";" );
+                const size = this.points.length;
+                if (size != 0) {
+                    element.setAttribute('x1', this.points[size - 1].x);
+                    element.setAttribute('y1', this.points[size - 1].y);
+                    element.setAttribute('x2', this.points[size - 2].x);
+                    element.setAttribute('y2', this.points[size - 2].y);
+                    const length = Math.sqrt(Math.pow(this.points[size - 1].x - this.points[size - 2].x, 2) + Math.pow(this.points[size - 1].y - this.points[size - 2].y, 2));
+                    const time = this.times[size - 1] - this.times[size - 2];
+                    const width = Math.min(time/length * 3, 10);
+                    console.log(width);
+                    element.setAttribute('stroke-width', width);
+                    this.parent.appendChild(element);
                 }
             }
 
-            #drawArea:hover{
-                cursor: crosshair;
-            }
-
-            #btnClear{
-                background-color: #4b93d7;
-                border: none;
-                color: white;
-                width: 81.5vw;
-                height: 1.5em;
-                border-radius: 10px;
-                font-size: x-large;
-                display: block;
-                margin: 1em auto 0;
-            }
-
-            #btnClear:hover{
-                background-color: #1870c7;
-                cursor: pointer;
-            }
-
-            #btnClear:disabled{
-                background-color: #c5bfbf;
-                color: #5e5e60;
-                cursor: pointer;
-            }
-
-            #colorPicker{
-                display: inline;
-                margin: 0 auto 1em;
-                width: 4.5vw;
-                height: 2em;
-                border: none;
-                border-radius: 10px;
-            }
-
-            h2{
-                display: inline;
-            }
-        </style>
-        <script>
-            let btnClear, drawArea, colorPicker, path, sizePicker;
-
-            function punkte(x, y) {
-                this.x = x;
-                this.y = y;
-            }
-
-            function Line(svgContainer, color, size){
-                this.color = color;
-                this.size = size;
-                this.element = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
-                this.element.setAttribute("style", "fill:none; stroke:" + this.color + "; stroke-width:"+ this.size );
+            this.reset = () => {
                 this.points = new Array();
-                this.parent = svgContainer;
-                this.addPoint = (p)=>{
-                    this.points.push(p);
-                }
-                this.getLineString = ()=>{
-                    let s = "";
-                    this.points.forEach(point => s += this.convertValues(point.x) + "," + this.convertValues(point.y) + " ");
-                    return s;
-                }
-                this.drawLine = ()=>{
-                    this.element.setAttribute("points", this.getLineString())
-                    this.parent.appendChild(this.element);
-                }
-
-                this.convertValues = (x)=>{
-                    return x - 15;
-                }
             }
+        }
 
-            //Auf das DOM warten
-            window.addEventListener("load",()=>{
-                btnClear = document.getElementById("btnClear");
-                drawArea = document.getElementById("drawArea");
-                colorPicker = document.getElementById("colorPicker");
-                sizePicker = document.getElementById("sizePicker");
+        //Auf das DOM warten
+        window.addEventListener("load",()=>{
+            btnClear = document.getElementById("btnClear");
+            drawArea = document.getElementById("drawArea");
+            colorPicker = document.getElementById("colorPicker");
+            sizePicker = document.getElementById("sizePicker");
 
-                btnClear.addEventListener("click", e=>{
-                    drawArea.classList.add("wish");
+            btnClear.addEventListener("click", e=>{
+                drawArea.classList.add("wish");
 
-                    void drawArea.offsetX;
-                    setTimeout(()=>{
-                        drawArea.innerHTML = "";
-                    },500);
-                    setTimeout(()=>{
-                        drawArea.classList.remove("wish");
-                        btnClear.disabled = true;
-                    },1000);
+                void drawArea.offsetX;
+                setTimeout(()=>{
+                    drawArea.innerHTML = "";
+                },500);
+                setTimeout(()=>{
+                    drawArea.classList.remove("wish");
+                    btnClear.disabled = true;
+                },1000);
 
-                });
-                drawArea.addEventListener("mousedown", start);
-                document.addEventListener("mouseup", stop); //Dokument, damit auch Mouse-Up außerhalb des Containers erkannt wird
             });
+            drawArea.addEventListener("mousedown", start);
+            document.addEventListener("mouseup", stop); //Dokument, damit auch Mouse-Up außerhalb des Containers erkannt wird
+        });
 
-            function draw(event){
-                path.addPoint(new punkte(event.offsetX,event.offsetY));
-                path.drawLine();
-            }
+        function draw(event){
+            const point = drawArea.createSVGPoint();
+            point.x = event.offsetX;
+            point.y = event.offsetY;
+            path.addPoint(point);
+            path.drawLine();
+        }
 
-            function start(){
-                btnClear.disabled = false;
-                path = new Line(drawArea, colorPicker.value, sizePicker.value );
-                path.drawLine();
-                drawArea.addEventListener("mousemove",draw);
-            }
+        function start(){
+            btnClear.disabled = false;
+            drawArea.addEventListener("mousemove",draw);
+        }
 
-            function stop(){
-                drawArea.removeEventListener("mousemove", draw);
-            }
-        </script>
-    </head>
-    <body>
-        <h1>SVG-Kalligraphie</h1>
-        <label for="colorPicker"><h2>Farbe:</h2></label>
-        <input id="colorPicker" type="color">
-        <label for="sizePicker"><h2>Größe:</h2></label>
-        <input id="sizePicker" type="number" max="100"  min="1" value="3">
-        <svg id="drawArea"></svg>
-        <button id="btnClear" type="button" disabled>Clear</button>
+        function stop(){
+            drawArea.removeEventListener("mousemove", draw);
+            path.reset();
+        }
 
-    </body>
+        window.addEventListener('load', () => {
+            path = new Line(drawArea);
+        });
+    </script>
+</head>
+<body>
+<h1>SVG-Kalligraphie</h1>
+<label for="colorPicker"><h2>Farbe:</h2></label>
+<input id="colorPicker" type="color">
+<svg id="drawArea"></svg>
+<button id="btnClear" type="button" disabled>Clear</button>
+
+</body>
 </html>

@@ -93,7 +93,6 @@
                     const length = Math.sqrt(Math.pow(this.points[size - 1].x - this.points[size - 2].x, 2) + Math.pow(this.points[size - 1].y - this.points[size - 2].y, 2));
                     const time = this.times[size - 1] - this.times[size - 2];
                     const width = Math.min(time/length * 3, 10);
-                    console.log(width);
                     element.setAttribute('stroke-width', width);
                     this.parent.appendChild(element);
                 }
@@ -149,6 +148,27 @@
         window.addEventListener('load', () => {
             path = new Line(drawArea);
         });
+
+
+        function Point(x,y){
+            this.x = x;
+            this.y = y;
+        }
+
+        function getPointOffset(a,b, delta){
+            //Steigung bestimmen
+            const m = (b.y - a.y) / (b.x - a.x);
+            //Steigung für Kreuz-Funktion berechnen
+            const n = -1/m;
+            //Y-Achsen Abstand berechnen mit Punkt b y=nx+u <=> u = -nx+y
+            const u = -n*b.x + b.y;
+            let point1 = new Point(b.x + delta, n * (b.x+delta) + u);
+            let point2 = new Point(b.x - delta, n * (b.x-delta) + u);
+            return [point1, point2];
+        }
+
+
+
     </script>
 </head>
 <body>

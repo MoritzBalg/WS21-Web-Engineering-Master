@@ -43,33 +43,6 @@
             opacity: 1;
         }
 
-        #spd{
-            fill: #e3010f;
-        }
-
-        #cdu{
-            fill: #8a8a8a;
-        }
-
-        #gruenen{
-            fill: #47c21b;
-        }
-
-        #fdp{
-            fill: #e8e511;
-        }
-
-        #afd{
-            fill: #189dec;
-        }
-
-        #linke{
-            fill: #ec18d0;
-        }
-
-        #fraktionslos{
-            fill: #b9b7b7;
-        }
     </style>
 </head>
 <body>
@@ -78,15 +51,53 @@
 <svg id="balkenDiagramm" width="1030"></svg>
 <script>
     let obj, svgContainer;
-    async function fetchJSON(url){
-        const request = await fetch(url);
-        if(request.ok){
-            return await request.json();
+    obj = {
+        "spd": {
+            "name": "SPD",
+            "fullName": "Sozialdemokratische Partei Deutschlands",
+            "seats": 206,
+            "color": "#e3010f"
+        },
+        "cdu": {
+            "name": "CDU",
+            "fullName": "Christliche demokratische Union",
+            "seats": 197,
+            "color": "#000000"
+        },
+        "gruenen": {
+            "name": "Grüne",
+            "fullName": "BÜNDNIS 90/DIE GRÜNEN",
+            "seats": 118,
+            "color": "#47c21b"
+        },
+        "fdp": {
+            "name": "FDP",
+            "fullName": " Freie Demokratische Partei",
+            "seats": 92,
+            "color": "#e8e511"
+        },
+        "afd": {
+            "name": "AfD",
+            "fullName": "Alternative für Deutschland",
+            "seats": 82,
+            "color": "#189dec"
+        },
+        "linke": {
+            "name": "Linke",
+            "fullName": "Die Linke",
+            "seats": 39,
+            "color": "#ec18d0"
+        },
+        "fraktionslos": {
+            "name": "Fraktionslos",
+            "fullName": "Fraktionslos",
+            "seats": 2,
+            "color": "#b9b7b7"
         }
-    }
+    };
 
-    async function printParty(){
-         obj = await fetchJSON("a1.json");
+     function printParty(){
+
          svgContainer = document.getElementById("balkenDiagramm");
          const sp = document.getElementById("sitzplaetze");
          let i = 0;

@@ -1,0 +1,21 @@
+{
+  "name": "WWW-Navigator",
+  "short_name": "wwwNav",
+  "theme_color": "#005d55",
+  "background_color": "#2196f3",
+  "display": "standalone",
+  "scope": "/pwa",
+  "start_url": "/pwa/a1.html",
+  "icons": [
+    {
+      "src": "/img/icon-192.png",
+      "type": "image/png",
+      "size": "192x192"
+    },
+    {
+      "src": "/img/icon-512.png",
+      "type": "image/png",
+      "size": "512x512"
+    }
+  ]
+}

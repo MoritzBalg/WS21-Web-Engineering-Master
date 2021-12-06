@@ -90,6 +90,9 @@
           }
         }
         async connectedCallback(){
+          this.shadow = this.attachShadow({"mode":"open"});
+
+
           const headline = this.getAttribute("headline");
           const language = this.getAttribute("language");
           const runnable = this.getAttribute("runnable");
@@ -165,7 +168,7 @@
               button.addEventListener("click", clickCallback);
             }
             wrap.appendChild(section)
-            this.appendChild(wrap);
+            this.shadow.appendChild(wrap);
 
           }
 

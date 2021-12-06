@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WWW Navi</title>
+  <link rel="manifest" href="manifest.json">
+  <script src="serviceWorker.js"></script>
+  <script src="content.js" type="module"></script>
+  <script>
+    if("serviceWorker" in navigator){ //Prüfen ob der Browser ServiceWorker unterstützt
+      window.addEventListener("load", ()=>{
+        navigator.serviceWorker.register("serviceWorker.js", {"scope": "/WS21-Web-Engineering-Master/u9/pwa/"})
+                .then((sw)=>{
+                  //Registrierung erfolgreich
+                  console.log("ServiceWorker angelegt " + sw.scope);
+                }).catch(()=>{
+          console.log("Error");
+        })
+      });
+    }
+  </script>
+
+
+</head>
+<body>
+<www-navigator path="content.json"></www-navigator>
+</body>
+</html>
+

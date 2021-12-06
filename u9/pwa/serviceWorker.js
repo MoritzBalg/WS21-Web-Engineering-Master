@@ -1,6 +1,11 @@
 const CACHE_NAME = "WEB-NAV-CACHE_V1";
 const urlsToCache = [
-    'a1.html'
+    'index.html',
+    'content.js',
+    'content.json',
+    'manifest.json',
+    'img/icon-192.png',
+    'img/icon-512.png'
 ];
 
 self.addEventListener("install", (event)=>{
@@ -8,4 +13,18 @@ self.addEventListener("install", (event)=>{
         caches.open(CACHE_NAME)
             .then((cache) => cache.addAll(urlsToCache))
     );
+});
+
+self.addEventListener("fetch", (event)=>{
+    console.log("Test");
+    event.respondWith(
+        fetch(event.request).catch(()=>{
+            return caches.open(CACHE_NAME).then((cache)=>{
+                return cache.match(event.request)
+            }).catch((error)=>{
+                return new Response("Du bist offline");
+            })
+        })
+    )
+
 });

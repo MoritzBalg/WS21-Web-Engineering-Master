@@ -98,43 +98,43 @@
 
      function printParty(){
 
-         svgContainer = document.getElementById("balkenDiagramm");
-         const sp = document.getElementById("sitzplaetze");
-         let i = 0;
-         let maxSeats = -1;
-         for(let key in obj){
-            const seats = obj[key].seats;
-            if(seats>maxSeats){
-                maxSeats = seats;
-            }
-            const bar = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-            bar.setAttribute('fill', obj[key].color);
-            bar.setAttribute('x', "200");
-            bar.setAttribute('y', 20 + i*120);
-            bar.setAttribute('width', seats * 4);
-            bar.setAttribute('height', "100");
-            svgContainer.appendChild(bar);
-            const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
-            label.setAttribute('x', "20");
-            label.setAttribute('y', 75 + i*120);
-            label.setAttribute('text-anchor', "left");
-            label.innerHTML = obj[key].name;
-            svgContainer.appendChild(label);
-            bar.addEventListener("click",()=>sp.innerText = "Die Partei: '" + obj[key].fullName + "' hat " + obj[key].seats + " Plätze im deutschen Bundestag");
+             svgContainer = document.getElementById("balkenDiagramm");
+             const sp = document.getElementById("sitzplaetze");
+             let i = 0;
+             let maxSeats = -1;
+             for(let key in obj){
+                 const seats = obj[key].seats;
+                 if(seats>maxSeats){
+                     maxSeats = seats;
+                 }
+                 const bar = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                 bar.setAttribute('fill', obj[key].color);
+                 bar.setAttribute('x', "200");
+                 bar.setAttribute('y', 20 + i*120);
+                 bar.setAttribute('width', seats * 4);
+                 bar.setAttribute('height', "100");
+                 svgContainer.appendChild(bar);
+                 const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                 label.setAttribute('x', "20");
+                 label.setAttribute('y', 75 + i*120);
+                 label.setAttribute('text-anchor', "left");
+                 label.innerHTML = obj[key].name;
+                 svgContainer.appendChild(label);
+                 bar.addEventListener("click",()=>sp.innerText = "Die Partei: '" + obj[key].fullName + "' hat " + obj[key].seats + " Plätze im deutschen Bundestag");
 
-            i++;
-        }
-        const height = i * 125;
-         const width = maxSeats * 5;
-        const xAxis = document.createElementNS("http://www.w3.org/2000/svg", "line");
-        xAxis.setAttribute("x1",200);
-        xAxis.setAttribute("y1",height - 10);
-        xAxis.setAttribute("x2",width-10);
-        xAxis.setAttribute("y2",height - 10);
-        xAxis.setAttribute("stroke","black");
-        const maxLable = document.createElementNS("http://www.w3.org/2000/svg", "text");
-        maxLable.setAttribute('x', width - 50);
-        maxLable.setAttribute('y', height+ 10);
+                 i++;
+             }
+             const height = i * 125;
+             const width = maxSeats * 5;
+             const xAxis = document.createElementNS("http://www.w3.org/2000/svg", "line");
+             xAxis.setAttribute("x1",200);
+             xAxis.setAttribute("y1",height - 10);
+             xAxis.setAttribute("x2",width-10);
+             xAxis.setAttribute("y2",height - 10);
+             xAxis.setAttribute("stroke","black");
+             const maxLable = document.createElementNS("http://www.w3.org/2000/svg", "text");
+             maxLable.setAttribute('x', width - 50);
+             maxLable.setAttribute('y', height+ 10);
         maxLable.setAttribute('text-anchor', "left");
         maxLable.innerHTML = maxSeats;
         svgContainer.appendChild(maxLable);

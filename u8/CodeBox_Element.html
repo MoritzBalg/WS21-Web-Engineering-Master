@@ -149,6 +149,7 @@
                 iframe.setAttribute("class", "code_iframe");
                 iframe.setAttribute("src", src);
                 iframe.setAttribute("width", section.offsetWidth.toString());
+                iframe.setAttribute("height", "800px");
                 wrap.appendChild(iframe);
 
                 const removeCallback = _=>{
@@ -181,7 +182,8 @@
     </script>
 </head>
 <body>
-<code-box headline="Hallo Welt", language="js", src="../u6/a3.html" runnable="true"/>
-<code-box headline="Hallo Welt", language="js", src="../u6/a1.html" runnable="true"/>
+<code-box headline="SVG-Kalligraphie", language="html", src="../u6/a3.html" runnable="false"/>
+
+<code-box headline="SVG Bar Chart", language="js", src="../u6/a1.html" runnable="true"/>
 </body>
 </html>

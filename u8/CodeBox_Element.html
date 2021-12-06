@@ -90,6 +90,9 @@
           }
         }
         async connectedCallback(){
+          this.shadow = this.attachShadow({"mode":"open"});
+
+
           const headline = this.getAttribute("headline");
           const language = this.getAttribute("language");
           const runnable = this.getAttribute("runnable");
@@ -149,6 +152,7 @@
                 iframe.setAttribute("class", "code_iframe");
                 iframe.setAttribute("src", src);
                 iframe.setAttribute("width", section.offsetWidth.toString());
+                iframe.setAttribute("height", "800px");
                 wrap.appendChild(iframe);
 
                 const removeCallback = _=>{
@@ -164,7 +168,7 @@
               button.addEventListener("click", clickCallback);
             }
             wrap.appendChild(section)
-            this.appendChild(wrap);
+            this.shadow.appendChild(wrap);
 
           }
 

@@ -9,6 +9,11 @@ const urlsToCache = [
 ];
 
 self.addEventListener("install", (event)=>{
+    (async ()=>{
+        const permission = await Notification.requestPermission();
+        console.log(permission);
+        console.log("Hallo");
+    })();
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then((cache) => cache.addAll(urlsToCache))

@@ -1,0 +1,142 @@
+:root {
+    --background-color: #f9f9f9;
+    --font-color: #b7b7b7;
+    --highlight-color: #1a1a1a;
+    --accent-color: #41b4dc;
+}
+
+body{
+    background-color: var(--background-color);
+    margin: 0;
+    font-family: "Arial" , sans-serif;
+}
+
+header{
+    background: rgb(116,109,149);
+    background: radial-gradient(circle, rgba(116,109,149,1) 0%, rgba(10,10,10,1) 100%);
+}
+
+header, footer{
+    background-color: var(--highlight-color);
+    color: var(--font-color);
+    text-align: center;
+}
+
+
+
+#mainWrapper{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+main{
+    padding: 2em;
+    animation: flyin 2.5s;
+    background-color: var(--background-color);
+}
+
+main > h1{
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 2em;
+    box-shadow: 0px 3px 25px 0px var(--font-color);
+}
+
+nav a{
+    text-decoration: none;
+    color: var(--font-color);
+    padding: 1em;
+}
+
+nav span{
+    display: flex;
+}
+
+nav span a{
+    margin-left: 1em;
+    padding-top: 1.75em;
+    flex: 1 1 4em;
+
+}
+
+nav span a:hover{
+    background-color: var(--accent-color);
+    color: white;
+    animation: load 1s;
+    box-shadow: 0px 0px 15px 0px var(--accent-color);
+}
+
+#logo{
+    font-weight: bold;
+    font-size: x-large;
+    margin-left: -1em;
+    text-shadow: 1px 1px 10px var(--accent-color);
+
+}
+
+#logo:hover{
+    animation: wishover 2s infinite;
+}
+
+@keyframes wishover {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.3;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+section{
+    text-align: justify;
+    padding: 1em;
+    margin-bottom: 3em;
+    border: 1px solid var(--font-color);
+}
+
+section>div>h2{
+    margin-bottom: 0.5em;
+}
+
+
+.headlineWrap{
+    background-color: var(--background-color);
+    position: absolute;
+    margin-top: -3em;
+}
+
+@keyframes flyin {
+    0%{
+        opacity: 0;
+    }
+}
+
+@keyframes load {
+    0%{
+        box-shadow: 0px 0px 0px 0px var(--accent-color);
+    }
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+.refs{
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+.refs:visited{
+    color: var(--font-color);
+}

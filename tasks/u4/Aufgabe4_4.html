@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>WYSIWYG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script4_4.js"></script>
+    <style>
+
+        :root {
+            --radius: 10px;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        main {
+            background-color: #ffffff;
+            border-radius: var(--radius);
+            border: 2px solid #d5d5d5;
+        }
+
+        #header {
+            background-color: #30aadd;
+            padding: 1em;
+            display: flex;
+
+            justify-content: center;
+            border-top-left-radius: var(--radius);
+            border-top-right-radius: var(--radius);
+        }
+
+        #header > #clean {
+            background-color: #d01010;
+            color: white;
+        }
+
+        #header > #clean:hover {
+            background-color: red;
+        }
+
+        #header > button {
+            background-color: #d5d5d5;
+            display: inline-block;
+            text-align: center;
+            padding: 0.5em;
+            flex: 0 1 3em;
+            margin: 0.5em;
+            font-size: x-large;
+            border-radius: var(--radius);
+        }
+
+
+        #header > button:hover {
+            background-color: #f8f8f8;
+        }
+
+        #content {
+            height: 40vh;
+            padding: 0.5em;
+        }
+
+    </style>
+</head>
+<body>
+<h1>WYSIWYG Editor</h1>
+
+<main>
+    <div id="header">
+        <button>A<input type="color" onchange="edit('forecolor', this.value)"></button>
+        <button onclick="edit('bold')"><b>F</b></button>
+        <button onclick="edit('italic')"><em>K</em></button>
+        <button onclick="edit('underline')"><u>U</u></button>
+        <button onclick="edit('justifyLeft')"><i class="fa fa-align-left"></i></button>
+        <button onclick="edit('justifyCenter')"><i class="fa fa-align-center"></i></button>
+        <button onclick="edit('justifyRight')"><i class="fa fa-align-right"></i></button>
+        <button onclick="edit('subscript')">X<sub>2</sub></button>
+        <button onclick="edit('superscript')">X<sup>2</sup></button>
+        <button onclick="edit('undo')">&#11119;</button>
+        <button onclick="edit('redo')">&#11118;</button>
+        <button id="clean" onclick="clean()"><i class="fa fa-trash"></i></button>
+
+    </div>
+    <div id="content" contentEditable="true">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+        takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+        dolor sit amet.
+
+        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+        feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
+        delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
+    </div>
+</main>
+</body>
+</html>

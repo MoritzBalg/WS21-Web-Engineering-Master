@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function click(){
+            let aContent = null;
+            let bContent = null;
+            const aContainer = document.getElementById("a");
+            const bContainer = document.getElementById("b");
+            const conContainer = document.getElementById("concat")
+            fetch("A.txt")
+                .then(response => response.text())
+                .then(response => {
+                    aContainer.textContent = response
+                    aContent = response;
+                    concatFiles();
+                })
+                .catch(err => console.log(err));
+            fetch("B.txt")
+                .then(response => response.text())
+                .then(response => {
+                    bContainer.textContent = response
+                    bContent = response;
+                    concatFiles();
+                })
+                .catch(err => console.log(err));
+            function concatFiles(){
+                conContainer.textContent = "";
+                if(aContent != null && bContent!=null){
+                    aContent = aContent.split("\n");
+                    bContent = bContent.split("\n");
+                    for(let i = 0; i < aContent.length; i++){
+                        conContainer.textContent += aContent[i] + " " + bContent[i] + "\r\n";
+                    }
+                }
+            }
+        }
+
+        window.onload = () => {
+            document.querySelector("button").addEventListener("click", click);
+
+        };
+
+    </script>
+</head>
+<body>
+<button>Klick mich!</button>
+<p id="a">Inhalt der Datei A</p>
+<p id="b">Inhalt der Datei B</p>
+<hr>
+<p>
+    <pre id="concat">
+    Inhalt der Dateien concatiniert
+    </pre>
+</p>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Bezier-Animation</title>
+</head>
+<style>
+  body{
+    margin: 0;
+    padding: 2em;
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  #drawArea, #drawArea2{
+    background-color: #ececec;
+    display: block;
+    margin: 0 auto 0;
+    width: 80vw;
+    height: 80vh;
+
+  }
+
+  circle{
+    stroke: #000000;
+    stroke-width: 1;
+    cursor: pointer;
+  }
+
+  text{
+    font-size: 10px;
+  }
+
+</style>
+<body>
+<h2>Bezier-Animation</h2>
+<svg id="drawArea" width="301" height="301">
+  <defs>
+    <pattern id="tenthGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="silver" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#tenthGrid)"/>
+
+  <g stroke="gray" stroke-width="2" fill="none">
+    <path id="ac" d="M 50 50 L 100 100"></path>
+    <path id="ab" d="M107.07106781186548 92.92893218813452 L 92.92893218813452 107.07106781186548"></path>
+  </g>
+
+  <circle id="a" r="5" cx="50" cy="50" fill="green"></circle>
+  <circle id="b" r="5" cx="100" cy="100" fill="blue"></circle>
+
+  <text id="lA" x="60" y="60">(50,50)</text>
+  <text id="lB" x="110" y="110">(100,100)</text>
+
+</svg>
+<script>
+  window.addEventListener("load",()=>{
+    const drawArea = document.getElementById("drawArea");
+    const circles = document.querySelectorAll("#drawArea circle");
+    for(let c of circles){
+      let m = move(c);
+      c.addEventListener("mousedown", ()=>{
+        drawArea.addEventListener("mousemove", m);
+      });
+      document.body.addEventListener("mouseup", ()=>{
+        drawArea.removeEventListener("mousemove", m);
+      });
+    }
+  });
+
+
+
+  function move(cir){
+    return (e)=>{
+      cir.setAttribute("cx", e.offsetX);
+      cir.setAttribute("cy", e.offsetY);
+
+      const cirA = document.querySelector("#drawArea #a");
+      const cirB = document.querySelector("#drawArea #b");
+
+      const pathAc = document.querySelector("#drawArea #ac");
+      const pathAb = document.querySelector("#drawArea #ab");
+      const lableA = document.querySelector("#drawArea #lA");
+      const lableB = document.querySelector("#drawArea #lB");
+
+      const cirAXY = [parseInt(cirA.getAttribute("cx")), parseInt(cirA.getAttribute("cy"))];
+      const cirBXY = [parseInt(cirB.getAttribute("cx")), parseInt(cirB.getAttribute("cy"))];
+
+
+      pathAb.setAttribute("d","M" + cirAXY[0] + " " + cirAXY[1] + " L " + cirBXY[0] + " " + cirBXY[1]);
+      let result = getPointOffset(new Point(cirAXY[0], cirAXY[1]), new Point(cirBXY[0], cirBXY[1]), 10);
+      let pointOffA = result[0];
+      //console.log(pointOffA);
+      let pointOffB = result[1];
+      pathAc.setAttribute("d","M" + pointOffA.x + " " + pointOffA.y + " L " + pointOffB.x + " " + pointOffB.y);
+
+
+      lableA.setAttribute("x", (cirAXY[0] + 10).toString());
+      lableA.setAttribute("y", (cirAXY[1] + 10).toString());
+      lableA.innerHTML = "(" + cirAXY[0] + "," + cirAXY[1] + ")";
+
+      lableB.setAttribute("x", (cirBXY[0] + 10).toString());
+      lableB.setAttribute("y", (cirBXY[1] + 10).toString());
+      lableB.innerHTML = "(" + cirBXY[0] + "," + cirBXY[1] + ")";
+
+    };
+  };
+
+  function Point(x,y){
+    this.x = x;
+    this.y = y;
+  }
+
+  function getPointOffset(a,b, delta){
+    //X Werte gleich => senkrechte Steigung kann nicht bestimmt werden!
+    if(a.x === b.x){
+      let point1 = new Point(b.x + delta, b.y);
+      let point2 = new Point(b.x - delta, b.y);
+      return [point1, point2];
+    }
+    //Steigung bestimmen
+    const m = (b.y - a.y) / (b.x - a.x);
+    //Y-Werte gleich?
+    if(m === 0){
+      let point1 = new Point(b.x, b.y + delta);
+      let point2 = new Point(b.x, b.y - delta);
+      return [point1, point2];
+    }
+
+
+    //Steigung für Kreuz-Funktion berechnen
+    const n = -1/m;
+    //Y-Achsen Abstand berechnen mit Punkt b y=nx+u <=> u = -nx+y
+    const u = - n * b.x + b.y;
+
+    let r = delta / Math.sqrt(1+n*n);
+
+    let point1 = new Point(b.x + r, b.y + n*r);
+    let point2 = new Point(b.x - r, b.y - n*r);
+
+
+    return [point1, point2];
+  }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+  customElements.define("einkaufs-liste", class extends HTMLElement{
+      constructor() {
+          super();
+      }
+
+      connectedCallback(){
+          const shadow = this.attachShadow({"mode":"open"});
+          const textFeld = document.createElement("input");
+          textFeld.setAttribute("id", "tb_item");
+          textFeld.setAttribute("type", "text");
+          textFeld.setAttribute("name", "item");
+
+          const button = document.createElement("input");
+          button.setAttribute("id", "btn_add");
+          button.setAttribute("type", "submit");
+          button.setAttribute("value", "Add item");
+
+          const list = document.createElement("ul");
+          list.setAttribute("id", "itemList");
+
+
+          shadow.innerHTML = `
+           <h1>Einkaufsliste</h1>
+            Enter a new item:
+          `;
+          shadow.appendChild(textFeld);
+          shadow.appendChild(button);
+          shadow.appendChild(list);
+
+          button.addEventListener("click", _=>{
+              if(textFeld.value === ""){
+                  alert("Please enter an item");
+              }else{
+                  //Textbox not empty. Insert into list
+                  const listElement = document.createElement("li");
+                  const delButton = document.createElement("button");
+                  const counter = document.createElement("input");
+                  counter.setAttribute("type", "number");
+                  counter.setAttribute("value", "1");
+                  delButton.innerText = "Delete";
+                  delButton.addEventListener("click", event=>list.removeChild(listElement));
+                  listElement.textContent = textFeld.value + " ";
+                  list.appendChild(listElement);
+                  listElement.appendChild(counter);
+                  listElement.appendChild(delButton);
+              }
+          });
+
+
+      }
+      attributeChangedCallback(){
+
+      }
+      disconnectedCallback(){
+
+      }
+
+  });
+</script>
+
+<body>
+<einkaufs-liste></einkaufs-liste>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 2.4</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: #ebeae6;
+            display: grid;
+            grid-template-rows: 1fr auto 3fr ;
+            font-family: sans-serif;
+        }
+
+        header{
+            background-color: #363636;
+            color: #ebeae6;
+            padding: 1em;
+            text-align: center;
+        }
+
+        footer{
+            background-color: #061825;
+            color: #ebeae6;
+            text-align: center;
+            padding-top: 2em;
+        }
+
+        header span{
+            padding-left: 1.5em;
+        }
+
+        #content{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr;
+            text-align: center;
+            height: 78.3vh;
+        }
+
+        #content > h1 {
+            grid-column-start: 1;
+            grid-column-end: 2 span;
+            text-align: center;
+        }
+
+        #content > img {
+            height: 60vh;
+            border: 1px solid black;
+            border-radius: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2em;
+        }
+
+        #content > p{
+            text-align: center;
+            line-height: 4em;
+            font-size: x-large;
+        }
+
+        button{
+            background-color: #ff831e;
+            color: #ebeae6;
+            font-size: large;
+            border-radius: 5px;
+            border: 0;
+            height: 2.2em;
+        }
+
+        #content button{
+            width: 18em;
+        }
+
+        footer button{
+            width: 40em;
+        }
+
+
+    </style>
+</head>
+<body>
+<header>
+    <span>The book series</span>
+    <span>Testimonials</span>
+    <span>The Author</span>
+    <span>Free resources</span>
+</header>
+<div id="content">
+    <h1>You dont know JavaScript</h1>
+    <img src="https://kaul.inf.h-brs.de/wem/assets/img/landing-img.png" alt="Book Cover">
+    <p> Don't just drift through Javascript.<br>
+        Understand how Javascript works<br>
+        start your journey through the bumpy side of Javascript<br>
+        <button>ORDER YOUR COPY NOW</button>
+    </p>
+</div>
+<footer>
+    <p>The first ebook in the book series is absolutely free.</p>
+    <button>FIND OUT MORE ABOUT THIS OFFER</button>
+</footer>
+</body>
+</html>

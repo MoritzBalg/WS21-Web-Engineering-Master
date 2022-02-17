@@ -19,7 +19,7 @@
 
     "aufgaben": {
         "Aufgabe 1": {
-            "tags": ["html", "css"],
+            "tags": ["html", "css", "http", "uri"],
             "headline": "Einführung",
             "content": "./tasks/u1/index.html"
         },

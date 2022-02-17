@@ -130,6 +130,30 @@ main,
       grid-template-rows: auto 1fr auto;
 }
 
+.question-box {
+  margin-top: 1rem;
+}
+
+.question-box p {
+  color: greenyellow;
+  font-style: italic;
+  margin-top: .5rem;
+}
+
+figure {
+  text-align: center;
+  margin: 2rem;
+}
+
+figure img {
+  max-width: 70%;
+}
+
+figure figcaption {
+  color: greenyellow;
+  font-style: italic;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -146,8 +170,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1 {
+h1, h2, h3 {
   padding-bottom: 1rem;
-  font-family: serif;
 }
 /*# sourceMappingURL=main.css.map */

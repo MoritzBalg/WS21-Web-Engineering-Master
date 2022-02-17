@@ -1,0 +1,13 @@
+figure{
+    text-align: center;
+    margin: 2rem;
+    img{
+        max-width: 70%;
+    }
+    
+    figcaption{
+        color: $primary-color;
+        font-style: italic;
+    }
+
+}

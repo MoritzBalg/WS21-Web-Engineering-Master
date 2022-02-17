@@ -5,11 +5,15 @@ window.addEventListener("load", async _=>{
     //get main and side menu to load them with the content
     mainMenu = document.getElementById("main-menu");
     sideMenu = document.getElementById("side-menu");
+    aside = document.getElementById("main-aside");
     contentArea = document.getElementById("content-area");
     btn_hideMenu = document.getElementById("hide-menu");
 
+
+
+
     btn_hideMenu.addEventListener("click",()=>{
-        sideMenu.style.display = sideMenu.style.display=="none"?"block":"none";
+        aside.style.display = aside.style.display=="none"?"block":"none";
     })
 
 
@@ -58,6 +62,8 @@ function loadMainTopics(menuElem, jsonFile){
             loadSideTopics(sideMenu, jsonFile, key);
             document.querySelectorAll("#main-menu .active").forEach(n => n.classList.remove("active"));
             entry.classList.add("active"); 
+            aside.style.display = "block";
+
         }); 
         menuElem.insertBefore(entry, btn_hideMenu);
     }
@@ -77,7 +83,7 @@ function loadSideTopics(menuElem, jsonFile, mainTopic){
         menuElem.appendChild(entry);
        
     }
-    loadTextContent(jsonFile, mainTopic, Object.keys(jsonFile[mainTopic])[0]); //always load the first section
+  loadTextContent(jsonFile, mainTopic, Object.keys(jsonFile[mainTopic])[0]); //always load the first section
     document.querySelector("#side-menu > li").classList.add("active");
 }
 

@@ -1,19 +1,19 @@
 {
     "home": {
-        "Herzlich Wilkommen": {
+        "Willkommen": {
             "tags": ["html", "css"],
-            "headline": "Einführung",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+            "headline": "Herzlich Wilkommen",
+            "content": "./tasks/u1/index.html"
         },
         "Übersicht": {
             "tags": ["html", "css"],
             "headline": "Responsives Web",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+            "content": "./tasks/u1/index.html"
         },
         "Allgemeine Informationen": {
             "tags": ["html", "css"],
-            "headline": "JavaScript",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+            "headline": "Allgemeine Informationen",
+            "content": "./tasks/u1/index.html"
         }
     },
 
@@ -21,62 +21,62 @@
         "Aufgabe 1": {
             "tags": ["html", "css"],
             "headline": "Einführung",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+            "content": "./tasks/u1/index.html"
         },
         "Aufgabe 2": {
             "tags": ["html", "css"],
             "headline": "Responsives Web",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+            "content": "./tasks/u2/index.html"
         },
         "Aufgabe 3": {
             "tags": ["html", "css"],
             "headline": "JavaScript",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+            "content": "./tasks/u3/index.html"
         },
         "Aufgabe 4": {
             "tags": ["html", "css"],
             "headline": "DOM",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+            "content": "./tasks/u4/index.html"
         },
         "Aufgabe 5": {
             "tags": ["html", "css"],
             "headline": "Asynchron",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+            "content": "./tasks/u5/index.html"
         },
         "Aufgabe 6": {
             "tags": ["html", "css"],
             "headline": "SVG",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+            "content": "./tasks/u6/index.html"
         },
         "Aufgabe 7": {
             "tags": ["html", "css"],
             "headline": "Node & npm & Deno",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+            "content": "./tasks/u7/index.html"
         },
         "Aufgabe 8": {
             "tags": ["html", "css"],
             "headline": "Modular Web",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+            "content": "./tasks/u8/index.html"
         },
         "Aufgabe 9": {
             "tags": ["html", "css"],
             "headline": "PWA",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+            "content": "./tasks/u9/index.html"
         },
         "Aufgabe 10": {
             "tags": ["html", "css"],
             "headline": "Vue",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+            "content": "./tasks/u10/index.html"
         },
         "Aufgabe 11": {
             "tags": ["html", "css"],
             "headline": "WebAssembly",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+            "content": "./tasks/u11/index.html"
         },
         "Aufgabe 12": {
             "tags": ["html", "css"],
             "headline": "Security",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+            "content": "./tasks/u12/index.html"
         }
     }
 }

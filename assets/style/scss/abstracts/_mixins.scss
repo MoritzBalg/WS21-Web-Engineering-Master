@@ -1,3 +1,4 @@
 @mixin box-shadow($color: black){
     box-shadow: 2px 2px 5px 0 $color;
+    z-index: 10;
 }

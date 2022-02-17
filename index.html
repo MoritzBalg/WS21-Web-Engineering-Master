@@ -1,85 +1,32 @@
 <!DOCTYPE html>
-<html lang="de" style="height: 100%;">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>WEM WS21 Balg</title>
-    <link rel="stylesheet" href="layout.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-
-    <script>
-        async function content_loader(a, path) {
-            const content = document.getElementById("content");
-            const navItems = document.querySelector("#menu span");
-            a.style.backgroundColor = "#56b0b7";
-            if(path){
-                const htmlContent = await (await fetch(path)).text();
-                content.innerHTML = htmlContent;
-            } else{
-                 content.innerHTML= "<h1>" + a.textContent + "</h1>"  + "<h2>Seite nicht verfügbar!</h2>";
-            }
-            
-        }
-    </script>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Web Engineering Master</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/style/css/main.css'>
+    <script src='assets/js/main.js'></script>
+    <script type="module" src="assets/js/components/tipping/typing-field.js"></script>
+    <script type="module" src="assets/js/components/fileViewer/fileViewer.js"></script>
 </head>
-<body style="height: 100%;">
-<div id="webcontainer">
-    <header>
-        <h1>Web-Engineering Master WS 2021</h1>
-        <div id="menu">
-            <span onclick="content_loader(this)">Übung 1</span>
-            <span onclick="content_loader(this)">Übung 2</span>
-            <span onclick="content_loader(this, 'Aufgabe3.html')">Übung 3</span>
-            <span onclick="content_loader(this)">Übung 4</span>
-            <span onclick="content_loader(this)">Übung 5</span>
-            <span onclick="content_loader(this)">Übung 6</span>
-            <span onclick="content_loader(this)">Übung 7</span>
-            <span onclick="content_loader(this)">Übung 8</span>
-            <span onclick="content_loader(this)">Übung 9</span>
-            <span onclick="content_loader(this)">Übung 10</span>
-            <span onclick="content_loader(this)">Übung 11</span>
-            <span onclick="content_loader(this)">Übung 12</span>
-
-        </div>
-    </header>
-
-    <div id="content">
-
-    <h1 id='Headline'>Herzlich Wilkommen!</h1>
-        <h2>Über diese Webseite</h2>
-        Auf dieser Webseite werden die von mir im Rahmen der Lehrveranstaltung <i>Web-Engineering</i> erlangten Kenntnisse präsentiert und strukturiert dargestellt. Diese Webseite wird über GitHub-Pages bereitgestellt. Das zugehörige Repository ist <a href="#!">hier</a> zu finden. Für Fragen können Sie mich gerne über den GitHub-Messenger kontaktieren.<br>
-        Die Gliederung dieser Seite orientiert sich an den bereitgestellten Übungsaufgaben. Jede Woche wurde eine dieser Aufgaben veröffentlicht und bearbeitet. Meine Lösungsansätze sind auf den einzelnen Unterseiten zu finden.
-
-        <h2>Sonstiges</h2>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-
-        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-
-<div class="codeBox">
-    <div class="title">Hallo Welt Programm:</div>
-    <div class="language_html">HTML</div>
-    <code>
-        <pre>
-public Class Test{
-    public static void main (String[] args){
-        System.out.println("Hallo Welt");
-    }
-}
-        </pre>
-    </code>
-</div>
-
-
-
-
-
-
-
+<body>
+    <div id="side-wrapper">
+        <header>
+                <span id="logo">WEM</span>
+                <ul id="main-menu">
+                    <li id="hide-menu">X</li>
+                    <!-- Content will be inserted by the Content loader-->
+                </ul>
+        </header>
+        <aside id="main-aside">
+                <ul id="side-menu">
+                    <!-- Content will be inserted by the Content loader-->
+                </ul>
+        </aside>
+        <main id="content-area">Main
+        </main>
+        <footer>&copy; 2022 Moritz Balg</footer>
     </div>
-    <footer>&copy 2021 Moritz Balg </footer>
-
-</div>
 </body>
 </html>

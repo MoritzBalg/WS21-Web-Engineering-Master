@@ -18,12 +18,12 @@ header,
     ul{
         list-style: none;
         display: flex;
+        width: 100px;
         flex-direction: row;
-        
         justify-content: flex-end;
 
         li{
-            padding: 1rem 2rem;
+            padding: 1rem 1rem;
             cursor: pointer;
             &:hover{
                 background-color: $secondary-color;

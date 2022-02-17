@@ -1,4 +1,4 @@
-let mainMenu, sideMenu, contentArea;
+let mainMenu, sideMenu, contentArea, btn_hideMenu;
 
 window.addEventListener("load", async _=>{
     const content = await loadContent("./content.json");
@@ -6,6 +6,13 @@ window.addEventListener("load", async _=>{
     mainMenu = document.getElementById("main-menu");
     sideMenu = document.getElementById("side-menu");
     contentArea = document.getElementById("content-area");
+    btn_hideMenu = document.getElementById("hide-menu");
+
+    btn_hideMenu.addEventListener("click",()=>{
+        sideMenu.style.display = sideMenu.style.display=="none"?"block":"none";
+    })
+
+
 
     loadMainTopics(mainMenu, content);
     loadSideTopics(sideMenu, content, "home");
@@ -28,8 +35,22 @@ async function loadContent(url){
 
 }
 
+
+async function loadHTML(url){
+    const request = await fetch(url);
+    if(request.ok){
+        try {
+            return await request.text();   
+        } catch (error) {
+            console.error("Invalid Text Format in " + url);
+    }
+    }else{
+        console.error("Fail to fetch File " + url);
+    }
+}
+
 function loadMainTopics(menuElem, jsonFile){
-    menuElem.innerHTML = ""; //only the last call of this function will resut in the navigation
+   // menuElem.innerHTML = ""; //only the last call of this function will resut in the navigation
     for(let key in jsonFile){
         const entry = document.createElement("li");
         entry.innerText = key.toUpperCase();
@@ -38,7 +59,7 @@ function loadMainTopics(menuElem, jsonFile){
             document.querySelectorAll("#main-menu .active").forEach(n => n.classList.remove("active"));
             entry.classList.add("active"); 
         }); 
-        menuElem.appendChild(entry);
+        menuElem.insertBefore(entry, btn_hideMenu);
     }
     document.querySelector("#main-menu > li").classList.add("active");
 }
@@ -60,10 +81,11 @@ function loadSideTopics(menuElem, jsonFile, mainTopic){
     document.querySelector("#side-menu > li").classList.add("active");
 }
 
-function loadTextContent(jsonFile, mainTopic, sideTopic){
+async function loadTextContent(jsonFile, mainTopic, sideTopic){
+    const textFile = await loadHTML(jsonFile[mainTopic][sideTopic].content);
     contentArea.innerHTML = `
-    <h1>${jsonFile[mainTopic][sideTopic].headline}</h1>
-    <section>${jsonFile[mainTopic][sideTopic].content}</section>
+    <h1><typing-field>${jsonFile[mainTopic][sideTopic].headline}</typing-field></h1>
+    <section>${textFile}</section>
 `;
 }
 

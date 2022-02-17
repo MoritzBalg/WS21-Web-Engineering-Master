@@ -3,33 +3,35 @@ header,
     background-color: $primary-color;
     grid-area: header;
     @include box-shadow;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    nav{
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    #logo{
+        color: $secondary-color;
         margin-left: 1rem;
-        #logo{
-            color: $secondary-color;
-            font-weight: 700;
-            font-size: x-large;
-        }
+        font-weight: 700;
+        font-size: x-large;
+    }
 
-        ul{
-            list-style: none;
-            display: flex;
-            flex-direction: row;
-            gap: .5rem;
-            justify-content: flex-end;
+    ul{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        
+        justify-content: flex-end;
 
-            li{
-                padding: .5rem;
-                cursor: pointer;
-                &:hover{
-                    background-color: $secondary-color;
-                    color: $white-font-color;
-                }
+        li{
+            padding: 1rem 2rem;
+            cursor: pointer;
+            &:hover{
+                background-color: $secondary-color;
+                color: $white-font-color;
+            }
+            &.active{
+                background-color: $secondary-color;
+                color: $white-font-color;
             }
         }
     }

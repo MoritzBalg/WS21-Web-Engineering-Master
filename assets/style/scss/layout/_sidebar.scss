@@ -3,18 +3,25 @@ aside,
     grid-area: aside;
     background-color: $background-color-darker;
     color: $white-font-color;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
 
     ul{
         list-style: none;
 
         li{
-            padding: 0 1rem;
+            padding: 1rem 1rem;
             
             &:hover{
+                background-color: $primary-color;
+                color: $background-color-darker;
+                cursor: pointer;
+            }
+
+            &.active{
                 background-color: $primary-color;
                 color: $background-color-darker;
             }
         }
     }
 }
+

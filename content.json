@@ -1,9 +1,23 @@
 {
     "home": {
-
+        "Herzlich Wilkommen": {
+            "tags": ["html", "css"],
+            "headline": "Einführung",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+        },
+        "Übersicht": {
+            "tags": ["html", "css"],
+            "headline": "Responsives Web",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+        },
+        "Allgemeine Informationen": {
+            "tags": ["html", "css"],
+            "headline": "JavaScript",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+        }
     },
 
-    "Aufgaben": {
+    "aufgaben": {
         "Aufgabe 1": {
             "tags": ["html", "css"],
             "headline": "Einführung",
@@ -64,13 +78,5 @@
             "headline": "Security",
             "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
         }
-    },
-
-    "About": {
-
-    },
-
-    "Tony": {
-
     }
 }

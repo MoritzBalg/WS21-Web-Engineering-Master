@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Web Navigator</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            min-height: 100vh;
+        }
+
+
+        #content-wrapper{
+            background-color: red;
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            grid-template-areas: "header header"
+                                 "aside main"
+                                 "footer footer";
+            grid-template-columns: auto 1fr;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        header{
+            grid-area: header;
+            background-color: purple;
+        }
+
+        footer{
+            grid-area: footer;
+            background-color: green;
+        }
+
+        main{
+            grid-area: main;
+            background-color: antiquewhite;
+            padding: 1rem;
+        }
+
+        aside{
+            grid-area: aside;
+            background-color: green;
+        }
+
+        ul{
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        ul li{
+            padding: 1rem 1.5rem; 
+        }
+
+        ul li:hover{
+            background-color: red;
+        }
+
+        header > nav > ul{
+            justify-content: flex-end;
+        }
+  
+        aside > nav > ul{
+            flex-direction: column;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="content-wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li>Hallo</li>
+                    <li>Hallo</li>
+                    <li>Hallo</li>
+                    <li>Hallo</li>
+                </ul>
+            </nav>
+        </header>
+
+        <aside>
+            <nav>
+                <ul>
+                    <li>Wlet</li>
+                    <li>Wlet</li>
+                    <li>Wlet</li>
+                    <li>Wlet</li>
+                </ul>
+            </nav>
+        </aside>
+        <main>test</main>
+        <footer>Test</footer>
+    </div>
+    
+</body>
+</html>

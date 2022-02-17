@@ -1,0 +1,23 @@
+/* 
+*   Das Layouting orientiert sich an dem von SASS vorgeschlagenen Muster. 
+*   Infos dazu findet man hier https://sass-guidelin.es/de/ im Bereich Architektur 
+*/
+
+@charset 'UTF-8';
+
+@import 'abstracts/mixins';
+@import 'abstracts/colors';
+
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/sidebar';
+@import 'layout/main';
+@import 'layout/grid';
+
+@import 'components/buttons';
+
+@import 'pages/home';
+
+@import 'base/reset';
+@import 'base/typography';

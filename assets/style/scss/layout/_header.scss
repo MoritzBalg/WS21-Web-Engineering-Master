@@ -1,0 +1,36 @@
+header,
+.header {
+    background-color: $primary-color;
+    grid-area: header;
+    @include box-shadow;
+
+    nav{
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 1rem;
+        #logo{
+            color: $secondary-color;
+            font-weight: 700;
+            font-size: x-large;
+        }
+
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            gap: .5rem;
+            justify-content: flex-end;
+
+            li{
+                padding: .5rem;
+                cursor: pointer;
+                &:hover{
+                    background-color: $secondary-color;
+                    color: $white-font-color;
+                }
+            }
+        }
+    }
+}

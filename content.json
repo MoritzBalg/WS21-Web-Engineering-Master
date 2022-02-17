@@ -1,0 +1,76 @@
+{
+    "home": {
+
+    },
+
+    "Aufgaben": {
+        "Aufgabe 1": {
+            "tags": ["html", "css"],
+            "headline": "Einführung",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+        },
+        "Aufgabe 2": {
+            "tags": ["html", "css"],
+            "headline": "Responsives Web",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+        },
+        "Aufgabe 3": {
+            "tags": ["html", "css"],
+            "headline": "JavaScript",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+        },
+        "Aufgabe 4": {
+            "tags": ["html", "css"],
+            "headline": "DOM",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+        },
+        "Aufgabe 5": {
+            "tags": ["html", "css"],
+            "headline": "Asynchron",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+        },
+        "Aufgabe 6": {
+            "tags": ["html", "css"],
+            "headline": "SVG",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+        },
+        "Aufgabe 7": {
+            "tags": ["html", "css"],
+            "headline": "Node & npm & Deno",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+        },
+        "Aufgabe 8": {
+            "tags": ["html", "css"],
+            "headline": "Modular Web",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+        },
+        "Aufgabe 9": {
+            "tags": ["html", "css"],
+            "headline": "PWA",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+        },
+        "Aufgabe 10": {
+            "tags": ["html", "css"],
+            "headline": "Vue",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+        },
+        "Aufgabe 11": {
+            "tags": ["html", "css"],
+            "headline": "WebAssembly",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+        },
+        "Aufgabe 12": {
+            "tags": ["html", "css"],
+            "headline": "Security",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam tenetur officia nisi cumque voluptatum!"
+        }
+    },
+
+    "About": {
+
+    },
+
+    "Tony": {
+
+    }
+}

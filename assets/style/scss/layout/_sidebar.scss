@@ -5,6 +5,7 @@ aside,
     color: $white-font-color;
     padding: 1.5rem 0;
     position: absolute;
+    display: none;
     top: 0;
     right: 0;
     width: 15rem;
@@ -34,6 +35,6 @@ aside,
 
 @keyframes slideIn {
     0%{
-        width: 0;
+        transform: translateX(300px);
     }
 }

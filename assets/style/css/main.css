@@ -8,7 +8,7 @@ footer,
   -ms-grid-column: 1;
   grid-area: footer;
   background-color: greenyellow;
-  color: #3f6407;
+  color: rgba(63, 100, 7, 0.445);
   text-align: center;
 }
 
@@ -34,7 +34,7 @@ header,
 
 header #logo,
 .header #logo {
-  color: #3f6407;
+  color: rgba(63, 100, 7, 0.445);
   margin-left: 1rem;
   font-weight: 700;
   font-size: x-large;
@@ -63,13 +63,13 @@ header ul li,
 
 header ul li:hover,
 .header ul li:hover {
-  background-color: #3f6407;
+  background-color: rgba(63, 100, 7, 0.445);
   color: whitesmoke;
 }
 
 header ul li.active,
 .header ul li.active {
-  background-color: #3f6407;
+  background-color: rgba(63, 100, 7, 0.445);
   color: whitesmoke;
 }
 
@@ -83,6 +83,7 @@ aside,
   color: whitesmoke;
   padding: 1.5rem 0;
   position: absolute;
+  display: none;
   top: 0;
   right: 0;
   width: 15rem;
@@ -116,13 +117,15 @@ aside ul li.active,
 
 @-webkit-keyframes slideIn {
   0% {
-    width: 0;
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
   }
 }
 
 @keyframes slideIn {
   0% {
-    width: 0;
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
   }
 }
 
@@ -134,6 +137,18 @@ aside ul li.active,
   color: whitesmoke;
   padding: 1.5rem;
   position: relative;
+  overflow-x: hidden;
+}
+
+#hider {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: none;
 }
 
 #side-wrapper {
@@ -160,17 +175,25 @@ aside ul li.active,
 figure {
   text-align: center;
   margin: 2rem auto;
-  width: 70%;
+  width: 75%;
   display: block;
 }
 
 figure img {
-  max-width: 70%;
+  max-width: 75%;
+  margin-bottom: 1rem;
 }
 
 figure figcaption {
   color: greenyellow;
   font-style: italic;
+}
+
+figure > img:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 2px 2px 5px 0 #707070;
+          box-shadow: 2px 2px 5px 0 #707070;
+  z-index: 10;
 }
 
 * {
@@ -181,8 +204,7 @@ figure figcaption {
 }
 
 body {
-  min-height: 100vh;
-  min-width: 100vw;
+  min-height: 100%;
 }
 
 * {

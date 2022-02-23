@@ -1,0 +1,24 @@
+figure{
+    text-align: center;
+    margin: 2rem auto;
+    width: 75%;
+    display: block;
+
+    img{
+        max-width: 75%;
+        margin-bottom: 1rem;
+    }
+    
+    figcaption{
+        color: $primary-color;
+        font-style: italic;
+    }
+
+    &>img:hover{
+        cursor: pointer;        
+        @include box-shadow(rgb(112, 112, 112));
+
+    }
+
+}
+

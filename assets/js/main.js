@@ -1,28 +1,37 @@
-let mainMenu, sideMenu, contentArea, btn_hideMenu;
+let mainMenu, sideMenu, contentArea, btn_hideMenu, content;
+let selectedMainTopic = "home", selectedSideTopic = "Willkommen";
 
 window.addEventListener("load", async _=>{
-    const content = await loadContent("./content.json");
+    content = await loadContent("./content.json");
     //get main and side menu to load them with the content
     mainMenu = document.getElementById("main-menu");
     sideMenu = document.getElementById("side-menu");
     aside = document.getElementById("main-aside");
     contentArea = document.getElementById("content-area");
     btn_hideMenu = document.getElementById("hide-menu");
-
-
+    hider = document.getElementById("hider");
 
 
     btn_hideMenu.addEventListener("click",()=>{
         aside.style.display = aside.style.display=="none"?"block":"none";
     })
 
+    hider.addEventListener("click",()=> {
+        aside.style.display = "none";
+        hider.style.display = "none";
+    });
+
+    mainMenu.addEventListener("click",_=>{
+        hider.style.display = "block";
+        aside.style.display = "block";
+    })
 
 
-    loadMainTopics(mainMenu, content);
-    loadSideTopics(sideMenu, content, "home");
 
-
-
+    
+    loadMainTopics(mainMenu, Object.keys(content));
+    refreshContent();
+    //activate(mainMenu.children[0]);
 });
 
 async function loadContent(url){
@@ -53,45 +62,52 @@ async function loadHTML(url){
     }
 }
 
-function loadMainTopics(menuElem, jsonFile){
-   // menuElem.innerHTML = ""; //only the last call of this function will resut in the navigation
-    for(let key in jsonFile){
-        const entry = document.createElement("li");
-        entry.innerText = key.toUpperCase();
-        entry.addEventListener("click", ()=>{
-            loadSideTopics(sideMenu, jsonFile, key);
-            document.querySelectorAll("#main-menu .active").forEach(n => n.classList.remove("active"));
-            entry.classList.add("active"); 
-            aside.style.display = "block";
 
+
+function loadMainTopics(elem, topics){
+   elem.innerText = "";
+    for(let topic of topics){
+        const entry = document.createElement("li");
+        entry.innerText = topic.toUpperCase();
+        elem.appendChild(entry);
+        if(topic === selectedMainTopic){entry.classList.add("active")};    
+        entry.addEventListener("click", _=>{
+            selectedMainTopic = topic;
+            loadSideTopics(sideMenu, Object.keys(content[topic]));
+            activate(entry);
         }); 
-        menuElem.insertBefore(entry, btn_hideMenu);
     }
-    document.querySelector("#main-menu > li").classList.add("active");
 }
 
-function loadSideTopics(menuElem, jsonFile, mainTopic){
-    menuElem.innerHTML = ""; //only the last call of this function will resut in the navigation
-    for(let key in jsonFile[mainTopic]){
-        const entry = document.createElement("li");
-        entry.innerText = key.toUpperCase();
-        entry.addEventListener("click", ()=>{
-            loadTextContent(jsonFile, mainTopic, key);
-            document.querySelectorAll("#side-menu .active").forEach(n => n.classList.remove("active"));
-            entry.classList.add("active");  
-        });
-        menuElem.appendChild(entry);
-       
-    }
-  loadTextContent(jsonFile, mainTopic, Object.keys(jsonFile[mainTopic])[0]); //always load the first section
-    document.querySelector("#side-menu > li").classList.add("active");
-}
+function loadSideTopics(elem, topics){
+    elem.innerText = "";
+     for(let topic of topics){
+         const entry = document.createElement("li");
+         entry.innerText = topic.toUpperCase();
+         if(topic === selectedSideTopic){entry.classList.add("active")};    
+         elem.appendChild(entry);    
+         entry.addEventListener("click", _=>{
+            selectedSideTopic = topic;
+            refreshContent();
+            activate(entry);
+        }); 
+     }
+ }
 
-async function loadTextContent(jsonFile, mainTopic, sideTopic){
-    const textFile = await loadHTML(jsonFile[mainTopic][sideTopic].content);
-    contentArea.innerHTML = `
-    <h1><typing-field>${jsonFile[mainTopic][sideTopic].headline}</typing-field></h1>
-    <section>${textFile}</section>
+async function refreshContent(){
+     const textContent  = await loadHTML(content[selectedMainTopic][selectedSideTopic].content);
+     contentArea.innerHTML = `
+        <h1><typing-field>${content[selectedMainTopic][selectedSideTopic].headline}</typing-field></h1>
+        <section>${textContent}</section>
 `;
-}
+ }
 
+ function activate(elem){
+     //reset the active marker 
+     const activeElement = elem.parentElement.querySelector(".active")
+     if(activeElement) {
+         activeElement.classList.remove("active");
+     }
+    //elem.parentElement.querySelector(".active").classList.remove("active");   
+    elem.classList.add("active");
+ }

@@ -1,4 +1,4 @@
-let mainMenu, sideMenu, contentArea, btn_hideMenu, content;
+let mainMenu, sideMenu, contentArea, content;
 let selectedMainTopic = "home", selectedSideTopic = "Willkommen";
 
 window.addEventListener("load", async _=>{
@@ -8,13 +8,7 @@ window.addEventListener("load", async _=>{
     sideMenu = document.getElementById("side-menu");
     aside = document.getElementById("main-aside");
     contentArea = document.getElementById("content-area");
-    btn_hideMenu = document.getElementById("hide-menu");
     hider = document.getElementById("hider");
-
-
-    btn_hideMenu.addEventListener("click",()=>{
-        aside.style.display = aside.style.display=="none"?"block":"none";
-    })
 
     hider.addEventListener("click",()=> {
         aside.style.display = "none";
@@ -31,7 +25,7 @@ window.addEventListener("load", async _=>{
     
     loadMainTopics(mainMenu, Object.keys(content));
     refreshContent();
-    //activate(mainMenu.children[0]);
+    history.pushState({key1: selectedMainTopic, key2: selectedSideTopic},"");
 });
 
 async function loadContent(url){
@@ -88,6 +82,7 @@ function loadSideTopics(elem, topics){
          elem.appendChild(entry);    
          entry.addEventListener("click", _=>{
             selectedSideTopic = topic;
+            history.pushState({key1: selectedMainTopic, key2: selectedSideTopic},"");
             refreshContent();
             activate(entry);
         }); 
@@ -100,6 +95,7 @@ async function refreshContent(){
         <h1><typing-field>${content[selectedMainTopic][selectedSideTopic].headline}</typing-field></h1>
         <section>${textContent}</section>
 `;
+    document.title = selectedSideTopic;
  }
 
  function activate(elem){
@@ -111,3 +107,9 @@ async function refreshContent(){
     //elem.parentElement.querySelector(".active").classList.remove("active");   
     elem.classList.add("active");
  }
+
+ window.addEventListener("popstate", (event)=>{
+    selectedMainTopic = event.state.key1;
+    selectedSideTopic = event.state.key2;
+    refreshContent();
+})

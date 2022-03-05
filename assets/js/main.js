@@ -93,7 +93,7 @@ async function refreshContent(){
      const textContent  = await loadHTML(content[selectedMainTopic][selectedSideTopic].content);
      contentArea.innerHTML = `
         <h1><typing-field id="headline">${content[selectedMainTopic][selectedSideTopic].headline}</typing-field></h1>
-        <section>${textContent}</section>
+        <section id="html-section">${textContent}</section>
 `;
     document.title = selectedSideTopic;
  }

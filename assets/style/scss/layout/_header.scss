@@ -2,16 +2,15 @@ header,
 .header {
     background-color: $primary-color;
     grid-area: header;
-    @include box-shadow;
   
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     #logo{
-        color: $secondary-color;
         margin-left: 1rem;
         font-weight: 700;
+        height: 2.5rem;
         font-size: x-large;
     }
 

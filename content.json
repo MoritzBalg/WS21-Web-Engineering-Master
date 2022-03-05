@@ -2,7 +2,7 @@
     "home": {
         "Willkommen": {
             "tags": ["html", "css"],
-            "headline": "Herzlich Wilkommen",
+            "headline": "Herzlich Willkommen",
             "content": "./tasks/u1/index.html"
         },
         "Übersicht": {
@@ -18,6 +18,11 @@
     },
 
     "aufgaben": {
+        "Übersicht": {
+            "tags": [],
+            "headline": "Übersicht",
+            "content": "./tasks/index.html"
+        },
         "Aufgabe 1": {
             "tags": ["html", "css", "http", "uri"],
             "headline": "Einführung",

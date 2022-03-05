@@ -2,25 +2,23 @@
 *   Das Layouting orientiert sich an dem von SASS vorgeschlagenen Muster. 
 *   Infos dazu findet man hier https://sass-guidelin.es/de/ im Bereich Architektur 
 */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 footer,
 .footer {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: footer;
-  background-color: greenyellow;
-  color: rgba(63, 100, 7, 0.445);
+  background-color: #b8ccc1;
+  color: #3a6c64;
   text-align: center;
 }
 
 header,
 .header {
-  background-color: greenyellow;
+  background-color: #b8ccc1;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: header;
-  -webkit-box-shadow: 2px 2px 5px 0 black;
-          box-shadow: 2px 2px 5px 0 black;
-  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,9 +32,9 @@ header,
 
 header #logo,
 .header #logo {
-  color: rgba(63, 100, 7, 0.445);
   margin-left: 1rem;
   font-weight: 700;
+  height: 2.5rem;
   font-size: x-large;
 }
 
@@ -63,13 +61,13 @@ header ul li,
 
 header ul li:hover,
 .header ul li:hover {
-  background-color: rgba(63, 100, 7, 0.445);
+  background-color: #3a6c64;
   color: whitesmoke;
 }
 
 header ul li.active,
 .header ul li.active {
-  background-color: rgba(63, 100, 7, 0.445);
+  background-color: #3a6c64;
   color: whitesmoke;
 }
 
@@ -104,14 +102,14 @@ aside ul li,
 
 aside ul li:hover,
 .aside ul li:hover {
-  background-color: greenyellow;
+  background-color: #b8ccc1;
   color: #221919;
   cursor: pointer;
 }
 
 aside ul li.active,
 .aside ul li.active {
-  background-color: greenyellow;
+  background-color: #b8ccc1;
   color: #221919;
 }
 
@@ -133,7 +131,8 @@ aside ul li.active,
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: main;
-  background-color: #3a3434;
+  background: #4b4b4b;
+  background: radial-gradient(circle, #4b4b4b 50%, #2d2d2d 100%);
   color: whitesmoke;
   padding: 1.5rem;
   position: relative;
@@ -167,7 +166,7 @@ aside ul li.active,
 }
 
 .question-box p {
-  color: greenyellow;
+  color: #b8ccc1;
   font-style: italic;
   margin-top: .5rem;
 }
@@ -185,7 +184,7 @@ figure img {
 }
 
 figure figcaption {
-  color: greenyellow;
+  color: #b8ccc1;
   font-style: italic;
 }
 
@@ -194,6 +193,10 @@ figure > img:hover {
   -webkit-box-shadow: 2px 2px 5px 0 #707070;
           box-shadow: 2px 2px 5px 0 #707070;
   z-index: 10;
+}
+
+task-card {
+  margin: 1rem;
 }
 
 * {
@@ -207,8 +210,12 @@ body {
   min-height: 100%;
 }
 
+h1 {
+  font-size: 1.75rem;
+}
+
 * {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1, h2, h3 {

@@ -92,7 +92,7 @@ function loadSideTopics(elem, topics){
 async function refreshContent(){
      const textContent  = await loadHTML(content[selectedMainTopic][selectedSideTopic].content);
      contentArea.innerHTML = `
-        <h1><typing-field>${content[selectedMainTopic][selectedSideTopic].headline}</typing-field></h1>
+        <h1><typing-field id="headline">${content[selectedMainTopic][selectedSideTopic].headline}</typing-field></h1>
         <section>${textContent}</section>
 `;
     document.title = selectedSideTopic;

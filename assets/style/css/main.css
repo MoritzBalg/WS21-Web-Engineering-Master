@@ -150,6 +150,17 @@ aside ul li.active,
   display: none;
 }
 
+#html-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 #side-wrapper {
   min-height: 100vh;
   display: -ms-grid;

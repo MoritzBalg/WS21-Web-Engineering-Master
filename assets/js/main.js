@@ -47,7 +47,10 @@ async function loadHTML(url){
     const request = await fetch(url);
     if(request.ok){
         try {
-            return await request.text();   
+            const text =  await request.text();
+            const parser = new DOMParser();
+            const dom = parser.parseFromString(text, "text/html");
+            return dom;   
         } catch (error) {
             console.error("Invalid Text Format in " + url);
     }

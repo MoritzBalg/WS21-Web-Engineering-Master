@@ -1,4 +1,4 @@
-<div id="flex-wrap" style="display: flex; flex-wrap: wrap; justify-content: center;">
+<div id="flex-wrap" style="display: flex; flex-wrap: wrap; justify-content: center; flex-grow: 0;">
 
 </div>
 
@@ -13,14 +13,13 @@
         const json  = await load();
 
         for(let topic in json.aufgaben){
-            if (json.aufgaben[topic].headline === "Übersicht") continue;
+            if (json.aufgaben[topic].headline === "Aufgaben Liste") continue;
             const tk = document.createElement("task-card");
             tk.setAttribute("img", json.aufgaben[topic].image);
             tk.setAttribute("tags", json.aufgaben[topic].tags);
             tk.innerHTML = json.aufgaben[topic].headline;
             div.appendChild(tk);
 
-            tk.addEventListener("click", console.log("test"));
 
 
 

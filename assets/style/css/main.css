@@ -137,6 +137,7 @@ aside ul li.active,
   padding: 1.5rem;
   position: relative;
   overflow-x: hidden;
+  text-align: justify;
 }
 
 #hider {
@@ -221,10 +222,17 @@ task-card {
 
 body {
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 h1 {
   font-size: 1.75rem;
+}
+
+acronym {
+  -webkit-text-decoration: underline 2px solid #b8ccc1;
+          text-decoration: underline 2px solid #b8ccc1;
+  cursor: help;
 }
 
 * {

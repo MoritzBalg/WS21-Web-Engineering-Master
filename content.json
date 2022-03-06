@@ -1,98 +1,95 @@
 {
     "home": {
         "Willkommen": {
-            "tags": ["html", "css"],
             "headline": "Herzlich Willkommen",
-            "content": "./tasks/u1/index.html"
+            "content": "./home/welcome/"
         },
         "Übersicht": {
-            "tags": ["html", "css"],
-            "headline": "Responsives Web",
-            "content": "./tasks/u1/index.html"
+            "headline": "Übersicht",
+            "content": "./home/overview/"
         },
         "Allgemeine Informationen": {
-            "tags": ["html", "css"],
             "headline": "Allgemeine Informationen",
-            "content": "./tasks/u1/index.html"
+            "content": "./home/info/"
         }
     },
 
     "aufgaben": {
-        "Übersicht": {
+        "Aufgaben Liste": {
             "tags": [],
-            "headline": "Übersicht",
+            "headline": "Aufgaben Liste",
             "content": "./tasks/index.html"
         },
         "Aufgabe 1": {
-            "tags": ["html", "css", "http", "uri"],
+            "tags": ["HTML", "CSS", "HTTP", "URL"],
             "headline": "Einführung",
-            "content": "./tasks/u1/index.html",
+            "content": "./tasks/u1/",
             "image": "./tasks/u1/logo.png"
         },
         "Aufgabe 2": {
-            "tags": ["html", "css"],
+            "tags": ["HTML", "CSS"],
             "headline": "Responsives Web",
-            "content": "./tasks/u2/index.html",
+            "content": "./tasks/u2/",
             "image": "./tasks/u2/logo.png"
         },
         "Aufgabe 3": {
-            "tags": ["html", "css"],
+            "tags": ["HTML", "JS"],
             "headline": "JavaScript",
-            "content": "./tasks/u3/index.html",
+            "content": "./tasks/u3/",
             "image": "./tasks/u3/logo.png"
         },
         "Aufgabe 4": {
-            "tags": ["html", "css"],
+            "tags": ["HTML", "JS"],
             "headline": "DOM",
-            "content": "./tasks/u4/index.html",
+            "content": "./tasks/u4/",
             "image": "./tasks/u4/logo.png"
         },
         "Aufgabe 5": {
-            "tags": ["html", "css"],
+            "tags": ["HTML", "CSS", "JS"],
             "headline": "Asynchron",
-            "content": "./tasks/u5/index.html",
+            "content": "./tasks/u5/",
             "image": "./tasks/u5/logo.png"
         },
         "Aufgabe 6": {
-            "tags": ["html", "css"],
+            "tags": ["SVG", "JS"],
             "headline": "SVG",
-            "content": "./tasks/u6/index.html",
+            "content": "./tasks/u6/",
             "image": "./tasks/u6/logo.png"
         },
         "Aufgabe 7": {
-            "tags": ["html", "css"],
+            "tags": ["NODE", "DENO", "JS"],
             "headline": "Node & npm & Deno",
-            "content": "./tasks/u7/index.html",
+            "content": "./tasks/u7/",
             "image": "./tasks/u7/logo.png"
         },
         "Aufgabe 8": {
-            "tags": ["html", "css"],
+            "tags": ["JS", "LitElement", "HTML"],
             "headline": "Modular Web",
-            "content": "./tasks/u8/index.html",
+            "content": "./tasks/u8/",
             "image": "./tasks/u8/logo.png"
         },
         "Aufgabe 9": {
-            "tags": ["html", "css"],
+            "tags": ["JS", "PWA", "HTML"],
             "headline": "PWA",
-            "content": "./tasks/u9/index.html",
+            "content": "./tasks/u9/",
             "image": "./tasks/u9/logo.png"
         },
         "Aufgabe 10": {
-            "tags": ["html", "css"],
+            "tags": ["VUE", "JS"],
             "headline": "Vue",
-            "content": "./tasks/u10/index.html",
+            "content": "./tasks/u10/",
             "image": "./tasks/u10/logo.png"
         },
         "Aufgabe 11": {
-            "tags": ["html", "css"],
+            "tags": ["WA", "JS"],
             "headline": "WebAssembly",
-            "content": "./tasks/u11/index.html",
+            "content": "./tasks/u11/",
             "image": "./tasks/u11/logo.png"
         },
         "Aufgabe 12": {
-            "tags": ["html", "css"],
+            "tags": ["JS", "SECURITY"],
             "headline": "Security",
-            "content": "./tasks/u12/index.html",
+            "content": "./tasks/u12/",
             "image": "./tasks/u12/logo.png"
         }
     }

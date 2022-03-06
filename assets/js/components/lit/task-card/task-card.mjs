@@ -70,6 +70,12 @@ customElements.define("task-card", class extends LitElement{
             transform: translateY(calc(var(--width) + 50px));
         }
     }
+
+    h3{
+        background-color: #3a6c64;
+        margin: 0 -1em;
+        text-align: center;
+    }
     `;
 
     constructor(){

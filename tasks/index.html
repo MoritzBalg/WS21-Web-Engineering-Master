@@ -1,7 +1,6 @@
+<div id="flex-wrap" style="display: flex; flex-wrap: wrap; justify-content: center;">
 
-<task-card img="./assets/img/u1/logo.png" tags="HTML">Einführung: HTML</task-card>
-<task-card img="./assets/img/u2/logo.png" tags="HTML, CSS">Responiv Design</task-card>
-<task-card img="./assets/img/u3/logo.png" tags="HTML, JS">Java Script</task-card>
+</div>
 
 <script>
     async function load (){
@@ -10,12 +9,24 @@
     };
 
     (async _=>{
-        const x  = await load();
-        console.log(x);
-        const tk = document.createElement("task-card");
-        tk.setAttribute("img", "");
-        tk.setAttribute("tags", "");
-        tk.innerHTML("s");
+        const div = document.getElementById("flex-wrap");
+        const json  = await load();
+
+        for(let topic in json.aufgaben){
+            if (json.aufgaben[topic].headline === "Übersicht") continue;
+            const tk = document.createElement("task-card");
+            tk.setAttribute("img", json.aufgaben[topic].image);
+            tk.setAttribute("tags", json.aufgaben[topic].tags);
+            tk.innerHTML = json.aufgaben[topic].headline;
+            div.appendChild(tk);
+
+            tk.addEventListener("click", console.log("test"));
+
+
+
+        }
+
+
     })();
     
 

@@ -4,5 +4,19 @@
 <task-card img="./assets/img/u3/logo.png" tags="HTML, JS">Java Script</task-card>
 
 <script>
-    alert("help");
+    async function load (){
+        const x = await fetch("./content.json");
+        return await x.json();
+    };
+
+    (async _=>{
+        const x  = await load();
+        console.log(x);
+        const tk = document.createElement("task-card");
+        tk.setAttribute("img", "");
+        tk.setAttribute("tags", "");
+        tk.innerHTML("s");
+    })();
+    
+
 </script>

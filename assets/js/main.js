@@ -96,8 +96,23 @@ async function refreshContent(){
      const textContent  = await loadHTML(content[selectedMainTopic][selectedSideTopic].content);
      contentArea.innerHTML = `
         <h1><typing-field id="headline">${content[selectedMainTopic][selectedSideTopic].headline}</typing-field></h1>
-        <section id="html-section">${textContent}</section>
+        <section id="html-section"></section>
 `;
+    const anchor = document.querySelector("#html-section");
+    const elements = Array.from(textContent.querySelector("body").children);
+
+
+    
+    for(let elem of elements){
+        //Scripte werden nicht ausgeführt, wenn sie via innerHTML eingefügt werden. Deshalb werden hierfür neue Knoten erzeugt. 
+        if(elem.tagName === "SCRIPT" || elem.tagName === "script"){
+            const newScript = document.createElement("script");
+            newScript.innerHTML = elem.innerHTML;
+            anchor.appendChild(newScript);
+        }else{
+            anchor.appendChild(elem);
+        }
+    }
     document.title = selectedSideTopic;
  }
 

@@ -2,14 +2,14 @@
 *   Das Layouting orientiert sich an dem von SASS vorgeschlagenen Muster. 
 *   Infos dazu findet man hier https://sass-guidelin.es/de/ im Bereich Architektur 
 */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka&display=swap");
 footer,
 .footer {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: footer;
   background-color: #b8ccc1;
-  color: #3a6c64;
+  color: #3a3434;
   text-align: center;
 }
 
@@ -236,7 +236,7 @@ acronym {
 }
 
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Fredoka', sans-serif;
 }
 
 h1, h2, h3 {

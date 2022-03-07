@@ -75,6 +75,7 @@ customElements.define("task-card", class extends LitElement{
         background-color: #3a6c64;
         margin: 0 -1em;
         text-align: center;
+        padding: .5rem;
     }
     `;
 

@@ -1,7 +1,11 @@
 import {html, css, LitElement} from 'https://mkaul.github.io/lit/lib/lit.js'
 customElements.define("tab-viewer", class extends LitElement{
 
-    
+    get tabs(){
+        const slot = document.querySelector("slot");
+        console.log(slot);
+        return slot? slot.assignedElements() : [];
+    }
 
     static styles = css`
         :host{
@@ -20,7 +24,8 @@ customElements.define("tab-viewer", class extends LitElement{
 
     render(){
         return html`
-            <p>${this.counter}</p>
+            <h1>${this.tabs}</h1>
+            <slot></slot>
         `;
     }
 })

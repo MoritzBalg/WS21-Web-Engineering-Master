@@ -3,7 +3,7 @@ let selectedMainTopic = "home", selectedSideTopic = "Willkommen";
 
 window.addEventListener("load", async _=>{
     if("serviceWorker" in navigator){
-        navigator.serviceWorker.register("~/pwa.js")
+        navigator.serviceWorker.register("/pwa.js")
         .then(registration=>{
             console.log("Service Worker erfolgreich registriert. Scope: ", registration.scope);
         }).catch((error)=>{

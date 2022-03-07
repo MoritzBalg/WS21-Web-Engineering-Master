@@ -18,8 +18,11 @@
             tk.setAttribute("tags", json.aufgaben[topic].tags);
             tk.innerHTML = json.aufgaben[topic].headline;
             div.appendChild(tk);
-
-
+            tk.addEventListener("click", _=>{
+            selectedSideTopic = topic;
+            history.pushState({key1: selectedMainTopic, key2: selectedSideTopic},"");
+            refreshContent();
+        }); 
 
 
         }

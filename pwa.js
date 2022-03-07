@@ -2,7 +2,10 @@ const CACHE_NAME = 'pwa-cache'
 const urlsToCache = [
 'index.html',
 'content.json',
-'tasks/'
+'tasks/',
+'https://fonts.googleapis.com/css2?family=Fredoka&display=swap',
+'https://fonts.gstatic.com/s/fredoka/v6/X7nP4b87HvSqjb_WIi2yDCRwoQ_k7367_B-i2yQag0-mac3O8SL8EemMttxNbikt.woff',
+'https://mkaul.github.io/lit/lib/lit.js'
 ];
 
 self.addEventListener("install", event=>{

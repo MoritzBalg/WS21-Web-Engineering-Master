@@ -3,9 +3,7 @@ template.innerHTML  = `
     <style>
 
     #cursor{
-        animation: blink 1s steps(1) infinite;
-        /*realign pipe symbol*/
-        transform: translateY(-.1rem); 
+        animation: blink 1s steps(1) infinite; 
         display: inline-block;
         color: white;
     }

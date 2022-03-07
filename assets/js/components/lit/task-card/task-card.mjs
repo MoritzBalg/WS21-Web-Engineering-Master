@@ -86,6 +86,7 @@ customElements.define("task-card", class extends LitElement{
         this.addEventListener("mouseover", ()=>{
             this.renderRoot.querySelector("#taskcardcircle").style.animationPlayState = "running";
         });
+        
         this.addEventListener("mouseleave", ()=>{
             this.renderRoot.querySelector("#taskcardcircle").style.animationPlayState = "paused";
         });

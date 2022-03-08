@@ -272,6 +272,7 @@ example-tabs::part(tab-selected) {
 
 example-tab {
   width: 100%;
+  padding: 2rem;
 }
 
 * {

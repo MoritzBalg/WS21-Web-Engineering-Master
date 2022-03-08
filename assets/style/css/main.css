@@ -234,7 +234,8 @@ example-tabs::part(tab-bar) {
 }
 
 example-tabs::part(content) {
-  border: 2px solid #3a6c64;
+  -webkit-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -245,6 +246,7 @@ example-tabs::part(content) {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  background-color: rgba(245, 245, 245, 0.253);
 }
 
 example-tabs::part(tab) {
@@ -321,6 +323,6 @@ acronym {
 }
 
 h1, h2, h3 {
-  padding: 1rem 0;
+  padding: 1.5rem 0;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufgabe 2.2</title>
+    <style>
+        body{
+            margin: 0;
+            display: grid;
+        }
+
+        #head{
+            background-color: red;
+            height: 25vh;
+        }
+
+        #left{
+            background-color: #00ff00;
+            height: 25vh;
+        }
+
+        #right{
+            background-color: magenta;
+            height: 25vh;
+        }
+
+        #center{
+            background-color: blue;
+            height: 100vh;
+        }
+
+        @media only screen and (min-width: 600px) {
+            
+            body{
+                margin: 1vw 2vw 1vw 2vw;
+                grid-template-columns: 1fr 2fr;
+                grid-template-rows: 1fr 3fr 1fr;
+            }
+            
+            body > div{
+                margin: 0.5vw;
+            }
+
+            #head{
+            height: 40vh;
+            grid-column-start: 1;
+            grid-column-end:  3;
+            } 
+
+            #left, #center, #right{
+                height: auto;            
+            }
+            
+            #right{
+                grid-column-start: 1;
+                grid-column-end:  3;
+            }
+           
+
+        }
+
+        @media only screen and (min-width: 1200px) {
+            body{
+                margin: 1vw 2vw 1vw 2vw;
+                grid-template-columns: 1fr 2fr 1fr;
+                grid-template-rows: 1fr 2fr;
+            }
+
+            #head{
+            height: 30vh;
+            grid-column-start: 1;
+            grid-column-end:  4;
+            } 
+
+            #left, #center, #right{
+                height: auto;            
+            }
+            
+            #right{
+                grid-column-start: 3;
+                grid-column-end:  3;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="head"></div>
+    <div id="left"></div>
+    <div id="center"></div>
+    <div id="right"></div>
+</body>
+</html>

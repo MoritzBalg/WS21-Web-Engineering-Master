@@ -1,4 +1,5 @@
-<h2>Die Geschichte des WWW</h2>
+<h2>Aufgabe 1.1 - Fachliche Argumentation über Erfolgsprinzipien des WWW</h2>
+
 
 <details class="question-box">
     <summary>Mit welchen fachlichen Argumenten wurde das WWW-Proposal von TBL abgelehnt?</summary>
@@ -16,7 +17,35 @@
     <p>Zur Vermeidung von "broken-links" müsste ein zentrales Verzeichnis angelegt werden, in dem alle Ressourcen verwaltet werden. Neue Webseiten müssten sich bei diesem Verzeichnis anmelden und abgeschaffte Seiten müssten abgemeldet werden. Lösungen zur Löschweitergabe müssten implementiert werden, damit die referenzielle Integrität gewahrt werden kann.</p>
 </details>
 
-<h2>Aufgabe 1.3</h2>
+<h2>Aufgabe 1.2 - HTTP</h2>
+
+<details class="question-box">
+    <summary>Sie bekommen im Browser den HTTP Status Code 200. Was bedeutet das?</summary>
+    <p>Die Anfrage ist erfolgreich verlaufen und wird mit dem Status-Code 200 Ok bestätigt.</p>
+</details>
+
+<details class="question-box">
+    <summary>Sie bekommen im Browser den HTTP Status Code 301. Was hat das zu bedeuten?</summary>
+    <p>Die angefragte Ressource wurde dauerhaft verschoben. Es wird ein redirect zur neuen Quelle mittels des Location Feldes im Header durchgeführt.</p>
+</details>
+
+<details class="question-box">
+    <summary>Sie bekommen im Browser den HTTP Status Code 400. Was hat das zu bedeuten? Was können Sie dagegen tun?</summary>
+    <p>Hierbei handelt es sich um einen Bad Request. Dies bedeutet, dass der Server die Anfrage nicht bearbeiten kann oder vielleicht auch nicht bearbeiten will. Probleme könnten fehlende rechte sein, die durch einen Log-in erlangt werden können. In den meisten Fällen ist jedoch die Ressource oder Anfrage nicht ausführbar. Man könnte also die Anfrage mit der bereitgestellten API abgleichen.</p>
+</details>
+
+<details class="question-box">
+    <summary>Sie bekommen im Browser den HTTP Status Code 403. Was hat das zu bedeuten? Was können Sie dagegen tun?</summary>
+    <p>Hierbei handelt es sich um einen Forbidden response. Dies bedeutet, dass der Server die Anfrage zwar bearbeiten könnte, dies aber aufgrund fehlender Berechtigungen verhindert. Ein Log-in bzw. eine Erneuerung der Session könnte Abhilfe schaffen.</p>
+</details>
+
+<details class="question-box">
+    <summary>In einer Webanwendung benötigen Sie eine OPTIONS-Anfrage, die die Optionen des Servers vor dem eigentlichen Zugriff erfragen soll. Aus Performanzgründen soll die Abfrage jedoch cacheable sein. Wie könnten Sie dafür eine Lösung angehen?</summary>
+    <p>Options-Abfragen sind idempotent. Das bedeutet, dass eine Anfrage beliebig oft gestellt werden kann und immer das gleiche Ergebnis liefert. Da das Ergebnis immer gleich ist, kann auch einfach nach einmaliger Abfrage der Rückgabewert gespeichert werden.</p>
+</details>
+
+
+<h2>Aufgabe 1.3 - Wireframe with HTML and CSS: Tribute Page</h2>
 
 <example-tabs>
     <example-tab title="Mockup">
@@ -35,7 +64,7 @@
     </example-tab>
   </example-tabs>
 
-  <h2>Aufgabe 1.4</h2>
+  <h2>Aufgabe 1.4 - Wireframe with HTML and CSS (Survey Form)</h2>
   
   <example-tabs>
     <example-tab title="Mockup">
@@ -54,7 +83,7 @@
     </example-tab>
   </example-tabs>
 
-  <h2>Aufgabe 1.5</h2>
+  <h2>Aufgabe 1.5 - Wireframe with HTML and CSS (Product Landing Page)</h2>
 
   <example-tabs>
     <example-tab title="Mockup">
@@ -72,3 +101,6 @@
         <embed-browser src="/tasks/u1/a5.html"></embed-browser>
     </example-tab>
   </example-tabs>
+
+  <h2>Aufgabe 1.6 - Integration in die eigene Webseite</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora magni dignissimos at quibusdam dolor quos quia, ab laborum atque quisquam.</p>

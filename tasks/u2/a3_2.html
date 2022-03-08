@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+
+        body{
+            color: white;
+            display: grid;
+            grid-template-rows: 2fr auto 1fr;
+            border-radius: 10px;
+        }
+
+        header{
+            background-color: #b35653;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            border-top-left-radius: 2em;
+            border-top-right-radius: 2em;
+
+        }
+
+        header h1 {
+            text-align: center;
+        }
+
+        #left{
+            grid-column-start: 1;
+            grid-column-end: 1;
+            grid-row-start: 2;
+        }
+
+        #main{
+            display: grid;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-template-columns: 1fr 3fr 1fr;
+            overflow: auto;
+            height: 70vh;
+        }
+
+        #right{
+            grid-column-start: 3;
+            grid-column-end: 3;
+            grid-row-start: 2;
+        }
+
+        #content{
+            grid-column-start: 2;
+            grid-column-end: 2; 
+            grid-row-start: 2;
+            background-color: #759dba;
+            font-size: x-large;
+
+        }
+
+        footer{
+            grid-column-start: 1;
+            grid-column-end: 4; 
+            grid-row-start: 3;
+        }
+
+        aside{
+            background-color: #b98583;
+            text-align: center;
+            font-size: xx-large;
+        }
+
+        footer{
+            background-color: black;
+            text-align: center;
+            border-bottom-right-radius: 2em;
+            border-bottom-left-radius: 2em;
+        }
+
+        .button{
+            background-color: #6b709b;
+            color: black;
+            font-weight: bold;
+            font-family: sans-serif;
+            border: 5px solid #9a9a9a;
+            text-align: center;
+            border-left-color: white;
+            border-top-color: white;
+            border-radius: 69px;
+            padding: 0.5em;
+            width: 7em;
+            display: inline-block;
+            margin-left: 1em;
+        }
+
+        aside ul{
+            list-style-type: none;
+            display: inline;
+            padding: 0;
+        }
+
+        .footer_links{
+            text-decoration: underline;
+        }
+
+        footer h1{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+        <header>
+        
+            <h1>Header</h1>
+
+            <span class="button">Home</span>
+            <span class="button">News</span>
+            <span class="button">Contact</span>
+            <span class="button">About</span>
+
+    </header>
+    <div id="main">
+        <aside id="left">
+            <ul>
+                <li>left</li>
+                <li>menu</li>
+                <li>with</li>
+                <li>many</li>
+                <li>items</li>
+            </ul>
+        </aside>
+        <div id="content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ea nobis expedita sapiente tempora, deleniti molestias tempore delectus dolore aliquam velit hic doloremque facilis repellat explicabo perspiciatis ut similique molestiae? Esse quia eligendi ea obcaecati, expedita voluptate deserunt rem aut itaque qui deleniti nemo reprehenderit earum quidem, labore harum accusantium iusto quis. Quisquam, mollitia. Accusamus molestias totam voluptas! Unde itaque similique saepe, at fugiat, suscipit assumenda reprehenderit eveniet hic maxime recusandae quae illum, dicta tempora? Voluptas quas qui, voluptates officiis totam nemo beatae itaque possimus rerum, adipisci reiciendis harum, esse eum? Cupiditate, quaerat dolore a doloribus culpa quae velit nesciunt ullam, soluta eaque, at explicabo nobis? Fuga iusto sunt, qui itaque, adipisci quos omnis natus fugit deserunt optio laboriosam velit vero laudantium accusantium reiciendis voluptates ab quas dolor et consectetur! Officiis, rerum ut iste cupiditate blanditiis provident fugiat accusantium nostrum aliquid illo nesciunt quod ad animi, voluptatem eos tempora quibusdam, itaque minus maiores reiciendis est veniam officia commodi eum. Provident unde, praesentium sequi, nesciunt fugiat dignissimos ipsa enim sit itaque expedita incidunt iure eligendi! Consequuntur dolorum, dicta amet tempore minus impedit nesciunt aliquam beatae deleniti id, error molestiae, debitis harum assumenda quidem alias eos? Blanditiis iste tempora, doloremque corporis nulla libero corrupti quaerat quibusdam ipsa quas cumque est. Aut perferendis ipsam consequuntur iste inventore, praesentium dolores consequatur fugit fuga enim asperiores molestias veritatis rem? Quis delectus nisi repellendus hic natus dolore nemo perspiciatis magnam? Tempore fugiat corporis earum enim quam quae eos illum quo, doloribus hic excepturi possimus quas sunt ipsa dolores odio animi eaque aliquid soluta rem repellat laboriosam. Dolorem labore exercitationem iste maiores autem, nulla quidem, sunt aut natus ab eum dolores tempora necessitatibus a et eos fugiat aperiam voluptatum recusandae eveniet molestiae doloribus! Expedita vero voluptate repellat reprehenderit, est suscipit natus tempore ex quibusdam nam vel, in molestias? Itaque error nihil nisi fugit. Esse rerum officia error eum, quod perspiciatis hic alias! Dolores, consequatur ex totam incidunt, explicabo fugiat maxime quae at perspiciatis laboriosam adipisci eos itaque exercitationem ut libero non ipsum maiores error deserunt laudantium velit consectetur recusandae excepturi. Facere ipsum voluptatum maiores fuga neque, saepe nostrum adipisci officia quos modi molestiae eligendi reprehenderit nesciunt magnam voluptas iste impedit vitae assumenda reiciendis ratione iusto consequuntur distinctio. Corrupti accusantium, illum magnam itaque maiores id laudantium. Eaque placeat quos adipisci illum voluptate earum illo consequatur molestiae, atque recusandae dolorum numquam quod voluptatibus iste eos nihil suscipit minima dicta quas sunt et odio voluptas? Consectetur, asperiores sapiente aliquam deleniti repellat dignissimos aperiam non cum. Commodi inventore in laborum, deleniti porro, excepturi dolore ut obcaecati quidem maiores velit officia deserunt reprehenderit esse, quis temporibus modi mollitia. Natus enim sequi, laboriosam ipsam cupiditate sunt unde. Incidunt, beatae doloribus quod repudiandae eos quas velit, illo voluptates voluptate expedita dolorem. Nesciunt eius atque corporis, voluptatem dignissimos amet. Dignissimos, amet. Nesciunt voluptate, voluptatem, error eveniet ex, temporibus vero quidem odit dolor rem neque asperiores qui eligendi quisquam nemo recusandae cum repellendus aliquid obcaecati cupiditate eius beatae. Consectetur consequuntur quod cupiditate fugiat aperiam quas deleniti?</div>
+        <aside id="right">right</aside>
+    </div>
+    <footer><h1>Footer: </h1>
+    <span class="footer_links">Sitemap</span>
+    <span class="footer_links">Home</span>
+    <span class="footer_links">News</span>
+    <span class="footer_links">Contact</span>
+    <span class="footer_links">About</span>
+    </footer>
+    
+</body>
+</html>

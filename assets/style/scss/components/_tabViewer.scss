@@ -4,12 +4,12 @@
   }
   
   example-tabs::part(content) {
-    border: 2px solid $secondary-color;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-
+    background-color: rgba(245, 245, 245, 0.253);
   }
   
   example-tabs::part(tab) {

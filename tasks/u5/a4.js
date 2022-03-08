@@ -8,7 +8,7 @@ window.addEventListener("load", async ()=> {
      mainContent = document.getElementById("mainTopics");
      subContent = document.getElementById("subTopics");
      contentCon = document.getElementById("content");
-     content = await fetchJSON("Aufgabe4.json");
+     content = await fetchJSON("a4.json");
 
      let i = 0;
      for(const key in content){

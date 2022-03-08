@@ -162,6 +162,7 @@ aside ul li.active,
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 0 5%;
 }
 
 #side-wrapper {
@@ -324,5 +325,9 @@ acronym {
 
 h1, h2, h3 {
   padding: 1.5rem 0;
+}
+
+typing-field {
+  padding-left: 5%;
 }
 /*# sourceMappingURL=main.css.map */

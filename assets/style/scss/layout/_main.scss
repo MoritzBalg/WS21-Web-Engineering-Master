@@ -1,5 +1,6 @@
 #center-section
 {
+
     grid-area: main;
     background: rgb(75,75,75);
     background: radial-gradient(circle, rgba(75,75,75,1) 50%, rgba(45,45,45,1) 100%);
@@ -25,4 +26,6 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding: 0 5%;
+
 }

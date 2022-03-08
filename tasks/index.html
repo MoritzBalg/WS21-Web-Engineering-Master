@@ -1,5 +1,4 @@
 <div id="flex-wrap" style="display: flex; flex-wrap: wrap; justify-content: center; flex-grow: 0;">
-
 </div>
 
 <script>
@@ -19,8 +18,11 @@
             tk.setAttribute("tags", json.aufgaben[topic].tags);
             tk.innerHTML = json.aufgaben[topic].headline;
             div.appendChild(tk);
-
-
+            tk.addEventListener("click", _=>{
+            selectedSideTopic = topic;
+            history.pushState({key1: selectedMainTopic, key2: selectedSideTopic},"");
+            refreshContent();
+        }); 
 
 
         }

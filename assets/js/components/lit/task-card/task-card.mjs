@@ -75,6 +75,7 @@ customElements.define("task-card", class extends LitElement{
         background-color: #3a6c64;
         margin: 0 -1em;
         text-align: center;
+        padding: .5rem;
     }
     `;
 
@@ -85,6 +86,7 @@ customElements.define("task-card", class extends LitElement{
         this.addEventListener("mouseover", ()=>{
             this.renderRoot.querySelector("#taskcardcircle").style.animationPlayState = "running";
         });
+        
         this.addEventListener("mouseleave", ()=>{
             this.renderRoot.querySelector("#taskcardcircle").style.animationPlayState = "paused";
         });

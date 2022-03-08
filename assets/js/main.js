@@ -2,6 +2,14 @@ let mainMenu, sideMenu, contentArea, content;
 let selectedMainTopic = "home", selectedSideTopic = "Willkommen";
 
 window.addEventListener("load", async _=>{
+    if("serviceWorker" in navigator){
+        navigator.serviceWorker.register("/pwa.js")
+        .then(registration=>{
+            console.log("Service Worker erfolgreich registriert. Scope: ", registration.scope);
+        }).catch((error)=>{
+            console.error("Fehler bei der Registrierung des Service-Workers: ", error);
+        });
+    }
     content = await loadContent("./content.json");
     //get main and side menu to load them with the content
     mainMenu = document.getElementById("main-menu");

@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <link rel="stylesheet" href="../layout.css">
     <meta charset="UTF-8">
-    <title>Aufgabe 1.1</title>
+    <title>Title</title>
+    <style>
+    #header{
+        background-color: #eee;
+        font-family: sans-serif;
+        text-align: center;
+        padding: 0.5em;
+    }
+    #headline{
+        font-size: xx-large;
+    }
+
+    #subline{
+        font-size: large;
+    }
+
+    #hintergrund{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 40vw;
+    }
+    </style>
 </head>
 <body>
-<h1>Hallo Welt</h1>
-das ist ein Test
-
-<div class="codeBox" >
-    <div class="title">Hallo Welt Programm:</div>
-    <div class="language_css">CSS</div>
-    <code>
-        <pre>
-public Class Test{
-    public static void main (String[] args){
-      System.out.println("Hallo Welt");
-    }
-}
-        </pre>
-    </code>
+<div id="header">
+    <h1 id="headline">DR. Norman Borlaug</h1>
+    <p id="subline">The men who saved a billion lives</p>
 </div>
+<img id="hintergrund" src="task1_wallpaper.png" alt="wallpaper">
 </body>
 </html>

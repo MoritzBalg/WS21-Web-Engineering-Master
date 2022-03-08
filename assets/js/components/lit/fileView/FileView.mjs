@@ -12,12 +12,9 @@ customElements.define("file-viewer", class extends LitElement{
     static styles = css`
     #fileViewer{
         background-color: #4b4b4b;
-        display: inline-block;
         box-sizing: border-box;
         padding: 1rem;
-        border-radius: 10px;
         color: whitesmoke;
-        box-shadow: 2px 2px 5px black;
         max-width: 100%;
         overflow-x: scroll;
     }

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: sans-serif;
+            background-color: #ebeae6ff;
+            margin: 0;
+
+        }
+
+        #wrapper{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: space-between;
+        }
+
+        body h1 {
+            margin-top: 1em;
+            text-align: center;
+
+        }
+
+        img{
+            border: 1px solid black;
+            border-radius: 15px;
+            height: 24em;
+            margin-left: 7%;
+            float: left;
+            margin-bottom: 2rem;
+        }
+
+        p{
+            line-height: 3.5em;
+            text-align: center;
+            margin-top: 5em;
+            font-size: larger;
+        }
+
+        header{
+            background-color: #363636ff;
+            text-align: center;
+            padding: 1.5em;
+
+        }
+
+        header span{
+            color: #ebeae6ff;
+            height: 2em;
+            margin: 1em;
+        }
+
+        .button{
+            background-color: #f88e37ff;
+            border: none;
+            color: white;
+            height: 3em;
+            width: 20em;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        footer{
+            background-color: #011826ff;
+            height: 10em;
+            width: 100%;
+            text-align: center;
+            color: #ebeae6ff;
+            font-size: larger;
+            padding-top: 3.5em;
+        }
+
+        footer .button{
+            width: 40em;
+            margin-top: 1.5em;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="wrapper">
+<header>
+    <span>The book series</span>
+    <span>Testimonials</span>
+    <span>The Author</span>
+    <span>Free resources</span>
+</header>
+<div id="content-wrapper">
+<h1>You dont know JavaScript</h1>
+
+<p>
+    <img id="img_book" src="landing-img.png" alt="book">
+    Don't just drift through Javascript<br>
+    Understand how Javascript works<br>
+    Start your journey through the bumpy side of Javascrips<br>
+    <input class="button" type="submit" value="ORDER YOUR COPY NOW">
+</p>
+</div>
+<footer>
+    The firs ebook in the book series is absolutely free.<br>
+    <input class="button" type="submit" value="FIND OUT MORE ABOUT THIS OFFER">
+</footer>
+</div>
+</body>
+</html>

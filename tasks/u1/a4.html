@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-color: #b2d6d1;
+            text-align: center;
+            font-family: sans-serif;
+            color: #2c2c2c;
+        }
+
+        #form_wrapper{
+            background-color: white;
+            border-radius: 5px;
+            padding: 1em;
+            margin: 0 auto;
+            width: 90%;
+        }
+
+        #subline{
+            padding-bottom: 1em;
+        }
+
+        table{
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        td{
+            width: 50%;
+            padding-bottom: 1em;
+            text-align: left;
+            vertical-align: baseline;
+        }
+
+        .key{
+            text-align: right;
+            padding-right: 1em;
+        }
+
+        select{
+            background-color: #ececec;
+            height: 2em;
+            width: 10em;
+            border: 2px solid lightgrey;
+            border-radius: 3px;
+        }
+
+        .textbox{
+            width: 20em;
+            height: 2em;
+            border: 2px solid lightgrey;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Survey Form</h1>
+    <div id="form_wrapper">
+        <p id="subline">Let us know how we can improve freeCodeCamp</p>
+        <form>
+            <table>
+                <tr >
+                    <td class="key">* Name:</td>
+                    <td><input class="textbox" placeholder="Enter your name"></td>
+                </tr>
+                <tr>
+                    <td class="key">* Email:</td>
+                    <td><input class="textbox" placeholder="Enter your Email"></td>
+                </tr>
+                <tr>
+                    <td class="key">* Age:</td>
+                    <td><input class="textbox" type="number" placeholder="Age"></td>
+                </tr>
+                <tr>
+                    <td class="key">Which option best describes your current role?</td>
+                    <td>
+                        <select name="role" id="sel_role">
+                            <option>Student</option>
+                            <option>Others</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="key" rowspan="3">* How likely is that you would recommend <br> freeCodeCamp to a friend?</td>
+                    <td><input type="radio" value="definitly">Definitely</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" value="maybe">Maybe</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" value="not_sure">Not sure</td>
+                </tr>
+                <tr>
+                    <td class="key">What do you like the most in FCC:</td>
+                    <td>
+                        <select name="role" id="sel_role">
+                            <option>Select an option</option>
+                            <option>Others</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="key" rowspan="3">Things that should be improved in the future <br> (Check all that apply)</td>
+                    <td><input type="checkbox" value="front">Front-end Projects</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="back">Back-end Projects</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="data">Data Visualisation</td>
+                </tr>
+    </div>
+
+
+
+        </table>
+    </form>
+</body>
+</html>

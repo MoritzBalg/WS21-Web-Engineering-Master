@@ -6,7 +6,9 @@ const urlsToCache = [
 'https://fonts.googleapis.com/css2?family=Fredoka&display=swap',
 'https://fonts.gstatic.com/s/fredoka/v6/X7nP4b87HvSqjb_WIi2yDCRwoQ_k7367_B-i2yQag0-mac3O8SL8EemMttxNbikt.woff',
 'https://mkaul.github.io/lit/lib/lit.js',
-'https://fonts.gstatic.com/s/fredoka/v6/X7nP4b87HvSqjb_WIi2yDCRwoQ_k7367_B-i2yQag0-mac3O8SL8EemK.woff2'
+'https://fonts.gstatic.com/s/fredoka/v6/X7nP4b87HvSqjb_WIi2yDCRwoQ_k7367_B-i2yQag0-mac3O8SL8EemK.woff2',
+'https://fonts.gstatic.com/s/fredoka/v6/X7nP4b87HvSqjb_WIi2yDCRwoQ_k7367_B-i2yQag0-mac3O8SL8EemKttpNbg.woff2',
+'https://unpkg.com/vue'
 ];
 
 self.addEventListener("install", event=>{

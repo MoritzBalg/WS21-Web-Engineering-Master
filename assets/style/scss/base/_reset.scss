@@ -13,7 +13,7 @@ h1{
     font-size: 1.75rem
 }
 
-acronym{
+acronym, abbr{
     text-decoration: underline 2px solid $primary-color;
     cursor: help;
 }

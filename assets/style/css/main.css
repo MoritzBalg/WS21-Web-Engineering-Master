@@ -176,6 +176,29 @@ aside ul li.active,
       grid-template-rows: auto 1fr auto;
 }
 
+button,
+.button {
+  background-color: #3a6c64;
+  color: whitesmoke;
+  height: 1.5 rem;
+  padding: .5rem;
+  border: none;
+}
+
+input[type="color"] {
+  border: none;
+  background-color: transparent;
+  height: 2rem;
+}
+
+a {
+  color: #b8ccc1;
+}
+
+a::before {
+  content: '\01F517 ';
+}
+
 .question-box {
   margin-top: 1rem;
 }
@@ -232,6 +255,8 @@ example-tabs::part(tab-bar) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 example-tabs::part(content) {
@@ -262,6 +287,14 @@ example-tabs::part(tab) {
   padding: 10px 15px;
   color: #3a6c64;
   cursor: pointer;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+example-tabs::part(tab):hover {
+  background-color: #93aa9d;
+  color: whitesmoke;
 }
 
 example-tabs::part(tab-selected) {
@@ -273,6 +306,10 @@ example-tabs::part(tab-selected) {
 example-tab {
   width: 100%;
   padding: 2rem;
+}
+
+example-tab h3 {
+  padding-top: 0;
 }
 
 * {
@@ -291,7 +328,7 @@ h1 {
   font-size: 1.75rem;
 }
 
-acronym {
+acronym, abbr {
   -webkit-text-decoration: underline 2px solid #b8ccc1;
           text-decoration: underline 2px solid #b8ccc1;
   cursor: help;
@@ -330,5 +367,9 @@ h1, h2, h3 {
 
 typing-field {
   padding-left: 5%;
+}
+
+dfn {
+  color: #b8ccc1;
 }
 /*# sourceMappingURL=main.css.map */

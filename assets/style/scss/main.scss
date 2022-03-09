@@ -17,6 +17,8 @@
 @import 'layout/grid';
 
 @import 'components/buttons';
+@import 'components/input';
+@import 'components/links';
 @import 'components/questionBox';
 @import 'components/figures';
 @import 'components/taskCard';
@@ -27,3 +29,7 @@
 
 @import 'base/reset';
 @import 'base/typography';
+
+dfn{
+    color: $primary-color;
+}

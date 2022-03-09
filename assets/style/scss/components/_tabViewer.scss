@@ -1,6 +1,7 @@
 
   example-tabs::part(tab-bar) {
     display: flex;
+    flex-wrap: wrap;
   }
   
   example-tabs::part(content) {
@@ -21,6 +22,11 @@
     padding: 10px 15px;
     color: $secondary-color;
     cursor: pointer;
+    flex-grow: 1;
+    &:hover{
+      background-color: $primary-color-hover;
+      color: whitesmoke;
+    }
   
   }
   
@@ -35,4 +41,8 @@
   example-tab{
     width: 100%;
     padding: 2rem;
+
+    h3{
+      padding-top: 0;
+    }
   }

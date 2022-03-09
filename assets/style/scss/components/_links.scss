@@ -1,0 +1,7 @@
+a{
+    color: $primary-color;
+}
+
+a::before{
+    content: '\01F517 ';
+}

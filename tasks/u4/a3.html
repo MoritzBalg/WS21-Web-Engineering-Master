@@ -1,62 +1,97 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Tabellenkalkulation</title>
-    <script src="a3.js"></script>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
     <style>
-        body{
-            font-family: sans-serif;
-        }
-
-        table, td, th {
+        table, td, th{
             border: 1px solid black;
+            border-collapse: collapse;
         }
 
-        table {
-           border-collapse: collapse;
-            margin: 0 auto 0;
-            text-align: right;
-        }
         td{
-            width: 20em;
-            height: 1.5em;
+            width: 10rem;
         }
-        th{
+
+        td:first-child, tr:first-child{
+            font-weight: bold;
             text-align: center;
-            background-color: #d4e6f1;
         }
 
     </style>
 </head>
 <body>
-<h1>Tabellenkalkulation mit contentEditable</h1>
-<table id="table" contenteditable="true">
 
-    <tr>
-        <th></th>
-        <th>A</th>
-        <th>B</th>
-        <th>C</th>
-    </tr>
-    <tr>
-        <th>1</th>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th>2</th>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-<tr>
-    <th>3</th>
-    <td></td>
-    <td></td>
-    <td></td>
-</tr>
-</table>
+    <script>
+        class Cell {
+
+            constructor(content, editable=false) {
+                this.editable = editable;
+                this.elem = document.createElement("td");
+                this.elem.innerText = content;
+                this.elem.setAttribute("contenteditable", this.editable);
+                this.content = content;
+                if(this.editable){
+                    this.elem.addEventListener("focusout", ()=>{
+                        const regex = /sum=(\d,\d):(\d,\d)/gm;
+                        const match = regex.exec(this.elem.textContent);
+                        if(match){
+                            this.elem.textContent = parseInt(table.getCellValue(match[1].split(",")[0],match[1].split(",")[1]))  + parseInt(table.getCellValue(match[2].split(",")[0],match[2].split(",")[1]));
+                        }
+                    });
+                }
+            }
+
+            set content(newVal){
+                this.elem.innerText = newVal;
+            }
+
+            get element(){
+                return this.elem;
+            }
+        }
+
+        class Table{
+            constructor(cols, rows){
+                this.cols = cols;
+                this.rows = rows;
+                this.elem = document.createElement("table");
+                for(let i = 0; i <= rows; i++){
+                    const row = document.createElement("tr");
+                    for(let j = 0; j <= cols; j++){
+                        let cell = null;
+                        if(i === 0){
+                            cell = new Cell(j?j:"");
+                        }else{
+                            if(j === 0){
+                                cell = new Cell(i?i:"");
+                            }else{
+                                cell = new Cell("",true);
+                            }
+                        }
+                        row.appendChild(cell.element);
+                    }
+                    this.elem.appendChild(row);
+                }   
+            }
+
+            get element(){
+                return this.elem;
+            }
+
+            getCellValue(row, col){
+                if(row > this.rows || col > this.cols) return;
+                return this.elem.children[row].children[col].textContent;
+            }
+        }
+  
+        const table = new Table(3,3);
+        document.querySelector("body").appendChild(table.element);
+    </script>
+
+   
 </body>
 </html>

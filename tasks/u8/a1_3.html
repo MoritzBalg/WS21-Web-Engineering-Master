@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Tabellenkalkulation</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+   
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    const template = document.createElement("template");
+    template.innerHTML  = `
+        <style>
+            table, td, th{
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+
+            td{
+                width: 10rem;
+            }
+
+            td:first-child, tr:first-child{
+                font-weight: bold;
+                text-align: center;
+            }
+        </style>
+    `;
+
+  customElements.define("tabellen-kalkulation", class extends HTMLElement{
+      
+      constructor() {
+          super();
+          const shadow = this.attachShadow({"mode":"open"});
+          shadow.appendChild(template.content.cloneNode(true));
+          shadow.appendChild(new Table(3,3).elem);
+      }
+
+      connectedCallback(){
+
+      }
+      attributeChangedCallback(){
+
+      }
+      disconnectedCallback(){
+
+      }
+
+  });
+
+
+class Cell {
+    constructor(content, editable=false) {
+        this.editable = editable;
+        this.elem = document.createElement("td");
+        this.elem.innerText = content;
+        this.elem.setAttribute("contenteditable", this.editable);
+        this.content = content;
+        if(this.editable){
+            
+        }
+    }
+
+    set content(newVal){
+        this.elem.innerText = newVal;
+    }
+
+    get element(){
+        return this.elem;
+    }
+}
+
+class Table{
+    constructor(cols, rows){
+        this.cols = cols;
+        this.rows = rows;
+        this.elem = document.createElement("table");
+        for(let i = 0; i <= rows; i++){
+            const row = document.createElement("tr");
+            for(let j = 0; j <= cols; j++){
+                let cell = null;
+                if(i === 0){
+                    cell = new Cell(j?j:"");
+                }else{
+                    if(j === 0){
+                        cell = new Cell(i?i:"");
+                    }else{
+                        cell = new Cell("",true);
+                        cell.elem.addEventListener("focusout", ()=>{
+                            const regex = /sum=(\d,\d):(\d,\d)/gm;
+                            const match = regex.exec(this.elem.textContent);
+                            if(match){
+                                cell.elem.textContent = parseInt(this.getCellValue(match[1].split(",")[0],match[1].split(",")[1]))  + parseInt(this.getCellValue(match[2].split(",")[0],match[2].split(",")[1]));
+                            }
+                        });
+                    }
+                }
+                row.appendChild(cell.element);
+            }
+            this.elem.appendChild(row);
+        }   
+    }
+
+    get element(){
+        return this.elem;
+    }
+
+    getCellValue(row, col){
+        if(row > this.rows || col > this.cols) return;
+        return this.elem.children[row].children[col].textContent;
+    }
+} 
+</script>
+
+<body>
+<tabellen-kalkulation></tabellen-kalkulation>
+</body>
+</html>

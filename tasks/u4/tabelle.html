@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Tabellenkalkulation</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <style>
+        table, td, th{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th{
+            user-select: none;
+        }
+
+        td{
+            width: 10rem;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        function createTable(elem, rows, cols){
+            const table = document.createElement("table");
+            for(let i = 0; i <= rows; i++){
+                const row = document.createElement("tr");
+                for(let j = 0; j <= cols; j++){
+                    
+                    if(i === 0){
+                        //Header
+                        const headCell = document.createElement("th");
+                        headCell.innerText = j?convert(j):"";
+                        row.appendChild(headCell);
+                            
+                    }else{
+                        if(j === 0){
+                            //first cell
+                            const firstCell = document.createElement("th");
+                            firstCell.innerText = i;
+                            row.appendChild(firstCell);
+                        }else{
+                            const cell = document.createElement("td");
+                            cell.setAttribute("contenteditable", "true");
+                            cell.innerText = "";
+                            row.appendChild(cell);
+                        }
+                    }
+
+                }
+                table.appendChild(row);
+            }
+            elem.appendChild(table);
+        }
+
+        //https://stackoverflow.com/questions/48352137/how-to-convert-number-to-character-using-javascript
+        function convert(num) {
+            return num
+                .toString()    // convert number to string
+                .split('')     // convert string to array of characters
+                .map(Number)   // parse characters as numbers
+                .map(n => (n || 10) + 64)   // convert to char code, correcting for J
+                .map(c => String.fromCharCode(c))   // convert char codes to strings
+                .join('');     // join values together
+        }
+
+
+        function getCellContent(tableElem, cell){
+            const regEx = /([a-zA-Z]+)(\d+)/;
+            const row = cell.match(regEx)[2];
+            let col = cell.match(regEx)[1];
+            col = col.charCodeAt(0) - 64;
+            const tableRows = Array.from(tableElem.children); 
+            console.log(tableRows.length);
+            for(let i = 1; 3; i++){
+                console.log(tableRows[i]);
+            }
+
+
+
+          //  console.log(col + "," + row);
+        }
+
+
+
+
+
+
+
+        createTable(document.querySelector("body"), 5, 5);
+        getCellContent(document.querySelector("table"), "A14");
+        
+    </script>
+
+   
+</body>
+</html>

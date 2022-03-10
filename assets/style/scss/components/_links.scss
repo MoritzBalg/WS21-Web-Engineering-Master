@@ -1,5 +1,10 @@
 a{
     color: $primary-color;
+    text-decoration: none;
+
+    &:visited{
+        color: $primary-color;
+    }
 }
 
 a::before{

@@ -8,6 +8,7 @@ const urlsToCache = [
 'https://mkaul.github.io/lit/lib/lit.js',
 'https://fonts.gstatic.com/s/fredoka/v6/X7nP4b87HvSqjb_WIi2yDCRwoQ_k7367_B-i2yQag0-mac3O8SL8EemK.woff2',
 'https://fonts.gstatic.com/s/fredoka/v6/X7nP4b87HvSqjb_WIi2yDCRwoQ_k7367_B-i2yQag0-mac3O8SL8EemKttpNbg.woff2',
+'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap',
 'https://unpkg.com/vue'
 ];
 

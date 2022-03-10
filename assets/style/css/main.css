@@ -137,7 +137,6 @@ aside ul li.active,
   padding: 1.5rem;
   position: relative;
   overflow-x: hidden;
-  text-align: justify;
 }
 
 #hider {
@@ -192,6 +191,11 @@ input[type="color"] {
 }
 
 a {
+  color: #b8ccc1;
+  text-decoration: none;
+}
+
+a:visited {
   color: #b8ccc1;
 }
 
@@ -293,7 +297,7 @@ example-tabs::part(tab) {
 }
 
 example-tabs::part(tab):hover {
-  background-color: #93aa9d;
+  background-color: #6f8177;
   color: whitesmoke;
 }
 
@@ -367,6 +371,12 @@ h1, h2, h3 {
 
 typing-field {
   padding-left: 5%;
+}
+
+reference-source {
+  font-style: italic;
+  color: #bf5c2a;
+  display: inline;
 }
 
 dfn {

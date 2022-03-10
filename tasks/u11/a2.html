@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body{
+      margin: 0;
+    }
+
+    #wrapper {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 2em;
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 1em;
+    }
+    #wrapper>div{
+      background-color: whitesmoke;
+      display: inline-block;
+      border: 1px solid gray;
+      padding: 1em;
+      box-sizing: border-box;
+      flex-basis: 400px;
+
+    }
+  </style>
+</head>
+<body>
+<section style="text-align: center">
+  <h1>Benchmark zwischen WebAssembly und Javascript</h1>
+  <p>Es wird die Anzahl an Primzahlen bis 100.000 berechnet. Einmal kommt hierzu die Funktion <em>isPrim()</em> zum Einsatz,
+  welche in WebAssembly erstellt wurde und einmal eine Version in Javascript.
+  </p>
+</section>
+
+<div id="wrapper">
+  <div id="js">
+    <h1>Javascript</h1>
+    <hr>
+    <button id="btn_js">Starte JS Test</button>
+    <p class="run">Anzahl der Testdurchläufe: </p>
+    <p class="min">Minimum: </p>
+    <p class="max">Maximum: </p>
+    <p class="avg">Durchschnitt: </p>
+  </div>
+
+  <div id="wa">
+    <h1>WebAssembly</h1>
+    <hr>
+    <button id="btn_wa">Starte WA Test</button>
+    <p class="run">Anzahl der Testdurchläufe: </p>
+    <p class="min">Minimum: </p>
+    <p class="max">Maximum: </p>
+    <p class="avg">Durchschnitt: </p>
+  </div>
+</div>
+  <script>
+
+    document.querySelector("#btn_js").addEventListener("click", js);
+    document.querySelector("#btn_wa").addEventListener("click", webAs);
+
+
+    function webAs(){
+      console.log("Starte Web-Assembly Test...")
+      fetch('/tasks/u11/a2.wasm').then(response =>
+              response.arrayBuffer()
+      ).then(bytes => WebAssembly.instantiate(bytes)).then(results => {
+        const instance = results.instance;
+
+        //Test der Methode
+        let times = [];
+        let runs = 0;
+        let sum;
+        while(runs < 10){
+          sum = 0;
+          const start = performance.now();
+          for(let i = 2; i < 100000; i++){
+            sum += instance.exports.isPrim(i)?1:0;
+          }
+          times.push(performance.now() - start);
+          runs++;
+        }
+        document.querySelector("#wa .run").innerHTML += times.length + "";
+        document.querySelector("#wa .min").innerHTML += getMin(times) + "ms";
+        document.querySelector("#wa .max").innerHTML += getMax(times) + "ms";
+        document.querySelector("#wa .avg").innerHTML += getAvg(times) + "ms";
+      }).catch(console.error);
+    }
+
+    function js(){
+      console.log("Starte JS Test...");
+      //Test der Methode
+      let times = [];
+      let runs = 0;
+      let sum;
+      while(runs < 10){
+        sum = 0;
+        const start = performance.now();
+        for(let i = 2; i < 100000; i++){
+          sum += isPrim(i)?1:0;
+        }
+        times.push(performance.now() - start);
+        runs++;
+      }
+      document.querySelector("#js .run").innerHTML += times.length + "";
+      document.querySelector("#js .min").innerHTML += getMin(times) + "ms";
+      document.querySelector("#js .max").innerHTML += getMax(times) + "ms";
+      document.querySelector("#js .avg").innerHTML += getAvg(times) + "ms";
+
+    }
+
+
+    function isPrim(n){
+      for(let i = 2; i <= n/2; i++){
+        if((n%i)==0)return false;
+      }
+      return true;
+    }
+
+    //Hilfsfunktionen
+    function getMin(a){
+      let min = a[0];
+      for(let i = 1; i < a.length; i++){
+        if(a[i] < min) min = a[i];
+      }
+      return min;
+    }
+
+    function getMax(a){
+      let max = a[0];
+      for(let i = 1; i < a.length; i++){
+        if(a[i] > max) max = a[i];
+      }
+      return max;
+    }
+
+    function getAvg(a){
+      //Build sum
+      let sum = 0;
+      for(let i = 0; i < a.length; i++){
+        sum += a[i];
+      }
+      return sum/a.length;
+    }
+  </script>
+</body>
+</html>

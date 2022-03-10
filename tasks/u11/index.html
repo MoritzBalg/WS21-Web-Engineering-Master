@@ -1,8 +1,10 @@
+<p><dfn>WebAssembly</dfn> ist ein bzw. <dfn>wasm</dfn> ist ein binäres Ausführungs-Format. Dieses Fomrat kann von einer Stack-Basierten virtuellen Machiene, welche im Broswer integriert werden kann interpretiert werden. Wasm kann aus verschiedenen Hochsprachen wie C, C++, Java, TypeScript uvm. compiliert werden. Dadurch ermöglicht es den Einsatz von diesen Sprachen im Webbrowser. <dfn>WAT</dfn> ist eine textuelle Repräsentation von wasm und erinnert sehr stark andere Assembly Sprachen.</p>
+
 <h2>Aufgabe 11.1 - WebAssembly-Modul von Hand erstellen</h2>
 <example-tabs>
     <example-tab title="&#9432;">
-        <h3>Kleine nette Beschreibung</h3>
-        <p>In dieser Aufgabe sollte ein Balkendirgramm erstellt werden, welches die Sitzvertzeilung des aktuellen duetschen Bundestages wiederspiegelt.</p>
+        <h3>GGT mit WAT</h3>
+        <p>In dieser Aufgabe sollte der GGT mit einem Webassembly Modul berechnet werden. Dieses Modul sollte händisch mit WAT erzeugt werden und dann in die Anwendung integriert werden.</p>
     </example-tab>
 
     <example-tab title="Code WAT">
@@ -13,12 +15,113 @@
         <file-viewer src="/tasks/u11/a1_2.js">a1_2.js</file-viewer>
     </example-tab>
 
+    <example-tab title="Vorschau">
+        <embed-browser src="/tasks/u11/a1.html">ggt.wat</embed-browser>
+    </example-tab>
+
 </example-tabs>
 
 
 <h2>Aufgabe 11.2 - Performanz-Messungen und -Vergleich</h2>
 
+<example-tabs>
+    <example-tab title="&#9432;">
+        <h3>Performanz-Vergleich zwischen WAT und JS</h3>
+        <p>In dieser Aufgabe sollte ein Performanz-Vergleich zwischen JS und Webassembly durchgeführt werden. Dazu sollte ein Algorithmus zur berechnung von Primzahlen in den beiden Varianten entwickelt werden. Um es etwas einfacher zu machen wurde der Algorthmus nicht in WAT sondern in C geschrieben und mit einem Compiler in wasm übersetz. Den Performanz Test können Sie im Vorschau-Tab selber einmal ausführen. Die von mir gemessenen Ergebnisse finden Sie etwas weiter unten in der Auswertung.</p>
+    </example-tab>
 
+    <example-tab title="Code WAT">
+        <file-viewer src="/tasks/u11/a2.wat">a2.wat</file-viewer>
+    </example-tab>
+
+    <example-tab title="Code JS">
+        <file-viewer src="/tasks/u11/a2.js">a2.js</file-viewer>
+    </example-tab>
+
+    <example-tab title="Code C">
+        <file-viewer src="/tasks/u11/a2.c">a2.c</file-viewer>
+    </example-tab>
+
+    <example-tab title="Code HTML">
+        <file-viewer src="/tasks/u11/a2.html">a2.html</file-viewer>
+    </example-tab>
+
+    <example-tab title="Vorschau">
+        <embed-browser src="/tasks/u11/a2.html">a2.html</embed-browser>
+    </example-tab>
+
+</example-tabs>
+
+<details class="question-box">
+    <summary>Wie viele Primzahlen gibt es bis 100.000?</summary>
+    <p>
+        9592 
+    </p>
+</details>
+
+<details class="question-box">
+    <summary>Messergebnisse (min, max, avg) </summary>
+    <pre>
+
+Zehn Läufe berechnung bis 100.000:
+========================
+WA: 952.23ms, 1010.59ms, 958ms
+JS:  851.60ms, 1082.39ms, 927.45ms
+
+Ein Lauf berechnung bis 1.000.000:
+=======================
+WA: 75,63s 
+JS: 86,11s
+
+Berechnung wie viele Primzahlen bis 1.000.000 existieren. 
+Ein Durchlauf in vier verschiedenen Browsern.
+
+Mozilla Firefox:
+JS: 97228ms
+WA: 75596ms
+WA Vorteil in Relation zu JS: 28.6%
+=======================================
+Google Chrome:
+JS: 107810ms
+WA: 62978.79ms
+WA Vorteil in Relation zu JS: 72%
+=======================================
+Microsoft Edge:
+JS: 106891.79ms
+WA: 60833.59ms
+WA Vorteil in Relation zu JS: 75,7%
+=======================================
+JetBrains WebStorm onboard Browser:
+JS: 104723.78ms
+WA: 59857.36ms
+WA Vorteil in Relation zu JS: 74,9%
+
+=======================================
+AVG:
+JS: 104163ms
+WA: 64816.36ms
+WA Vorteil in Relation zu JS: 60%
+
+
+============================================================
+= Im Schnitt ist hier die Berechnung bis zu 60% schneller. =
+============================================================ 
+    </pre>
+</details>
+
+<details class="question-box">
+    <summary>Geben Sie hier Ihre statistische Analyse ein. Wie viel Prozent schneller ist WebAssembly</summary>
+    <p>
+        Bei Zehn durchläufen und einer Berechnung der Anzahl an Primzahlen bis 100.000 ist WebEssembly tatsächlich im Schnitt langsamer als JS. Lässt man jedoch die Anzahl an Primzahlen bis 1.000.000 berechnen, so ist WebAssembly um ca. 60 Prozent schneller.  
+    </p>
+</details>
+
+<details class="question-box">
+    <summary>Wie erklären Sie sich die Performanz-Unterschiede?</summary>
+    <p>
+        Meine Vermutung ist, dass die Google V8 Engine inzwischen so performant ist, dass bei leichten bzw. sich wiederhohlenden Operationen kaum Unterschiede Festzustellen sind. Kommt es jedoch zu komplexeren Berechnungen kann WebAssembly seine Vorteile besser auspielen. 
+    </p>
+</details>
 
 
 

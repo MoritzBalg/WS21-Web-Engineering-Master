@@ -1,24 +1,143 @@
 <p>
-    <dfn>Javascript</dfn>
+    <dfn>Javascript</dfn> ist die vorherschende Sprache für Clientseitige Webseitenprogrammierung. In dieser Übung wird eine Vielzahl an Funktionen vorgestellt die im Rahmen der Aufgaben entwickelt werden sollte. Wenn Sie die Funktionen austesten wollen müssen Sie dafür lediglich Ihre Web-Console öffnen, indem sie <kbd>F12</kbd>. In der Konsole stehen Ihnen auf dieser Unterseite alle Funktionen zur Verfügung, die in den Aufgaben vorgestellt wurden.
 </p>
-
+<script>
+    console.clear();
+    console.log("Einbindung der Funktionen")
+    const script = document.createElement("script");
+    script.src = "/tasks/u3/a1.js";
+    document.head.appendChild(script);
+</script>
 <h2>Aufgabe 3.1 - Funktionen in JavaScript</h2>
+
+<example-tabs>
+    <example-tab title="&#9432;">
+        <p>
+            Schreiben Sie eine Funktion <mark>identity_function()</mark>, die ein Argument als Parameter entgegen nimmt und eine Funktion zurück gibt, die dieses Argument zurück gibt.
+        </p>
+    </example-tab>
+
+    <example-tab title="Code">
+        <file-viewer src="/tasks/u3/js-files/a1_1.js"></file-viewer>
+    </example-tab>
+
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="&#9432;">
+        <p>
+            Schreiben Sie eine Addier-Funktion <mark>addf()</mark>, so dass <mark>addf(x)(y)</mark> genau <mark>x + y</mark> zurück gibt. (Es haben also zwei Funktionsaufrufe zu erfolgen. <mark>addf(x)</mark> liefert eine Funktion, die auf y angewandt wird.)
+        </p>
+    </example-tab>
+
+    <example-tab title="Code">
+        <file-viewer src="/tasks/u3/js-files/a1_2.js"></file-viewer>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="&#9432;">
+        <p>
+            Schreiben Sie eine Funktion <mark>applyf()</mark>, die aus einer binären Funktion wie <mark>add(x,y)</mark> eine Funktion addfberechnet, die mit zwei Aufrufen das gleiche Ergebnis liefert, z.B. addf = applyf(add); addf(x)(y) soll add(x,y) liefern. Entsprechend applyf(mul)(5)(6) soll 30 liefern, wenn mul die binäre Multiplikation ist.
+        </p>
+    </example-tab>
+
+    <example-tab title="Code">
+        <file-viewer src="/tasks/u3/js-files/a1_3.js"></file-viewer>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="&#9432;">
+        <p>
+            Schreiben Sie eine Funktion curry() (von Currying), die eine binäre Funktion und ein Argument nimmt, um daraus eine Funktion zu erzeugen, die ein zweites Argument entgegen nimmt, z.B. add3 = curry(add, 3);add3(4) ergibt 7. curry(mul, 5)(6) ergibt 30.
+        </p>
+    </example-tab>
+
+    <example-tab title="Code">
+        <file-viewer src="/tasks/u3/js-files/a1_4.js"></file-viewer>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="&#9432;">
+        <p>
+            Erzeugen Sie die inc-Funktion mit Hilfe einer der Funktionen addf, applyf und curry aus den letzten Aufgaben, ohne die Funktion inc() selbst zu implementieren. (inc(x) soll immer x + 1 ergeben und lässt sich natürlich auch direkt implementieren. Das ist aber hier nicht die Aufgabe.) Vielleicht schaffen Sie es auch, drei Varianten der inc()-Implementierung zu schreiben?
+        </p>
+    </example-tab>
+
+    <example-tab title="Code">
+        <file-viewer src="/tasks/u3/js-files/a1_5.js"></file-viewer>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="&#9432;">
+        <p>
+            Schreiben Sie eine Funktion methodize(), die eine binäre Funktion (z.B. add, mul) in eine unäre Methode verwandelt. Nach Number.prototype.add = methodize(add); soll (3).add(4) genau 7 ergeben.
+        </p>
+    </example-tab>
+
+    <example-tab title="Code">
+        <file-viewer src="/tasks/u3/js-files/a1_6.js"></file-viewer>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="&#9432;">
+        <p>
+            Schreiben Sie eine Funktion demethodize(), die eine unäre Methode (z.B. add, mul) in eine binäre Funktion umwandelt. demethodize(Number.prototype.add)(5, 6) soll 11 ergeben.
+        </p>
+    </example-tab>
+
+    <example-tab title="Code">
+        <file-viewer src="/tasks/u3/js-files/a1_7.js"></file-viewer>
+    </example-tab>
+</example-tabs>
+
+
+<example-tabs>
+    <example-tab title="&#9432;">
+        <p>
+            Schreiben Sie eine Funktion twice(), die eine binäre Funktion in eine unäre Funktion umwandelt, die den einen Parameter zweimal weiter reicht. Z.B. var double = twice(add); double(11) soll 22 ergeben; var square = twice(mul); square(11) soll mul(11,11) === 121 ergeben.
+        </p>
+    </example-tab>
+
+    <example-tab title="Code">
+        <file-viewer src="/tasks/u3/js-files/a1_8.js"></file-viewer>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="&#9432;">
+        <p>
+            Schreiben Sie eine Funktion composeu(), die zwei unäre Funktionen in eine einzelne unäre Funktion transformiert, die beide nacheinander aufruft, z.B. soll composeu(double, square)(3) genau 36 ergeben.
+        </p>
+    </example-tab>
+
+    <example-tab title="Code">
+        <file-viewer src="/tasks/u3/js-files/a1_9.js"></file-viewer>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="&#9432;">
+        <p>
+            Schreiben Sie eine Funktion composeb(), die zwei binäre Funktionen in eine einzelne Funktion transformiert, die beide nacheinander aufruft, z.B. composeb(add, mul)(2, 3, 5) soll 25 ergeben.
+        </p>
+    </example-tab>
+
+    <example-tab title="Code">
+        <file-viewer src="/tasks/u3/js-files/a1_10.js"></file-viewer>
+    </example-tab>
+</example-tabs>
+
+
+
+
+
 
 <h2>Aufgabe 3.2 - Advanced Functional JavaScript Programming</h2>
 
 
-<h3>8.1.1 - Einkaufsliste</h3>
-<example-tabs>
-    <example-tab title="&#9432;">
-        <p>Die Einkaufsliste ermöglicht es, über den "Add item" Button, weitere Elemente in die Liste aufzunehmen.</p>
-    </example-tab>
-
-    <example-tab title="Code">
-        <file-viewer src="/tasks/u8/a1_1.html">a1_1.html</file-viewer>
-    </example-tab>
-
-    <example-tab title="Vorschau">
-        <embed-browser src="/tasks/u8/a1_1.html"></embed-browser>
-    </example-tab>
-</example-tabs>
 

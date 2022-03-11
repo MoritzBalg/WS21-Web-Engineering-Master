@@ -30,6 +30,7 @@ customElements.define("file-viewer", class extends LitElement{
 
     #fileViewer pre{
         overflow-x: scroll;
+        padding: 1rem;
     }
     `;
 
@@ -74,8 +75,8 @@ customElements.define("file-viewer", class extends LitElement{
         let line = text.split("\n");
         let textWithNumbers = "";
         //indices will remove the additional linebreaks
-        for(let i = 1; i < line.length; i++){
-            textWithNumbers += `${i}\t${line[i]} \n`;
+        for(let i = 0; i < line.length; i++){
+            textWithNumbers += `${i+1}\t${line[i]} \n`;
         }
         return textWithNumbers
     }

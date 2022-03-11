@@ -316,6 +316,10 @@ example-tab h3 {
   padding-top: 0;
 }
 
+example-tabs {
+  margin: 1rem 0;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -391,5 +395,9 @@ reference-source {
 
 dfn {
   color: #b8ccc1;
+}
+
+mark {
+  background-color: #b8ccc1;
 }
 /*# sourceMappingURL=main.css.map */

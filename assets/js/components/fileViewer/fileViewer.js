@@ -45,10 +45,12 @@ customElements.define("file-viewer", class extends HTMLElement{
     }
 
     generateLineNumbers(){
+        this.textContent = "\n" + this.textContent;
         let line = this.textContent.split("\n");
+        console.log("line")
         this.textContent = "";
         //indices will remove the additional linebreaks
-        for(let i = 1; i < line.length-1; i++){
+        for(let i = 0; i < line.length; i++){
             this.textContent += `${i}\t${line[i]} \n`;
         }
     }

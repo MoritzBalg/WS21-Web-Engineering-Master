@@ -4,12 +4,8 @@ const urlsToCache = [
 'content.json',
 'tasks/',
 'https://fonts.googleapis.com/css2?family=Fredoka&display=swap',
-'https://fonts.gstatic.com/s/fredoka/v6/X7nP4b87HvSqjb_WIi2yDCRwoQ_k7367_B-i2yQag0-mac3O8SL8EemMttxNbikt.woff',
 'https://mkaul.github.io/lit/lib/lit.js',
-'https://fonts.gstatic.com/s/fredoka/v6/X7nP4b87HvSqjb_WIi2yDCRwoQ_k7367_B-i2yQag0-mac3O8SL8EemK.woff2',
-'https://fonts.gstatic.com/s/fredoka/v6/X7nP4b87HvSqjb_WIi2yDCRwoQ_k7367_B-i2yQag0-mac3O8SL8EemKttpNbg.woff2',
-'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap',
-'https://unpkg.com/vue'
+'https://unpkg.com/vue@2.6.14/dist/vue.js'
 ];
 
 self.addEventListener("install", event=>{
@@ -39,8 +35,8 @@ async function cacheFirst(request){
 async function networkAndCache(request){
     const cache = await caches.open(CACHE_NAME);
     try{
-        const newFetch = fetch(request);
-        await cache.put(request, (await newFetch).clone);
+        const newFetch = await fetch(request);
+        await cache.put(request, newFetch.clone());
         return newFetch;
     }catch(exception){
         const chachedPage = await cache.match(request);

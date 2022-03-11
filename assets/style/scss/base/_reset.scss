@@ -39,3 +39,14 @@ acronym, abbr{
     ::-webkit-scrollbar-thumb:hover {
     background: #3a3434; 
     }
+
+    .padding-list{
+        padding-left: 1rem;
+        list-style: none;
+        
+        & li::before{
+            content: "\23F9 \00a0";
+            color: $primary-color;
+        }
+        
+    }

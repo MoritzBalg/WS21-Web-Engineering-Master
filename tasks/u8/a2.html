@@ -50,7 +50,6 @@
             }
 
             render(){
-                console.log(this.orientation === 'horizontal'?'column':'row');
                 let items = Array.from(this.getElementsByTagName("a"));
                 return html`
                     <nav style="display: flex; flex-direction: ${this.orientation === 'horizontal'?'column':'row'}">

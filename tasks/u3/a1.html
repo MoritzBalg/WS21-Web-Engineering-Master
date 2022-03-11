@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>JavaScript</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+
+    <h1>JavaScript</h1>
+
+
+
+<script>
+    //3.1.1
+    function identity_function(a){
+        return _=>{return a;}
+    }
+
+    //3.1.2
+    function addf(a){
+        return (b)=>{return a+b;}
+    }
+
+    //3.1.3
+    function applyf(binFunction){
+        return (a)=>{
+            return (b)=>{return binFunction(a,b);}
+        }
+    }
+
+    //3.1.4
+    function curry(binaryFun, arg){
+        return (arg2)=>{return binaryFun(arg, arg2);}
+    }
+
+    //3.1.5
+    const inc1 = addf(1);
+    const inc2 = applyf(add)(1);
+    const inc3 = curry(add, 1);
+
+    //3.1.6
+    //Großer Fallstrick mit "=>"-Syntax da diese den this Kontext nicht korrekt hat.
+    function methodize(binaryFun){
+        return function(a){
+            return binaryFun(this, a)
+        }
+    }
+
+    //3.1.7
+    function demethodize(unaryFun){
+        return function(){
+
+        }
+    }
+
+    //3.1.8
+    function twice(binaryFun){
+        return (a)=>{return binaryFun(a,a);}
+
+    }
+
+    //3.1.9
+    const double = twice(add);
+    const square = twice(mul);
+
+    function composeu(unaryFun1, unaryFun2){
+        return (a)=>{return unaryFun2(unaryFun1(a))};
+    }
+
+    //3.1.10
+    function composeb(binaryFun1, binaryFun2){
+        return (a,b,c)=>{return binaryFun2(binaryFun1(a,b),c);}
+    }
+
+    //3.1.11
+    function once(func){
+        let used = false;
+        return(a,b)=>{
+            if(!used){
+                used = true;
+                return func(a,b)
+            }
+            else{
+                throw new Error("This function was already called!");
+            }
+        }
+    }
+
+    //3.1.12
+    function counterf(a){
+        return{
+            inc: ()=>{return ++a},
+            dec: ()=>{return --a}
+        }
+    }
+
+    //3.1.13
+    function revocable(func){
+        let revoked = false;
+        return{
+            invoke: (a)=>{
+                if(!revoked){
+                    func(a);
+                }else{
+                    throw new Error("This function was revoked!")
+                }
+            },
+            revoke: _=>{revoked = true;}
+        }
+    }
+
+    //3.1.14
+    function vector(){
+        let arry = [];
+        return{
+            get: (a)=>{return arry[a];},
+            store: (a,b)=>{arry[a] = b;},
+            append: (a)=>{arry.push(a)}
+        }
+    }
+</script>
+
+
+    
+</body>
+</html>

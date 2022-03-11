@@ -96,6 +96,8 @@ function loadSideTopics(elem, topics){
             history.pushState({key1: selectedMainTopic, key2: selectedSideTopic},"");
             refreshContent();
             activate(entry);
+            aside.style.display = "none";
+            hider.style.display = "none";
         }); 
      }
  }

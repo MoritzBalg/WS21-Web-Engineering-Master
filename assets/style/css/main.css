@@ -361,6 +361,16 @@ acronym, abbr {
   background: #3a3434;
 }
 
+.padding-list {
+  padding-left: 1rem;
+  list-style: none;
+}
+
+.padding-list li::before {
+  content: "\23F9 \00a0";
+  color: #b8ccc1;
+}
+
 * {
   font-family: 'Fredoka', sans-serif;
 }

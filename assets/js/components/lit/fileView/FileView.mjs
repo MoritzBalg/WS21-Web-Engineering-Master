@@ -16,7 +16,6 @@ customElements.define("file-viewer", class extends LitElement{
         padding: 1rem;
         color: whitesmoke;
         max-width: 100%;
-        overflow-x: scroll;
     }
     
     #fileViewer > div{
@@ -27,6 +26,10 @@ customElements.define("file-viewer", class extends LitElement{
         padding: .5rem 1rem;
         display: flex;
         justify-content: space-between;
+    }
+
+    #fileViewer pre{
+        overflow-x: scroll;
     }
     `;
 

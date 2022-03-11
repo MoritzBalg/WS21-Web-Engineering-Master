@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>JavaScript</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+
+    <h1>JavaScript</h1>
+
+
+
+<script>
+    //3.2.1
+    class PubSub{
+        
+        constructor(){
+            this.subscriber = [];
+        }
+
+        subscribe(func){
+            this.subscriber.push(func);
+    
+        }
+
+        publish(message){
+            for(let sub of this.subscriber){
+                sub(message);
+            }
+        }
+    }
+
+    //3.2.2
+    class GenSym{
+        constructor(){
+            this.num = 0;
+        }
+
+        gensymf(character){
+            const ch = character.charAt(0);
+            return (ch + this.num++).toString();
+        }
+    }
+
+    //3.2.3
+    class Fibonacci{
+        constructor(first, second){
+            this.first = first;
+            this.second = second;
+        }
+
+        fib(){
+            const result = this.first + this.second;
+            this.first = this.second;
+            this.second = result;
+            return result;
+        }
+    }
+
+    //3.2.4
+    function addg(a){
+        let sum = a;
+        const func = (b)=>{
+            if(b !== undefined){
+                sum += b;
+                return func;
+            }
+            return sum;
+        }
+        return func;
+    }
+
+    //3.2.5
+    function applyg(binFunction){
+        let sum = 0;
+        const func = (b)=>{
+            if(b !== undefined){
+                sum = binFunction(sum, b);
+                return func;
+            }
+            return sum;
+        }
+        return func;
+    }
+    
+    function add(a,b){
+        return a + b;
+    }
+
+
+
+    //3.2.6
+    function m(value, source = value){
+        return {"value": value, "source": source.toString()};
+    }
+
+    //3.2.7
+    function addm(first, second){
+       return m(first.value + second.value, `(${first.value} + ${second.value})`);
+    }
+
+    //3.2.8
+    function binarymf(binFun, operatorSign){
+        return (first, second)=>{
+            return m(binFun(first.value, second.value), `(${first.value} ${operatorSign} ${second.value})`);
+        }
+    }
+
+    //3.2.9
+    function binarymf_2(binFun, operatorSign){
+        return (first, second)=>{
+            first = isNaN(first)?first.value:first
+            second = isNaN(second)?second.value:second
+            return m(binFun(first,second), `(${first} ${operatorSign} ${second})`);
+        }
+    }
+
+    //3.2.10
+
+    function unarymf(unaryFun, operatorSign){
+        return (first)=>{
+            first = isNaN(first)?first.value:first
+            return m(unaryFun(first), `(${operatorSign} ${first})`);
+        }
+    }
+
+    //3.2.11
+    function hyp(a,b){
+        return Math.sqrt(a*a + b*b);
+    }
+
+    //3.2.12
+    function mul(a,b){
+        return a*b;
+    }
+
+    function exp(expression){
+        //find the deepes Array Entry
+        let arry = [];
+        for(let entry of expression){
+            if(Array.isArray(entry)){//more values inside
+                arry.push(exp(entry));
+            }else{ //normale value or function
+                arry.push(entry);
+            }
+        }
+        //function on first position
+        const op = arry.shift();
+        return op.apply(null, arry);
+        
+    }
+
+    //3.2.13
+    function store(a){
+        variable = a;
+    }
+
+    //3.2.14
+    function identityf(a){
+        return a;
+    }
+
+    function quatre(binFunction, op1, op2, storage){
+        storage(binFunction(op1, op2));
+    }
+
+    //3.2.15
+    function unaryc(unaryFun){
+        return (arg, callBack)=>{
+            callBack(unaryFun(arg));
+        }
+    }
+
+    //3.2.16
+    function binaryc (binaryFun){
+        return (arg1, arg2, callBack)=>{
+            callBack(binaryFun(arg1, arg2));
+        }
+    }
+
+</script>
+
+
+    
+</body>
+</html>

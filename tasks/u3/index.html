@@ -1,143 +1,364 @@
 <p>
     <dfn>Javascript</dfn> ist die vorherschende Sprache für Clientseitige Webseitenprogrammierung. In dieser Übung wird eine Vielzahl an Funktionen vorgestellt die im Rahmen der Aufgaben entwickelt werden sollte. Wenn Sie die Funktionen austesten wollen müssen Sie dafür lediglich Ihre Web-Console öffnen, indem sie <kbd>F12</kbd>. In der Konsole stehen Ihnen auf dieser Unterseite alle Funktionen zur Verfügung, die in den Aufgaben vorgestellt wurden.
 </p>
-<script>
-    console.clear();
-    console.log("Einbindung der Funktionen")
-    const script = document.createElement("script");
-    script.src = "tasks/u3/a1.js";
-    document.head.appendChild(script);
-</script>
+
 <h2>Aufgabe 3.1 - Funktionen in JavaScript</h2>
 
-<example-tabs>
-    <example-tab title="&#9432;">
-        <p>
-            Schreiben Sie eine Funktion <mark>identity_function()</mark>, die ein Argument als Parameter entgegen nimmt und eine Funktion zurück gibt, die dieses Argument zurück gibt.
-        </p>
-    </example-tab>
-
-    <example-tab title="Code">
-        <file-viewer src="tasks/u3/js-files/a1_1.js"></file-viewer>
-    </example-tab>
-
-</example-tabs>
 
 <example-tabs>
-    <example-tab title="&#9432;">
+    <example-tab title="Aufgabe 3.1.1">
+        <h3>identity_function()</h3>
         <p>
-            Schreiben Sie eine Addier-Funktion <mark>addf()</mark>, so dass <mark>addf(x)(y)</mark> genau <mark>x + y</mark> zurück gibt. (Es haben also zwei Funktionsaufrufe zu erfolgen. <mark>addf(x)</mark> liefert eine Funktion, die auf y angewandt wird.)
+            Schreiben Sie eine Funktion identity_function(), die ein Argument als Parameter entgegen nimmt und eine Funktion zurück gibt, die dieses Argument zurück gibt.
         </p>
-    </example-tab>
-
-    <example-tab title="Code">
-        <file-viewer src="tasks/u3/js-files/a1_2.js"></file-viewer>
+        <js-console src="tasks/u3/js-files/a1_1.js"></js-console>
     </example-tab>
 </example-tabs>
 
 <example-tabs>
-    <example-tab title="&#9432;">
+    <example-tab title="Aufgabe 3.1.2">
+        <h3>addf()</h3>
         <p>
-            Schreiben Sie eine Funktion <mark>applyf()</mark>, die aus einer binären Funktion wie <mark>add(x,y)</mark> eine Funktion addfberechnet, die mit zwei Aufrufen das gleiche Ergebnis liefert, z.B. addf = applyf(add); addf(x)(y) soll add(x,y) liefern. Entsprechend applyf(mul)(5)(6) soll 30 liefern, wenn mul die binäre Multiplikation ist.
+            Schreiben Sie eine Addier-Funktion addf(), so dass addf(x)(y) genau x + y zurück gibt. (Es haben also zwei Funktionsaufrufe zu erfolgen. addf(x) liefert eine Funktion, die auf y angewandt wird.)
         </p>
-    </example-tab>
-
-    <example-tab title="Code">
-        <file-viewer src="tasks/u3/js-files/a1_3.js"></file-viewer>
+        <js-console src="tasks/u3/js-files/a1_2.js"></js-console>
     </example-tab>
 </example-tabs>
 
 <example-tabs>
-    <example-tab title="&#9432;">
+    <example-tab title="Aufgabe 3.1.3">
+        <h3>apllyf()</h3>
+        <p>
+            Schreiben Sie eine Funktion applyf(), die aus einer binären Funktion wie add(x,y) eine Funktion addf berechnet, die mit zwei Aufrufen das gleiche Ergebnis liefert, z.B. addf = applyf(add); addf(x)(y) soll add(x,y) liefern. Entsprechend applyf(mul)(5)(6) soll 30 liefern, wenn mul die binäre Multiplikation ist.
+        </p>
+        <js-console src="tasks/u3/js-files/a1_3.js"></js-console>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="Aufgabe 3.1.4">
+        <h3>curry()</h3>
         <p>
             Schreiben Sie eine Funktion curry() (von Currying), die eine binäre Funktion und ein Argument nimmt, um daraus eine Funktion zu erzeugen, die ein zweites Argument entgegen nimmt, z.B. add3 = curry(add, 3);add3(4) ergibt 7. curry(mul, 5)(6) ergibt 30.
         </p>
-    </example-tab>
-
-    <example-tab title="Code">
-        <file-viewer src="tasks/u3/js-files/a1_4.js"></file-viewer>
+        <js-console src="tasks/u3/js-files/a1_4.js"></js-console>
     </example-tab>
 </example-tabs>
 
 <example-tabs>
-    <example-tab title="&#9432;">
+    <example-tab title="Aufgabe 3.1.5">
+        <h3>inc()</h3>
         <p>
             Erzeugen Sie die inc-Funktion mit Hilfe einer der Funktionen addf, applyf und curry aus den letzten Aufgaben, ohne die Funktion inc() selbst zu implementieren. (inc(x) soll immer x + 1 ergeben und lässt sich natürlich auch direkt implementieren. Das ist aber hier nicht die Aufgabe.) Vielleicht schaffen Sie es auch, drei Varianten der inc()-Implementierung zu schreiben?
         </p>
-    </example-tab>
-
-    <example-tab title="Code">
-        <file-viewer src="tasks/u3/js-files/a1_5.js"></file-viewer>
+        <js-console src="tasks/u3/js-files/a1_5.js"></js-console>
     </example-tab>
 </example-tabs>
 
 <example-tabs>
-    <example-tab title="&#9432;">
+    <example-tab title="Aufgabe 3.1.6">
+        <h3>methodize()</h3>
         <p>
             Schreiben Sie eine Funktion methodize(), die eine binäre Funktion (z.B. add, mul) in eine unäre Methode verwandelt. Nach Number.prototype.add = methodize(add); soll (3).add(4) genau 7 ergeben.
         </p>
-    </example-tab>
-
-    <example-tab title="Code">
-        <file-viewer src="tasks/u3/js-files/a1_6.js"></file-viewer>
+        <js-console src="tasks/u3/js-files/a1_6.js"></js-console>
     </example-tab>
 </example-tabs>
 
 <example-tabs>
-    <example-tab title="&#9432;">
+    <example-tab title="Aufgabe 3.1.7">
+        <h3>demethodize()</h3>
         <p>
             Schreiben Sie eine Funktion demethodize(), die eine unäre Methode (z.B. add, mul) in eine binäre Funktion umwandelt. demethodize(Number.prototype.add)(5, 6) soll 11 ergeben.
         </p>
-    </example-tab>
-
-    <example-tab title="Code">
-        <file-viewer src="tasks/u3/js-files/a1_7.js"></file-viewer>
+        <js-console src="tasks/u3/js-files/a1_7.js"></js-console>
     </example-tab>
 </example-tabs>
 
-
 <example-tabs>
-    <example-tab title="&#9432;">
+    <example-tab title="Aufgabe 3.1.8">
+        <h3>twice()</h3>
         <p>
             Schreiben Sie eine Funktion twice(), die eine binäre Funktion in eine unäre Funktion umwandelt, die den einen Parameter zweimal weiter reicht. Z.B. var double = twice(add); double(11) soll 22 ergeben; var square = twice(mul); square(11) soll mul(11,11) === 121 ergeben.
         </p>
-    </example-tab>
-
-    <example-tab title="Code">
-        <file-viewer src="tasks/u3/js-files/a1_8.js"></file-viewer>
+        <js-console src="tasks/u3/js-files/a1_8.js"></js-console>
     </example-tab>
 </example-tabs>
 
 <example-tabs>
-    <example-tab title="&#9432;">
+    <example-tab title="Aufgabe 3.1.9">
+        <h3>composeu()</h3>
         <p>
             Schreiben Sie eine Funktion composeu(), die zwei unäre Funktionen in eine einzelne unäre Funktion transformiert, die beide nacheinander aufruft, z.B. soll composeu(double, square)(3) genau 36 ergeben.
         </p>
-    </example-tab>
-
-    <example-tab title="Code">
-        <file-viewer src="tasks/u3/js-files/a1_9.js"></file-viewer>
+        <js-console src="tasks/u3/js-files/a1_9.js"></js-console>
     </example-tab>
 </example-tabs>
 
 <example-tabs>
-    <example-tab title="&#9432;">
+    <example-tab title="Aufgabe 3.1.10">
+        <h3>composeb()</h3>
         <p>
             Schreiben Sie eine Funktion composeb(), die zwei binäre Funktionen in eine einzelne Funktion transformiert, die beide nacheinander aufruft, z.B. composeb(add, mul)(2, 3, 5) soll 25 ergeben.
         </p>
-    </example-tab>
-
-    <example-tab title="Code">
-        <file-viewer src="tasks/u3/js-files/a1_10.js"></file-viewer>
+        <js-console src="tasks/u3/js-files/a1_10.js"></js-console>
     </example-tab>
 </example-tabs>
 
+<example-tabs>
+    <example-tab title="Aufgabe 3.1.11">
+        <h3>once()</h3>
+        <p>
+            Schreiben Sie eine Funktion once(), die einer anderen Funktion nur einmal erlaubt, aufgerufen zu werden, z.B. add_once = once(add); add_once(3, 4) soll beim ersten Mal 7 ergeben, beim zweiten Mal soll jedoch add_once(3, 4) einen Fehlerabbruch bewirken.
+        </p>
+        <js-console src="tasks/u3/js-files/a1_11.js"></js-console>
+    </example-tab>
+</example-tabs>
 
+<example-tabs>
+    <example-tab title="Aufgabe 3.1.12">
+        <h3>counterf()</h3>
+        <p>
+            Schreiben Sie eine Fabrik-Funktion counterf(), die zwei Funktionen inc() und dec() berechnet, die einen Zähler hoch- und herunterzählen. Z.B. counter = counterf(10); Dann soll counter.inc() 11 und counter.dec() wieder 10 ergeben.
+        </p>
+        <js-console src="tasks/u3/js-files/a1_12.js"></js-console>
+    </example-tab>
+</example-tabs>
 
+<example-tabs>
+    <example-tab title="Aufgabe 3.1.13">
+        <h3>revocable()</h3>
 
+<p>
+    Schreiben Sie eine rücknehmbare Funktion revocable(), die als Parameter eine Funktion nimmt und diese bei Aufruf ausführt. Sobald die Funktion aber mit revoke() zurück genommen wurde, führt ein erneuter Aufruf zu einem Fehler. Z.B.
+</p>
+<pre>
 
+temp = revocable(alert);
+temp.invoke(7); // führt zu alert(7);
+temp.revoke();
+temp.invoke(8); // Fehlerabbruch!
+</pre>
+        <js-console src="tasks/u3/js-files/a1_13.js"></js-console>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="Aufgabe 3.1.14">
+        <h3>Array Wrapper</h3>
+<p>
+    Implementieren Sie ein "Array Wrapper"-Objekt mit den Methoden get, store und append, so dass ein Angreifer keinen Zugriff auf das innere, private Array hat.
+</p>
+<pre>
+
+my_vector = vector();
+my_vector.append(7);
+my_vector.store(1, 8);
+my_vector.get(0) // 7
+my_vector.get(1) // 8
+</pre>
+        <js-console src="tasks/u3/js-files/a1_14.js"></js-console>
+    </example-tab>
+</example-tabs>
 
 <h2>Aufgabe 3.2 - Advanced Functional JavaScript Programming</h2>
 
+<example-tabs>
+    <example-tab title="Aufgabe 3.2.1">
+        <h3>pubsub</h3>
+        <p>
+            Make a function that makes a publish/subscribe object. It will reliably deliver all publications to all subscribers in the right order.
+        </p>
+<pre>
+my_pubsub = pubsub();
+my_pubsub.subscribe(alert);
+my_pubsub.publish("It works!"); // alert("It works!")
+</pre>
+        <js-console src="tasks/u3/js-files/a2_1.js"></js-console>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="Aufgabe 3.2.2">
+        <h3>gensym()</h3>
+<p>
+Make a factory that makes functions that generate unique symbols.
+gensym = gensymf('G');
+gensym() // 'G0'
+gensym() // 'G1'
+gensym() // 'G2'
+gensym() // 'G3'
+</p>
+        <js-console src="tasks/u3/js-files/a2_2.js"></js-console>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="Aufgabe 3.2.3">
+        <h3>fibonacci()</h3>
+        <p>
+            Make a function that returns a function that will return the next fibonacci number.
+var fib = fibonaccif(0, 1);
+fib() // 0
+fib() // 1
+fib() // 1
+fib() // 2
+fib() // 3
+fib() // 5
+        </p>
+        <js-console src="tasks/u3/js-files/a2_3.js"></js-console>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="Aufgabe 3.2.4">
+        <h3>addg()</h3>
+        <p>
+            Write a function that adds from many invocations, until it sees an empty invocation.
+addg(3)(4)(5)() // 12
+addg(1)(2)(4)(8)() // 15
+        </p>
+        <js-console src="tasks/u3/js-files/a2_4.js"></js-console>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="Aufgabe 3.2.5">
+        <h3>apllyg()</h3>
+        <p>
+            Write a function that will take a binary function and apply it to many invocations.
+applyg(add)(3)(4)(5)() // 12
+applyg(add)(1)(2)(4)(8)() // 15
+        </p>
+        <js-console src="tasks/u3/js-files/a2_5.js"></js-console>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="Aufgabe 3.2.6">
+        <h3>m()</h3>
+        <p>
+            Write a function m that takes a value and an optional source string and returns them in an object.
+JSON.stringify(m(1)) // {"value": 1, "source": "1"}
+JSON.stringify(m(Math.PI, "pi")) // {"value": 3.14159..., "source": "pi"}
+        </p>
+        <js-console src="tasks/u3/js-files/a2_6.js"></js-console>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="Aufgabe 3.2.7">
+        <h3>addm()</h3>
+        <p>
+            Write a function addm that takes two m objects and returns an m object.
+JSON.stringify(addm(m(3), m(4))) // {"value": 7, "source": "(3+4)"}
+        </p>
+        <js-console src="tasks/u3/js-files/a2_7.js"></js-console>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="Aufgabe 3.2.8">
+        <h3>binarymf()</h3>
+        <p>
+            Write a function binarymf that takes a binary function and a string and returns a function that acts on m objects.
+addm = binarymf(add, "+");
+JSON.stringify(addm(m(3), m(4))) // {"value": 7, "source": "(3+4)"}
 
 
+        </p>
+        <js-console src="tasks/u3/js-files/a2_8.js"></js-console>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="Aufgabe 3.2.9">
+        <h3>binarymf()</h3>
+        <p>
+            Modify function binarymf so that the functions it produces can accept arguments that are either numbers or m objects.
+addm = binarymf(add, "+");
+JSON.stringify(addm(3, 4)) // {"value": 7, "source": "(3+4)"}
+        </p>
+        <js-console src="tasks/u3/js-files/a2_9.js"></js-console>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="Aufgabe 3.2.10">
+        <h3>unaryfm()</h3>
+        <p>
+            Write function unarymf, which is like binarymf except that it acts on unary functions.
+squarem = unarymf(square, "square");
+JSON.stringify(squarem(4)) // {"value": 16, "source": "(square 4)"}
+        </p>
+        <js-console src="tasks/u3/js-files/a2_10.js"></js-console>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="Aufgabe 3.2.11">
+        <h3>hyp()</h3>
+        <p>
+            Write a function that takes the lengths of two sides of a triangle and computes the length of the hypotenuse. (Hint: c2 = a2 + b2)
+            hyp(3, 4) // 5
+        </p>
+        <js-console src="tasks/u3/js-files/a2_11.js"></js-console>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="Aufgabe 3.2.12">
+        <h3>exp()</h3>
+        <p>
+            Write a function that evaluates array expressions.
+hypa = [ Math.sqrt, [ add, [mul, 3, 3], [mul, 4, 4] ] ];
+exp(hypa) // 5
+        </p>
+        <js-console src="tasks/u3/js-files/a2_12.js"></js-console>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="Aufgabe 3.2.13">
+        <h3>store()</h3>
+        <p>
+            Make a function that stores a value in a variable.
+var variable; store(5); // variable === 5
+        </p>
+        <js-console src="tasks/u3/js-files/a2_13.js"></js-console>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="Aufgabe 3.2.14">
+        <h3>quarte()</h3>
+        <p>
+            Make a function that takes a binary function, two functions that provide operands, and a function that takes the result.
+quatre( add, identityf(3), identityf(4), store ); // variable === 7
+        </p>
+        <js-console src="tasks/u3/js-files/a2_14.js"></js-console>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="Aufgabe 3.2.15">
+        <h3>unaryc()</h3>
+        <p>
+            Make a function that takes a unary function, and returns a function that takes an argument and a callback.
+sqrtc = unaryc(Math.sqrt); sqrtc(81, store) // variable === 9
+        </p>
+        <js-console src="tasks/u3/js-files/a2_15.js"></js-console>
+    </example-tab>
+</example-tabs>
+
+<example-tabs>
+    <example-tab title="Aufgabe 3.2.16">
+        <h3>binaryc()</h3>
+        <p>
+            Make a function that takes a binary function, and returns a function that takes two arguments and a callback.
+addc = binaryc(add); addc(4, 5, store) // variable === 9
+mulc = binaryc(mul); mulc(2, 3, store) // variable === 6
+        </p>
+        <js-console src="tasks/u3/js-files/a2_16.js"></js-console>
+    </example-tab>
+</example-tabs>

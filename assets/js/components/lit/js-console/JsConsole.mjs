@@ -20,12 +20,13 @@ customElements.define("js-console", class extends LitElement{
             font-family: monospace;
             margin: 0;
             height: 50vh;
+            margin-top: 1rem;
         }
         
 
         #input_section{
             height: 70%;
-            
+            white-space: pre;
             overflow-y: scroll;
             padding: 1rem;
         }
@@ -79,14 +80,6 @@ customElements.define("js-console", class extends LitElement{
         this.code = "loading ...";
         this.result = "";
        
-        console.log = (msg)=>{
-            this.result += msg + "\n";
-        };
-
-        console.clear = ()=>{
-            this.result = ">\n";
-        }
-       
     }
 
 
@@ -94,34 +87,29 @@ customElements.define("js-console", class extends LitElement{
         super.connectedCallback();
         this.loadFile(this.src);
         console.clear();
-
     }
 
+    
+
+  
 
     render(){
+        
         return html`
         <div id="wrapper">
             <div id="input_section" contenteditable="true" spellcheck="false">
-                //JS Live Editor <br>
-                //==================== <br>
-                <pre>${this.code}</pre>
+${this.code}
             </div>
             <div id="output">
                 <div id="button-section">
-                    <button id="clearButton" @click="${()=>{console.clear()}}">Clear</button>
-                    <button id="runButton" @click="${()=>{eval(this.shadowRoot.querySelector('#input_section > pre').innerText)}}">Run</button>
+                    <button id="clearButton" @click="${()=>{console.clear = ()=>{this.result = ">\n"}; console.clear();}}">Clear</button>
+                    <button id="runButton" @click="${()=>{ console.log = (msg)=>{this.result += msg + "\n"}; eval(this.shadowRoot.querySelector('#input_section').innerText);}}">Run</button>
                 </div>
                 <div id="output_section">
                     <pre>${this.result}</pre>
                 </div>
             </div>
         </div>
-            <script>
-
-                const btn_run = document.getElementById("runButton");
-                const btn_clear = document.getElementById("clearButton");
-                const output_section = document.getElementById("output_section");
-                const input_section = document.getElementById("input_section");
         
         `;
     }

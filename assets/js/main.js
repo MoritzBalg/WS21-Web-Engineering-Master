@@ -1,4 +1,4 @@
-let mainMenu, sideMenu, contentArea, content;
+let mainMenu, sideMenu, contentArea, content, logo;
 let selectedMainTopic = "home", selectedSideTopic = "Willkommen";
 
 window.addEventListener("load", async _=>{
@@ -17,6 +17,15 @@ window.addEventListener("load", async _=>{
     aside = document.getElementById("main-aside");
     contentArea = document.getElementById("content-area");
     hider = document.getElementById("hider");
+    logo = document.getElementById("logo");
+    logo.addEventListener("click", function(){
+        selectedMainTopic = "home",
+        selectedSideTopic = "Willkommen";
+        refreshContent();
+        this.classList.add("animation");
+        setTimeout(()=>{this.classList.remove("animation")}, 500);
+    })
+
 
     hider.addEventListener("click",()=> {
         aside.style.display = "none";
@@ -27,9 +36,6 @@ window.addEventListener("load", async _=>{
         hider.style.display = "block";
         aside.style.display = "block";
     })
-
-
-
     
     loadMainTopics(mainMenu, Object.keys(content));
     refreshContent();

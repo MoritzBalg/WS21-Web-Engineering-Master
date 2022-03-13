@@ -34,5 +34,49 @@ header,
             }
         }
     }
+
+
+
+ #orange-elements{
+            fill: var(--orange);
+            fill-opacity: var(--opacity);
+        }
+
+        #green-elements{
+            fill: var(--green);
+            fill-opacity: var(--opacity);
+
+        }
+        
+        .animation{
+            animation: wishout .5s ease-in ;
+        }
+
+        #logo{
+            --orange: #c04003; 
+            --green: #25544d; 
+            --opacity: 0.8;
+            cursor: pointer;
+
+            &:hover{
+                --green: #c04003; 
+                --orange: #25544d; 
+                --opacity: 0.9;
+    
+            }
+    
+        }
+
+        @keyframes wishout {
+            0%{
+                transform: translateX(-100px);
+                
+            }
+        }
+
+
+
+
+
 }
 

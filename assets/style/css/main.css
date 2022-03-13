@@ -71,6 +71,53 @@ header ul li.active,
   color: whitesmoke;
 }
 
+header #orange-elements,
+.header #orange-elements {
+  fill: var(--orange);
+  fill-opacity: var(--opacity);
+}
+
+header #green-elements,
+.header #green-elements {
+  fill: var(--green);
+  fill-opacity: var(--opacity);
+}
+
+header .animation,
+.header .animation {
+  -webkit-animation: wishout .5s ease-in;
+          animation: wishout .5s ease-in;
+}
+
+header #logo,
+.header #logo {
+  --orange: #c04003;
+  --green: #25544d;
+  --opacity: 0.8;
+  cursor: pointer;
+}
+
+header #logo:hover,
+.header #logo:hover {
+  --green: #c04003;
+  --orange: #25544d;
+  --opacity: 0.9;
+}
+
+@-webkit-keyframes wishout {
+  0% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+}
+
+@keyframes wishout {
+  0% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+}
+
 aside,
 .aside {
   -webkit-user-select: none;

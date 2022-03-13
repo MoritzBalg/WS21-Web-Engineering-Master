@@ -9,6 +9,17 @@ function fibonaccif(first, second){
     }
 }
 
+function fibonaccif(first, second){
+    let _first = first;
+    let _second = second;
+    return ()=>{
+        let result = _first;
+        _first = _second;
+        _second = result + _second;
+        return result;
+    }
+}
+
 //Test
 var fib = fibonaccif(0, 1);
  console.log(fib()) // 0 

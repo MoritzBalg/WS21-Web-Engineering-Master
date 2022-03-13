@@ -3,6 +3,8 @@ const urlsToCache = [
 'index.html',
 'content.json',
 'tasks/',
+'assets/style/css/main.css',
+'assets/js/main.js',
 'https://fonts.googleapis.com/css2?family=Fredoka&display=swap',
 'https://mkaul.github.io/lit/lib/lit.js',
 'https://unpkg.com/vue@2.6.14/dist/vue.js'

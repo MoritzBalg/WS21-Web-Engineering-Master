@@ -1,40 +1,154 @@
-<h2>Aufgabe 1.3 - Wireframe with HTML and CSS: Tribute Page</h2>
+<h2>Aufgabe 12.1. Sicherer ArrayWrapper</h2>
 
 <example-tabs>
     <example-tab title="&#9432;">
-        <h3>Nachbau eines Wireframes mit HTML und CSS</h3>
-        <p>In dieser Aufgabe sollte ein einfaches Wireframe mit HTML und CSS nachgebildet werden. dafür stand lediglich das Mockup zur verfügung.</p>
+        <h3>Exploit Array Wrapper</h3>
+        <p>
+            In der Vorlesung wurde ein ArrayWrapper Exploit gezeigt. Analysieren Sie die Ursache dieses Exploits. Entwickeln Sie ein Sicherheitskonzept und eine ArrayWrapper-Lösung, die gegen diesen Exploit gewappnet ist.
+        </p>
     </example-tab>
 
-    <example-tab title="Mockup">
-        <figure>
-            <img src="tasks/u12/sql_injection/a2.png" alt="Error">
-            <figcaption>Abbildung 1.1: Mock-Up einer einfachen Webseite die nachgebaut werden sollte</figcaption>
-        </figure>
+    <example-tab title="Ursachenanalyse">
+        <p>
+            Das Lücke resultiert aus der Tatsache, dass keine Typenüberprüfung von JS automatisiert vorgenommen wird. Da also nicht gechekt wird, ob es sich in der set-Methode bei dem ersten Parameter um eine Nummer handelt, können auch Key's für das interne JS-Objekt adresseirt und entsprechend geändert werden. Der Exploit nutzt genau dies aus und überschreibt die Prototypenfunktion "push" von Arrays. Ein Aufruf der append Methode, sorgt schließlich dafür, dass die überschriebene Methode auch gecalled wird. Der Exploid speichert sich schließlich den Zustand des internen Array's.
+        </p>
     </example-tab>
 
-    <example-tab title="Code">
-        <file-viewer src="/tasks/u1/Abschnitt1.html">Index File</file-viewer>
+    <example-tab title="Sicherheitskonzept">
+        <p>
+            Prinzipiell sollte man keinem User trauen und die Eingaben sorgfältig prüfen. Anstatt alles zu verbieten, was irgendwie zu Problemen führen könnte (Blacklisting), sollten nur die Eingaben möglich sein, die auch erlaubt sind (Whitelisting). Mit einem einfachen regulären Ausdruck kann sicher gestellt werden, dass nur Nummern als Positionsparameter erlaubt werden. Alternativ oder zusätzlich könnte durch entsprechende Typumwandlung ein ähnliches Verhalten erreicht werden.     
+        </p>
     </example-tab>
 
     <example-tab title="Vorschau">
-        <embed-browser src="/tasks/u1/Abschnitt1.html"></embed-browser>
+        <js-console src="tasks/u12/a1.js"></js-console>
     </example-tab>
   </example-tabs>
 
+  <h2>Aufgabe 12.2 WebGoat Injection</h2>
 
+  <example-tabs>
+    <example-tab title="&#9432;">
+        <h3>Aufgabe 12.2.2</h3>
+        <p>
+            In der ersten Aufgabe sollte als eine kleine Übung eine einfache Abfrage mit SQL abgesetzt werden. 
+        </p>
+    </example-tab>
 
-
-
-<example-tabs>
-    <example-tab title="Live Preview">
-        <h3>Bla</h3>
-        <js-console src="tasks/u12/test.js"></js-console>
+    <example-tab title="Solution">
+        <img src="tasks/u12/sql_injection/a2.png" alt="a2.png">
     </example-tab>
   </example-tabs>
 
   <example-tabs>
-    <example-tab title="Live Preview">
-        <h3>Bla</h3>
-        <js-console src="tasks/u12/test.js"></js-console>
+    <example-tab title="&#9432;">
+        <h3>Aufgabe 12.2.3</h3>
+        <p>
+            Zur weiteren Übung sollte anschließend ein Wert in der Tabelle <dfn>employee</dfn> geändert werden.
+        </p>
     </example-tab>
+
+    <example-tab title="Solution">
+        <img src="tasks/u12/sql_injection/a3.png" alt="a3.png">
+    </example-tab>
+  </example-tabs>
+
+  <example-tabs>
+    <example-tab title="&#9432;">
+        <h3>Aufgabe 12.2.4</h3>
+        <p>
+            Danach sollte die Tabelle um das Datenfeld <dfn>phone</dfn> ergänzt werden.
+        </p>
+    </example-tab>
+
+    <example-tab title="Solution">
+        <img src="tasks/u12/sql_injection/a4.png" alt="a4.png">
+    </example-tab>
+  </example-tabs>
+
+  <example-tabs>
+    <example-tab title="&#9432;">
+        <h3>Aufgabe 12.2.5</h3>
+        <p>
+            Anschließend sollten alle Rechte auf die Tabelle grant_rights für den Benutzer <dfn>unauthorized_user</dfn> gewährt werden.
+        </p>
+    </example-tab>
+
+    <example-tab title="Solution">
+        <img src="tasks/u12/sql_injection/a5.png" alt="a5.png">
+    </example-tab>
+  </example-tabs>
+
+  <example-tabs>
+    <example-tab title="&#9432;">
+        <h3>Aufgabe 12.2.9</h3>
+        <p>
+            Einfache SQL-Injection die ein logisches oder in das SQL-Statement inkludiert.
+        </p>
+    </example-tab>
+
+    <example-tab title="Solution">
+        <img src="tasks/u12/sql_injection/a9.png" alt="a9.png">
+    </example-tab>
+  </example-tabs>
+
+
+  <example-tabs>
+    <example-tab title="&#9432;">
+        <h3>Aufgabe 12.2.10</h3>
+        <p>
+            Wie bereits bei Aufgabe 12.2.9 wird hier eine logische Operation in das Statement eingefügt, was den losgisch Ausdruck allgemeingültig macht (Tautologie).
+        </p>
+    </example-tab>
+
+    <example-tab title="Solution">
+        <img src="tasks/u12/sql_injection/a10.png" alt="a10.png">
+    </example-tab>
+  </example-tabs>
+
+  <example-tabs>
+    <example-tab title="&#9432;">
+        <h3>Aufgabe 12.2.11</h3>
+        <p>
+            Auch hier wird wieder ein logischer Ausdruck in das Statement eingeschoben. Im vergleich zu den vorherigen Aufgaben muss hier darauf Acht gegeben werden, dass der Ausdruck mit korrekten Anführungszeichen versehen wird, damit der Ausdruck wie geplant vom SQL Interpreter ausgewertet wird.
+        </p>
+    </example-tab>
+
+    <example-tab title="Solution">
+        <img src="tasks/u12/sql_injection/a11.png" alt="a11.png">
+    </example-tab>
+  </example-tabs>
+
+  <example-tabs>
+    <example-tab title="&#9432;">
+        <h3>Aufgabe 12.2.12</h3>
+        <p>
+            In dieser Teil AUfgabe wurde ein zusätzliches SQL Statement an das bestehende angehangen. Dieses Statement hat dafür gesorgt, dass das Feld <dfn>salary</dfn> in der Tabelle <dfn>employee</dfn> geupdated wurde.
+        </p>
+    </example-tab>
+
+    <example-tab title="Solution">
+        <img src="tasks/u12/sql_injection/a12.png" alt="a12.png">
+    </example-tab>
+  </example-tabs>
+
+  <example-tabs>
+    <example-tab title="&#9432;">
+        <h3>Aufgabe 12.2.13</h3>
+        <p>
+            In der letzten Aufgabe im Bereich SQL-Injection war es das Ziel, die Tabelle <dfn>access_log</dfn> zu löschen. Dazu wurde ein drop tabel Statement eingebaut.  
+        </p>
+    </example-tab>
+
+    <example-tab title="Solution">
+        <img src="tasks/u12/sql_injection/a13.png" alt="a13.png">
+    </example-tab>
+  </example-tabs>
+
+  
+
+  
+
+  <h2>Aufgabe 12.3. WebGoat XSS</h2>
+  <h2>Aufgabe 12.4. WebGoat Cross-Site Request Forgeries</h2>
+  <h2>Aufgabe 12.5. Integration in die eingene Webseite</h2>

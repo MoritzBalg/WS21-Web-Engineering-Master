@@ -1,5 +1,5 @@
 <p>
-    Da immer mehr Endanwender Webseiten nicht mehr primär über einen Desktop Pc aufrufen sondern vermehrt auch über mobile Endgeräte (Siehe Abb. 2.1) wurde der Anspruch an Webseiten das Design benutzerfreundlicher für mobile Geräte zu gestalten immer größer.
+    Da immer mehr Endanwender Webseiten nicht mehr primär über einen Desktop PC aufrufen, sondern vermehrt auch über mobile Endgeräte (Siehe Abb. 2.1) wurde der Anspruch an Webseiten das Design benutzerfreundlicher für mobile Geräte zu gestalten immer größer.
     <figure>
         <img src="tasks/u2/mobil_vs_desktop.png" alt="Statisitik mobil vs desktop">
         <figcaption>
@@ -8,7 +8,7 @@
     </figure> 
 </p>
 
-<p>Da man doppelte Code-Basen gerne vermeiden möchte und nicht eine mobile und eine stationäre Webseite pflegen möchte, wurden die möglichkeiten mit HTML, CSS und JS immer größer Webseiten responsiv zu gestalten. Dies bedeutet die Webseite passt sich dynamisch an die Bildschirmauflösung an. Neben neuen Einheiten in CSS wie <dfn>VH</dfn> und <dfn>VW</dfn> gibt es viele weitere Layoutmöglichkeiten wie <dfn>Flexbox</dfn> und <dfn>Grid</dfn> die das entwickeln einer reponsiven Seite vereinfachen sollen. Diese beiden Technologien werden in dieser Aufgabe präsentiert.
+<p>Da man doppelte Code-Basen gerne vermeiden möchte und nicht eine mobile und eine stationäre Webseite pflegen möchte, wurden die Möglichkeiten mit HTML, CSS und JS immer größer Webseiten responsiv zu gestalten. Dies bedeutet, dass die Webseite sich dynamisch an die Bildschirmauflösung anpasst. Neben neuen Einheiten in CSS wie <dfn>VH</dfn> und <dfn>VW</dfn> gibt es viele weitere Layoutmöglichkeiten wie <dfn>Flexbox</dfn> und <dfn>Grid</dfn> die das Entwickeln einer reponsiven Seite vereinfachen sollen. Diese beiden Technologien werden in dieser Aufgabe präsentiert.
 </p>
 
 <h2>Aufgabe 2.1 - Responsiv mit Flexbox Desktop-First</h2>
@@ -16,8 +16,8 @@
 <example-tabs>    
     <example-tab title="&#9432;">
         <h3>Desktop-First und Flexbox</h3>
-        <p>In dieser Aufgabe wurde ein responsives Layout erarbeitet. Dafür wurden sogenannte <dfn>Flexboxen</dfn> eingesetzt. Diese erlauben es die Breite und Höhe dynamisch an den Seitenkontext anzupassen und verhinden ein Überlaufen der Komponenten (Komponenten bleiben breiter als der dargestellte Bereich). Das Flex-Layout ist ein eindimensionales Design Element, welches je nach Orientierung <dfn>flex-orientation</dfn> entweder in die höhe oder in die Breite wachen kann <br>
-        Das Layout sollte dabei nach der <dfn>Desktop-First</dfn> Strategie entwickelt werden, welche es vorsieht zuuerst die Webseite auf ein Desktop-Gerät angepasst zu gestalten und anschließend mit <dfn>Media-Querys</dfn> entsprechende Breakpoints zu definieren um die Seite an kleinere Bildschirme anzupassen. Man erkennt die Desktop-First Startegie im Code meist daran, wenn das <dfn>max-width</dfn> Attribut eingesetzt wird. 
+        <p>In dieser Aufgabe wurde ein responsives Layout erarbeitet. Dafür wurden sogenannte <dfn>Flexboxen</dfn> eingesetzt. Diese erlauben, die Breite und Höhe dynamisch an den Seitenkontext anzupassen und verhindern ein Überlaufen der Komponenten (Komponenten bleiben breiter als der dargestellte Bereich). Das Flex-Layout ist ein eindimensionales Design Element, welches je nach Orientierung <dfn>flex-orientation</dfn> entweder in die Höhe oder in die Breite wachen kann. <br>
+        Das Layout sollte dabei nach der <dfn>Desktop-First-Strategie</dfn> entwickelt werden, welche es vorsieht, zuerst die Webseite auf ein Desktop-Gerät angepasst zu gestalten und anschließend mit <dfn>Media-Querys</dfn> entsprechende Breakpoints zu definieren, um die Seite an kleinere Bildschirme anzupassen. Man erkennt die Desktop-First-Startegie im Code meist daran, wenn das <dfn>max-width</dfn> Attribut eingesetzt wird. 
         </p>
     </example-tab>
 
@@ -43,8 +43,8 @@
     <example-tab title="&#9432;">
         <h3>Mobil-First und Grid-Layout</h3>
         <p>
-            Im gegensatz zu <abbr title="Desktop-First und Flexbox">Aufgabe 1</abbr> sollte bei dieser Aufgabe nach der <dfn>Mobil-First</dfn> Strategie verfahren werden. Dazu wird die Webseite für einen kleinen meist im Hochformat ausgerichtetes Display entworfen und später durch Media Media-Querys an ein großes Display angepasst. Diese Startegie kann im Code an den <dfn>min-width</dfn> Attribut erkannt werden. <br>
-            Außerdem kam bei dieser Aufgabe das Gridlayout zum Einsatz, welches im Gegensatz zu der Flexbox ein zweidimensionales Layout darstellt. Dies bietet sich also besonders an, wenn man sowohl in die Höhe als uch in die Breite zeitgleich arbeiten möchte.
+            Im Gegensatz zu <abbr title="Desktop-First und Flexbox">Aufgabe 1</abbr> sollte bei dieser Aufgabe nach der <dfn>Mobil-First</dfn> Strategie verfahren werden. Dazu wird die Webseite für einen kleinen, meist im Hochformat ausgerichtetes Display, entworfen und später durch Media-Querys an ein großes Display angepasst. Diese Strategie kann im Code an den <dfn>min-width</dfn> Attribut erkannt werden. <br>
+            Außerdem kam bei dieser Aufgabe das Gridlayout zum Einsatz, welches im Gegensatz zu der Flexbox ein zweidimensionales Layout darstellt. Dies bietet sich also besonders an, wenn man sowohl in die Höhe als auch in die Breite zeitgleich arbeiten möchte.
         </p>
     </example-tab>
 
@@ -63,7 +63,7 @@
     <example-tab title="&#9432;">
         <h3>Der Holy Grail</h3>
         <p>
-            Als <dfn>Holy Grail</dfn> versteht man unter Webdesignern bzw. Webdeveloper ein Layout, welches sehr oft auf Webseiten zum Einsatz kommt. Dies sieht im Allgemeinen einen Header, einen Hauptbereich, einen Seitenbereich und einen Footer vor. Dabei sollen Header und Footer am oberen und unteren Ende der Webseite plaziert sein und einen Abschluss für diese Darstellten. Durch die Integration vom Flexbox- und Grid-Layout wurde die erstelung eines Holy-Grail deutlich vereinfacht. In dieser Aufgabe kann man beide Varianten betrachten.
+            Als <dfn>Holy Grail</dfn> versteht man unter Webdesignern bzw. Webdeveloper ein Layout, welches sehr oft auf Webseiten zum Einsatz kommt. Dies sieht im Allgemeinen einen Header, einen Hauptbereich, einen Seitenbereich und einen Footer vor. Dabei sollen Header und Footer am oberen und unteren Ende der Webseite platziert sein und einen Abschluss für diese darstellten. Durch die Integration vom Flexbox- und Grid-Layout wurde die Erstellung eines Holy-Grail deutlich vereinfacht. In dieser Aufgabe kann man beide Varianten betrachten.
         </p>
     </example-tab>
 
@@ -96,7 +96,7 @@
 
     <example-tab title="&#9432;">
         <h3>Responiv Design mit Grid-Laout</h3>
-        <p>In dieser Aufgabe wurde das Wireframe aus <abbr title="Wireframe with HTML and CSS (Product Landing Page)">Aufgabe 1.5</abbr> nachgebaut und mit dem Grid-Laout gestaltet. Dadurch passt sich das Wireframe auch Responiv an den Bildschirm an. Sie können dieses Verhalten betrachten, indem Sie Ihren Browser langsam kleiner ziehen.</p>
+        <p>In dieser Aufgabe wurde das Wireframe aus <abbr title="Wireframe with HTML and CSS (Product Landing Page)">Aufgabe 1.5</abbr> nachgebaut und mit dem Grid-Laout gestaltet. Dadurch passt sich das Wireframe auch responiv an den Bildschirm an. Sie können dieses Verhalten betrachten, indem Sie Ihren Browser langsam kleiner ziehen.</p>
     </example-tab>
     
 <example-tab title="Mockup">

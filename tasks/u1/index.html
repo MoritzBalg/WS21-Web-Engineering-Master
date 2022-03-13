@@ -1,5 +1,5 @@
 <p>
-    Die ertse Aufgabe soll eine schnelle Einführung in das Thema Webengineering geben, indem grundlegende Technologien wie HTML, CSS und HTTP vorgestellt und in ersten Aufgaben eingesetzt werden. In den ersten zwei Aufgaben werden historische Aspkete zum WWW und technische feinheiten des HHTP-Protokolls erläutert. In den weiteren Aufgaben werden Wireframes mit HTML und CSS nachgebildet.  
+    Die erste Aufgabe soll eine schnelle Einführung in das Thema Webengineering geben, indem grundlegende Technologien wie HTML, CSS und HTTP vorgestellt und in ersten Aufgaben eingesetzt werden. In den ersten zwei Aufgaben werden historische Aspekete zum WWW und technische Feinheiten des HTTP-Protokolls erläutert. In den weiteren Aufgaben werden Wireframes mit HTML und CSS nachgebildet.  
 </p>
 
 <h2>Aufgabe 1.1 - Fachliche Argumentation über Erfolgsprinzipien des WWW</h2>
@@ -11,7 +11,7 @@
 
 <details class="question-box">
     <summary>Was sind die fachlichen Argumente, warum das WWW dennoch ein Erfolg wurde?</summary>
-    <p>Das Konzept von TBL sah es vor, dass das Protokoll, die Auszeichnungssprache und die Identifikation von Ressourcen losgelöst voneinander entwickelt werden konnten. Der Erfolg gibt TBL recht. Auch heute ca. 30 Jahre später wird immer noch auf seiner Basis weiterentwickelt. </p>
+    <p>Das Konzept von TBL sah es vor, dass das Protokoll, die Auszeichnungssprache und die Identifikation von Ressourcen losgelöst voneinander entwickelt werden konnten. Der Erfolg gibt TBL recht. Auch heute, ca. 30 Jahre später, wird immer noch auf seiner Basis weiterentwickelt. </p>
 </details>
 
 <details class="question-box">
@@ -28,7 +28,7 @@
 
 <details class="question-box">
     <summary>Sie bekommen im Browser den HTTP Status Code 301. Was hat das zu bedeuten?</summary>
-    <p>Die angefragte Ressource wurde dauerhaft verschoben. Es wird ein redirect zur neuen Quelle mittels des Location Feldes im Header durchgeführt.</p>
+    <p>Die angefragte Ressource wurde dauerhaft verschoben. Es wird ein redirect zur neuen Quelle mittels des Location-Feldes im Header durchgeführt.</p>
 </details>
 
 <details class="question-box">
@@ -38,12 +38,12 @@
 
 <details class="question-box">
     <summary>Sie bekommen im Browser den HTTP Status Code 403. Was hat das zu bedeuten? Was können Sie dagegen tun?</summary>
-    <p>Hierbei handelt es sich um einen Forbidden response. Dies bedeutet, dass der Server die Anfrage zwar bearbeiten könnte, dies aber aufgrund fehlender Berechtigungen verhindert. Ein Log-in bzw. eine Erneuerung der Session könnte Abhilfe schaffen.</p>
+    <p>Hierbei handelt es sich um einen Forbidden Response. Dies bedeutet, dass der Server die Anfrage zwar bearbeiten könnte, dies aber aufgrund fehlender Berechtigungen verhindert. Ein Log-in bzw. eine Erneuerung der Session könnte Abhilfe schaffen.</p>
 </details>
 
 <details class="question-box">
     <summary>In einer Webanwendung benötigen Sie eine OPTIONS-Anfrage, die die Optionen des Servers vor dem eigentlichen Zugriff erfragen soll. Aus Performanzgründen soll die Abfrage jedoch cacheable sein. Wie könnten Sie dafür eine Lösung angehen?</summary>
-    <p>Options-Abfragen sind idempotent. Das bedeutet, dass eine Anfrage beliebig oft gestellt werden kann und immer das gleiche Ergebnis liefert. Da das Ergebnis immer gleich ist, kann auch einfach nach einmaliger Abfrage der Rückgabewert gespeichert werden.</p>
+    <p>Optionsabfragen sind idempotent. Das bedeutet, dass eine Anfrage beliebig oft gestellt werden kann und immer das gleiche Ergebnis liefert. Da das Ergebnis immer gleich ist, kann auch einfach nach einmaliger Abfrage der Rückgabewert gespeichert werden.</p>
 </details>
 
 
@@ -52,7 +52,7 @@
 <example-tabs>
     <example-tab title="&#9432;">
         <h3>Nachbau eines Wireframes mit HTML und CSS</h3>
-        <p>In dieser Aufgabe sollte ein einfaches Wireframe mit HTML und CSS nachgebildet werden. dafür stand lediglich das Mockup zur verfügung.</p>
+        <p>In dieser Aufgabe sollte ein einfaches Wireframe mit HTML und CSS nachgebildet werden. Dafür stand lediglich das Mockup zur Verfügung.</p>
     </example-tab>
 
     <example-tab title="Mockup">
@@ -77,7 +77,7 @@
 
     <example-tab title="&#9432;">
         <h3>Nachbau eines Wireframes mit HTML und CSS</h3>
-        <p>Auch hier sollte ein einfaches Wireframe nachgebildet werden. Damit das Wireframe möglichst exakt nachgebildet werden konnte, war neben dem Mockup auch der Farbcode <input type="color" value="#b2d6d1"> angegeben sowie ein Hinweis auf die <a href="https://fonts.google.com">Google-Fonts</a> die in der Webseite eingestezt wurden.</p>
+        <p>Auch hier sollte ein einfaches Wireframe nachgebildet werden. Damit das Wireframe möglichst exakt nachgebildet werden konnte, war neben dem Mockup auch der Farbcode <input type="color" value="#b2d6d1"> angegeben sowie ein Hinweis auf die <a href="https://fonts.google.com">Google-Fonts</a>, die in der Webseite eingesetzt wurden.</p>
     </example-tab>
 
     <example-tab title="Mockup">
@@ -101,7 +101,7 @@
   <example-tabs>
     <example-tab title="&#9432;">
         <h3>Nachbau eines Wireframes mit HTML und CSS</h3>
-        <p>Auch in der letzten Aufgabe sollte ein etwas aufwendigeres Wireframe nachgebildet werden. Im Gegensatz zu den vorherigen Aufgaben besteht hier die Schwirigkeit in den nebeneinander plazierten Elementen. Diese lassen sich in einem Fixen Layout recht einfach umsetzten. Ändert sich die Größe des Displays führt dies jedoch zu Problemen. Damit sich Webseiten responsiv verhalten, sind weritere Techniken notwendig, die in Aufgabe 2 vorgestellt werden.</p>
+        <p>Auch in der letzten Aufgabe sollte ein etwas aufwendigeres Wireframe nachgebildet werden. Im Gegensatz zu den vorherigen Aufgaben besteht hier die Schwierigkeit in den nebeneinander platzierten Elementen. Diese lassen sich in einem fixen Layout recht einfach umsetzten. Ändert sich die Größe des Displays, führt dies jedoch zu Problemen. Damit sich Webseiten responsiv verhalten, sind weitere Techniken notwendig, die in Aufgabe 2 vorgestellt werden.</p>
     </example-tab>
     
     <example-tab title="Mockup">
@@ -121,4 +121,4 @@
   </example-tabs>
 
   <h2>Aufgabe 1.6 - Integration in die eigene Webseite</h2>
-  <p>Diese Webseitre wurde vollständig mit HTML und CSS gebaut. Weitere auf diesen Technologienen, die auf diesen grundlegenden Elementen aufbauen werden in den weiteren Aufgaben präsentiert.</p>
+  <p>Diese Webseite wurde vollständig mit HTML und CSS gebaut. Weitere auf diesen Technologien, die auf diesen grundlegenden Elementen aufbauen, werden in den weiteren Aufgaben präsentiert.</p>

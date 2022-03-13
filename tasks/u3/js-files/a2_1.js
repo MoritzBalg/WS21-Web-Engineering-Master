@@ -1,17 +1,19 @@
-class PubSub{
-        
-    constructor(){
-        this.subscriber = [];
-    }
-
-    subscribe(func){
-        this.subscriber.push(func);
-
-    }
-
-    publish(message){
-        for(let sub of this.subscriber){
-            sub(message);
+function pubsub(){
+    let subscriber = [];
+    return{
+        subscribe: (func)=>{
+            subscriber.push(func);
+        },
+        publish: (message)=>{
+            for(let sub of subscriber){
+                sub(message);
+            }
         }
+
     }
 }
+
+//Test
+const my_pubsub = pubsub();
+my_pubsub.subscribe(alert);
+my_pubsub.publish("It works!"); // alert("It works!")

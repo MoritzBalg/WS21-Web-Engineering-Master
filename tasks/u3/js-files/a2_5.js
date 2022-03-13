@@ -10,6 +10,12 @@ function applyg(binFunction){
     return func;
 }
 
+//Test
 function add(a,b){
-    return a + b;
+    return a+b;
 }
+
+console.log(applyg(add)(3)(4)(5)());//12
+console.log(applyg(add)(1)(2)(4)(8)());//15 
+
+

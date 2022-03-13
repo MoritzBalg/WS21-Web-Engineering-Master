@@ -10,3 +10,14 @@ function once(func){
         }
     }
 }
+
+//Test
+
+function add(a,b){
+    return a+b;
+}
+
+const add_once = once(add);
+console.log(add_once(3, 4));
+console.log(add_once(3, 4));
+            

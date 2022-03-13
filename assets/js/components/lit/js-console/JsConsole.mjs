@@ -102,8 +102,26 @@ ${this.code}
             </div>
             <div id="output">
                 <div id="button-section">
-                    <button id="clearButton" @click="${()=>{console.clear = ()=>{this.result = ">\n"}; console.clear();}}">Clear</button>
-                    <button id="runButton" @click="${()=>{ console.log = (msg)=>{this.result += msg + "\n"}; eval(this.shadowRoot.querySelector('#input_section').innerText);}}">Run</button>
+                    <button id="clearButton" @click="${()=>{
+                        const orig_function = console.clear;
+                        console.clear = ()=>{this.result = ">\n"}; 
+                        console.clear();
+                        console.clear = orig_function;
+                    }
+                    
+                    }">Clear</button>
+                    <button id="runButton" @click="${()=>{
+                        //Save original function
+                        const orig_function_log = console.log;
+                        const orig_function_error = window.onerror;
+                        //override Function
+                        console.log = (msg)=>{this.result += msg + "\n"};
+                        window.onerror = console.log;
+                        eval(this.shadowRoot.querySelector('#input_section').innerText);
+                        //Restore original Functions
+                        console.log = orig_function_log;
+                        window.onerror = orig_function_error;
+                    }}">Run</button>
                 </div>
                 <div id="output_section">
                     <pre>${this.result}</pre>

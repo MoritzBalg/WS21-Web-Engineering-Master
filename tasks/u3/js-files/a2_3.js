@@ -1,13 +1,19 @@
-class Fibonacci{
-    constructor(first, second){
-        this.first = first;
-        this.second = second;
-    }
-
-    fib(){
-        const result = this.first + this.second;
-        this.first = this.second;
-        this.second = result;
+function fibonaccif(first, second){
+    let _first = first;
+    let _second = second;
+    return ()=>{
+        const result = _first + _second;
+        _first = _second;
+        _second = result;
         return result;
     }
 }
+
+//Test
+var fib = fibonaccif(0, 1);
+ console.log(fib()) // 0 
+ console.log(fib()) // 1 
+ console.log(fib()) // 1 
+ console.log(fib()) // 2 
+ console.log(fib()) // 3 
+ console.log(fib()) // 5

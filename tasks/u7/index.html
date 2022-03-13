@@ -1,5 +1,5 @@
 <p>
-    JavaScript hat sich in den vergangenen Jahre immer weiter etabliert. Gerade durch die Google V8-Engine ist auch die Sprache immer performanter geworden und ist inzwischen eine sehr beliebte Programmiersprache. NodeJS adaptiert die Google Engine um JS auch Serverseitig ausführen zu können. Eine Vielzahl an Erweiterungspaketen, die mit dem <dfn>Node Package Manager</dfn> (NPM) installiert werden können, bieten einen vergleichsweisen unkomplizierten Einstieg in die Backend Entwicklung. Ein wichtiger Vorteil, den auch Entwickler von Node erkannt haben, ist die Tatsache, dass man mit NodeJS als Backend nur noch eine vorherschende Programmiersprache im Projekt hat.   
+    JavaScript hat sich in den vergangenen Jahren immer weiter etabliert. Gerade durch die Google V8-Engine ist auch die Sprache immer performanter geworden und ist eine sehr beliebte Programmiersprache. Ryan Dahl hat mit NodeJS die Google-Engine adaptiert, um JS auch serverseitig ausführen zu können. Eine Vielzahl an Erweiterungspaketen, die mit dem <dfn>Node Package Manager</dfn> (NPM) installiert werden können, bieten einen vergleichsweisen unkomplizierten Einstieg in die Backendentwicklung. Ein wichtiger Vorteil ist die Tatsache, dass man mit NodeJS als Backend nur noch eine vorherrschende Programmiersprache im Projekt hat.   
 </p>
 
 <h2>Aufgabe 7.1 - File Generatoren</h2>
@@ -7,7 +7,7 @@
 <example-tabs>
     <example-tab title="&#9432;">
         <h3>Datei-Erzeugung über die Kommandozeile</h3>
-        <p>In der ersten Aufgabe sollten zwei Kommandozeilen-Programme mit NodeJS entworfen werden, die es ermöglichen große Dateien über die Kommandozeile zu erzeugen. Die Datei <em>number_file_gen.js</em> erszellt eine Datei mit x Zeilen und gibt jeweils die Zeilennummer am Anfang aus. Das Programm <em>aplpha_file_gen.js</em> erstellt ebenfalls eine Datei mit x Zeielen. I9m Gegensatz zum ersten Programm wird hierbei nicht die Zeilennummer sondern Buchstaben(Bsp.: A,...,Z,AA) ausgegeben.</p>
+        <p>In der ersten Aufgabe sollten zwei Kommandozeilen-Programme mit NodeJS entworfen werden, die es ermöglichen, große Dateien über die Kommandozeile zu erzeugen. Die Datei <em>number_file_gen.js</em> erstellt eine Datei mit x Zeilen und gibt jeweils die Zeilennummer am Anfang aus. Das Programm <em>aplpha_file_gen.js</em> erstellt ebenfalls eine Datei mit x Zeilen. Im Gegensatz zum ersten Programm wird hierbei nicht die Zeilennummer sondern Buchstaben(Bsp.: A,...,Z,AA) ausgegeben.</p>
     </example-tab>
 
     <example-tab title="Code - File Gen">
@@ -26,7 +26,7 @@
     <example-tab title="&#9432;">
         <h3>Dateien zusammenfügen mit Read und Stream</h3>
         <p>
-            In dieser Aufgabe sollten zwei Programme entwickelt werden die zwei Dateien zeilenweise miteinander konkartiniert. Dazu sollte einmal eine Variante mit Streams und einmal ohne entwickelt werden. Einen kleinen Performance Vergleich zwischen den beiden Verfahren finden Sie unter dieser Aufgabe.
+            In dieser Aufgabe sollten zwei Programme entwickelt werden, die zwei Dateien zeilenweise miteinander konkartiniert. Dazu sollte einmal eine Variante mit Streams und einmal ohne entwickelt werden. Einen kleinen Performance Vergleich zwischen den beiden Verfahren finden Sie unter dieser Aufgabe.
         </p>
     </example-tab>
 
@@ -46,16 +46,6 @@
         </p>
     </example-tab>
 </example-tabs>
-
-<details class="question-box">
-    <summary>Ergebnisse der Performanz-Messung</summary>
-    <p>
-        Grundlage waren 5 Messungen: <br>
-        Async: 1.329ms <br>
-        Stream: 0.971ms            
-    </p>
-</details>
-
 
 <h2>Aufgabe 7.3 - Express.js Server</h2>
 <strong>Nachholen</strong>

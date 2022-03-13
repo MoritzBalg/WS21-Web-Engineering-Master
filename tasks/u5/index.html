@@ -1,5 +1,5 @@
 <p>
-    In dieser Aufgabe dreht sich alles um die <strong>asychrone Programmierung</strong>. Da JavaScript grundsätzlich nur in einem Thread ausgeführt wird, muss man sich spätestens bei zeitintensiven Berechnungen fragen wie man dafür sorgen kann, dass die Webseite an anderern Stellen nicht blokiert oder sogar nicht  mehr korrekt angezeigt werden kann. Eine Möglichkeit ein solches Verhalten umzusetzen ist der Einsatz von <dfn>Promisses</dfn> <em>dt. Versprechen</em>. Wie man bereist bei dem Namen vermuten könnte, erhält man bei einer Berechnung nicht sofort ein Ergebnis sondern erstmal nur ein Prommis, dass ein Ergebnis in Zukunft geliefert wird. Auf die Erfüllung <dfn>resolve</dfn> oder die Verwerfung <dfn>reject</dfn> kann man entsprechend warten und zwischenzeitlich wieteren Code ausführen. Über Callback Funktionen kann dann definiert werden, wie verfahren werden soll wenn das Promises fullfilled wird. 
+    In dieser Aufgabe dreht sich alles um <strong>asychrone Programmierung</strong>. Da JavaScript grundsätzlich nur in einem Thread ausgeführt wird, muss man sich spätestens bei zeitintensiven Berechnungen fragen, wie man dafür sorgen kann, dass die Webseite an anderer Stelle nicht blockiert oder sogar nicht mehr korrekt angezeigt werden kann. Eine Möglichkeit, ein solches Verhalten umzusetzen, ist der Einsatz von <dfn>Promisses</dfn> <em>dt. Versprechen</em>. Wie man bereist bei dem Namen vermuten kann, erhält man bei einer Berechnung nicht sofort ein Ergebnis, sondern erst mal nur ein Prommis, dass ein Ergebnis in Zukunft geliefert wird. Auf die Erfüllung <dfn>resolve</dfn> oder die Verwerfung <dfn>reject</dfn> kann man entsprechend warten und zwischenzeitlich weiteren Code ausführen. Über Callback Funktionen kann dann definiert werden, wie verfahren werden soll wenn das Promises fullfilled wird. 
     <figure>
         <img src="tasks/u5/promisses_states.png" alt="Promisses States">
         <figcaption>Abbildung 5.1: Zustandsgraph von Promisses. Ausgestellte Promisses sind im Pending Zustand und können, sobald die Berechnungen fertig sind, entweder resolved oder rejected werden. <reference-source author="freeCodeCamp" year="2022" url="https://www.freecodecamp.org/news/javascript-es6-promises-for-beginners-resolve-reject-and-chaining-explained/">Resolve, Reject, and Chaining in JS and ES6</reference-source> 
@@ -8,7 +8,7 @@
 </p>    
     
 <p>
-    Zwei Verfahren, die in dieser Übung genauer vorgestellt werden sind die <dfn>.then</dfn>- sowie die <dfn>async/await</dfn> Syntax. Weiterhin wird in Aufgabe 5.3 darauf eingegangen, wie man mittels <dfn>Webworker</dfn> eine noch komplexere Asynchronität erreichen kann <reference-source author="Daniel Herken" page="127" year="2021">Javascript Kompendium</reference-source>.
+    Zwei Verfahren, um mit Prommises umzugehen, die in dieser Übung genauer vorgestellt werden, sind die <dfn>.then</dfn>- sowie die <dfn>async/await</dfn> Syntax. Weiterhin wird in Aufgabe 5.3 darauf eingegangen, wie man mittels <dfn>Webworker</dfn> eine noch komplexere Asynchronität erreichen kann <reference-source author="Daniel Herken" page="127" year="2021">Javascript Kompendium</reference-source>.
 </p>
        
 
@@ -18,7 +18,7 @@
 
         <example-tab title="&#9432;">
             <h3>Konkartination von zwei Text Dateien</h3>
-            <p>In dieser Aufgabe sollten zwei Textdateien durch die <dfn>fetch-Api</dfn> angefordert werden und die Texte Zeilenweise konkartiniert werden. Dabei durfte nicht die neuere <dfn>Async/Await</dfn> Syntax verwendet werden, sondern lediglich die <dfn>.then</dfn> und die <dfn>.chatch</dfn> Methode </p>
+            <p>In dieser Aufgabe sollten zwei Textdateien durch die <dfn>fetch-Api</dfn> angefordert werden und die Texte zeilenweise konkartiniert werden. Dabei durfte nicht die neuere <dfn>Async/Await</dfn> Syntax verwendet werden, sondern lediglich die <dfn>.then</dfn> und die <dfn>.chatch</dfn> Methode </p>
         </example-tab>
         
         <example-tab title="Code - a1.html">
@@ -69,7 +69,7 @@
 
     <example-tab title="&#9432;">
         <h3>Primzahlberechnung mit und ohne WebWorker</h3>
-        <p>Für Berechnungen und Operationen mit JavaScript steht einem prinzipiell ein Thread zur Verfügung. Manchmal möchte man jedoch gewisse Arbeiten auslagern um einen Flüssigeren Aufbau der Webseite zu gewährleisten, damit das DOM anständig gerendert werden kann. In einem solchen Fall kann man auf die bereits in den ersten Aufgaben vorgesstellten Promises zurückgreifen oder, falls dies nicht ausreichen sollte, einen zusätzlichen <dfn>WebWorker</dfn> definieren, der die Berechnungen in einem gesonderten Thread durchführt. In Aufgabe 5.3 sollten alle Primzahlen bis zu einer gegebenen oberen Schranke berechnet werden. Einmal mit und einmal ohne WebWorker.</p>
+        <p>Für Berechnungen und Operationen mit JavaScript steht einem prinzipiell ein Thread zur Verfügung. Manchmal möchte man jedoch gewisse Arbeiten auslagern, um einen flüssigeren Aufbau der Webseite zu gewährleisten, damit das DOM anständig gerendert werden kann. In einem solchen Fall kann man auf die bereits in den ersten Aufgaben vorgestellten Promises zurückgreifen oder, falls dies nicht ausreichen sollte, einen zusätzlichen <dfn>WebWorker</dfn> definieren, der die Berechnungen in einem gesonderten Thread durchführt. In Aufgabe 5.3 sollten alle Primzahlen bis zu einer gegebenen oberen Schranke berechnet werden. Einmal mit und einmal ohne WebWorker.</p>
     </example-tab>
     
     <example-tab title="Code - Primzahlen ohne WW">
@@ -101,7 +101,7 @@
     <example-tab title="&#9432;">
         <h3>Inhalte dynamisch aus einer Quelle laden</h3>
         <p>
-            In dieser Aufgabe sollte eine <abbr title="Single Page Application">SPA</abbr> entwickelt werden, die basierend auf einem <dfn>JSON</dfn> File die Daten und Einträge dynamisch anpassen kann. Dazu wird zu beginn das JSON File geladen und Schrittweise durch iteriert.
+            In dieser Aufgabe sollte eine <abbr title="Single Page Application">SPA</abbr> entwickelt werden, die basierend auf einem <dfn>JSON</dfn> File die Daten und Einträge dynamisch anpassen kann. Dazu wird zu Beginn das JSON File geladen und Schrittweise durch iteriert.
         </p>
     </example-tab>
 
@@ -122,5 +122,5 @@
 
 <h2>Aufgabe 5.5 - Integration in die eigene Webseite</h2>
 <p>
-    Einige Techniken die in dieser Aufgabe vorgestellt wurden, sind auch in dieser Webseite wiederzufinden. Beispielsweise werden die Inhalte ähnlich zu Aufgabe 5.4 aus einer JSON Datei geladen und demnach die Menüs und Inhalte dargestellt. Die Code- und Livevorschau verwenden ebenfalls die fetch-api um die angegebenen Dateien zu laden und anzuzeigen.
+    Einige Techniken, die in dieser Aufgabe vorgestellt wurden, sind auch in dieser Webseite wiederzufinden. Beispielsweise werden die Inhalte ähnlich zu Aufgabe 5.4 aus einer JSON Datei geladen und demnach die Menüs und Inhalte dargestellt. Die Code- und Livevorschau verwenden ebenfalls die fetch-api um die angegebenen Dateien zu laden und anzuzeigen.
 </p>

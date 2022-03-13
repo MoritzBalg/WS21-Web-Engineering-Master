@@ -25,7 +25,7 @@ customElements.define("reference-source", class extends LitElement{
 
     render(){
         return html`
-            ${this.author.split(" ")[1] === undefined?"":this.author.split(" ")[1] + ", "} ${this.author.split(" ")[0]} (${this.year===undefined?"o.J":this.year}): <slot></slot> ${this.url === undefined ? "":html`[<a href="${this.url}">Link</a>]`}
+            ${this.author.split(" ")[1] === undefined?"":this.author.split(" ")[1] + ", "} ${this.author.split(" ")[0]} (${this.year===undefined?"o.J":this.year}): <slot></slot> ${this.url === undefined ? "":html`[<a href="${this.url}" target="_blank">Link</a>]`}
             
         `;
     }

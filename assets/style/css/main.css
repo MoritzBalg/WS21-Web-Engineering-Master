@@ -217,6 +217,14 @@ aside ul li.active,
   }
 }
 
+dfn {
+  color: #b8ccc1;
+}
+
+mark {
+  background-color: #b8ccc1;
+}
+
 #side-wrapper {
   min-height: 100vh;
   display: -ms-grid;
@@ -369,8 +377,14 @@ example-tab h3 {
   padding-top: 0;
 }
 
-example-tabs {
+tab-view {
   margin: 1rem 0;
+  -webkit-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+  --primary-color: #b8ccc1;
+  --primary-color-hover: #3a6c64;
+  --secondary-color: rgb(117, 117, 117);
+  --padding: 1rem;
 }
 
 * {
@@ -444,13 +458,5 @@ reference-source {
   font-style: italic;
   color: #bf5c2a;
   display: inline;
-}
-
-dfn {
-  color: #b8ccc1;
-}
-
-mark {
-  background-color: #b8ccc1;
 }
 /*# sourceMappingURL=main.css.map */

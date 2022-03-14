@@ -2,27 +2,27 @@
     Aufgabe 9 beschäftigt sich mit <dfn>Progressive Web Apps</dfn> (PWA). Wie bereits in Aufgabe 2 herausgestellt wurde, erfolgt der zugriff auf Webseiten immer mehr über mobile Endgeräte. Neben responisven Webseiten wurden in den vergangenen Jahren auch oft Apps für die mobile Anwendung entwickelt. Dadurch ergeben sich doppelte Code-Basen, die auch von unterschiedlichen Teams meist mit unterschiedlichen Programmiersprachen gepflegt werden müssen. PWA's sollen dem Abhilfe schaffen, indem Webseiten wie native Apps installierbar werden. Des Weiteren sollen sie auch offline verwendbar werden, indem sie mittels Service Worker die Webseite cachen.  
 </p>
 <h2>Aufgabe 9.1 - PWA</h2>
-<example-tabs>
-    <example-tab title="&#9432;">
+<tab-view>
+    <tab-element tab-title="&#9432;">
         <h3>Erste PWA</h3>
         <p>In dieser Aufgabe sollte aus dem aus Aufgabe <dfn>5.4</dfn> entworfenen Web Navigator eine PWA entwickelt werden. Da es schwierig ist eine PWA in einer Webseite zu präsentieren, wird in dieser Aufgabe lediglich das Vorgehen beschrieben. Sollten Sie dennoch einen Blick in die PWA werfen wollen, können Sie sich alle relevanten Dateien als ZIP iim letzten Tab herunterladen.</p>
-    </example-tab>
+    </tab-element>
 
-    <example-tab title="Vorgehen">
+    <tab-element tab-title="Vorgehen">
         <p>
             Mit der Library Lit-Element wurde ein Custom Element erzeugt, welches in die HTML-Webseite eingebunden wurde.
             Dieses Custom-Element lädt durch die Angabe des Attributes "path" ein JSON-File, welches die Inhalte der Webseite bereithält.
             Ein Service-Worker nutzt die Cache-Api um gewisse Webseiten-Anteile zu speichern. Weiterhin lauscht er auf das Fetch-Event, um bei anfallenden Anfragen die Webseiten aus dem Cache bereitzustellen. Das Manifest, welches im Root-Verzeichnis abliegt, enthält Informationen über die Web-App und ermöglicht die deren Installation.
         </p>
-    </example-tab>
+    </tab-element>
 
-    <example-tab title="Probleme und Lösungskonzepte">
+    <tab-element tab-title="Probleme und Lösungskonzepte">
         <p>
             Ein Fehler, mit dem ich mich länger beschäftigen musste, war ein kleiner Tippfehler im Manifest. Versehentlich hatte ich im Image Attribut "size" anstatt "sizes" geschrieben. Leider kam es im Rahmen des Debuggings zu keiner entsprechenden Fehlermeldung, die einen auf den Fehler hätte hinweisen können. Eine gute Möglichkeit, um solche Fehler zu vermeiden, bieten sogenannte PWA-Manifest-Generatoren.
         </p>
-    </example-tab>
+    </tab-element>
 
-    <example-tab title="Lighthouse Messergebnisse">
+    <tab-element tab-title="Lighthouse Messergebnisse">
         <p>
 Leider hängt sich der Lighthouse Run jedes mal wieder auf. Anscheinend ist dies jedoch ein aktueller Fehler <reference-source author="Connor Clark" year="2021" url="https://github.com/GoogleChrome/lighthouse/issues/13396">Lighthouse in DevTools errors/hangs on installability checks</reference-source> Die App lässt sich dennoch ohne Probleme installieren und verwenden. <br> 
 Verzichtet man auf die Einbindung des Manifestes, so lassen sich durch Lighthouse folgende Werte ermitteln: <br>
@@ -40,14 +40,14 @@ Total Blocking Time: 0ms
 Cumulative Layout Shift: 0
 </pre>     
 </p>
-    </example-tab>
-    <example-tab title="PWA als Download">
+    </tab-element>
+    <tab-element tab-title="PWA als Download">
       <p>Die PWA aus der übung können Sie hier als ZIP herunterladen</p> <br>
       <button><a href="tasks/u9/pwa.zip">PWA als ZIP herunterladen &#8659;</a></button>
 
-    </example-tab>
+    </tab-element>
 
-</example-tabs>
+</tab-view>
 
 
 <h2>Aufgabe 9.2 - Integration in die eigene Webseite</h2>

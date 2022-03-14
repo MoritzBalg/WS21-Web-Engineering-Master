@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        #wrapper{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.637);
+        }
+
+        #tab-section{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #tab-section span{
+            background-color: #326996;
+            padding: 1rem;
+            flex-grow: 1;
+            cursor: pointer;
+            color: whitesmoke;
+            user-select: none;
+        }
+
+        #tab-section span:hover{
+            background-color: #173a57;
+        }
+
+        #tab-section span[selected]{
+            background-color: #173a57;
+        }
+
+
+        #content-section{
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrapper">
+        <div id="tab-section">
+            <span selected>Tab 1</span>
+            <span>Tab 1</span>
+            <span>Tab 1</span>
+        </div>
+        <div id="content-section">
+            <h4>Test</h4>
+            <p>Hallo</p>
+        </div>
+    </div>
+    
+</body>
+</html>

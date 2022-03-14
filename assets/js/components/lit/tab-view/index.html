@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Tab View</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="tab-view.mjs" type="module"></script>
+    <script src="tab-element.mjs" type="module"></script>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+
+        tab-view{
+            color: red;
+            --primary-color: blue;
+            --primary-color-hover: steelblue;
+            --secondary-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <tab-view>
+        <tab-element tab-title="test">
+            Hall
+        </tab-element>
+        <tab-element tab-title="test2">
+            Hallo
+        </tab-element>
+        <tab-element tab-title="test3">
+            <h1>Test</h1>
+            <p>Test</p>
+        </tab-element>
+        
+
+    </tab-view>
+
+</body>
+</html>

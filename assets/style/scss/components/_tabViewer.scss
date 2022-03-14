@@ -47,7 +47,12 @@
     }
   }
 
-  example-tabs{
+  tab-view{
     margin: 1rem 0;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+    --primary-color: #b8ccc1;
+    --primary-color-hover: #3a6c64;
+    --secondary-color: rgb(117, 117, 117);
+    --padding: 1rem;
 
   }

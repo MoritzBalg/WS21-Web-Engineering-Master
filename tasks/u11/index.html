@@ -1,57 +1,57 @@
 <p><dfn>WebAssembly</dfn> ist ein bzw. <dfn>wasm</dfn> ist ein binäres Ausführungsformat. Dieses Format kann von einer Stack-basierten virtuellen Maschine, welche im Browser integriert werden kann, interpretiert werden. Wasm kann aus verschiedenen Hochsprachen wie C, C++, Java, TypeScript uvm. kompiliert werden. Dadurch ermöglicht es den Einsatz von diesen Sprachen im Webbrowser. <dfn>WAT</dfn> ist eine textuelle Repräsentation von wasm und erinnert sehr stark andere Assembly Sprachen.</p>
 
 <h2>Aufgabe 11.1 - WebAssembly-Modul von Hand erstellen</h2>
-<example-tabs>
-    <example-tab title="&#9432;">
+<tab-view>
+    <tab-element tab-title="&#9432;">
         <h3>GGT mit WAT</h3>
         <p>In dieser Aufgabe sollte der GGT mit einem Webassembly Modul berechnet werden. Dieses Modul sollte händisch mit WAT erzeugt werden und dann in die Anwendung integriert werden.</p>
-    </example-tab>
+    </tab-element>
 
-    <example-tab title="Code WAT">
+    <tab-element tab-title="Code WAT">
         <file-viewer src="tasks/u11/a1_1.wat">ggt.wat</file-viewer>
-    </example-tab>
+    </tab-element>
 
-    <example-tab title="Code JS">
+    <tab-element tab-title="Code JS">
         <file-viewer src="tasks/u11/a1_2.js">a1_2.js</file-viewer>
-    </example-tab>
+    </tab-element>
 
-    <example-tab title="Vorschau">
+    <tab-element tab-title="Vorschau">
         <embed-browser src="tasks/u11/a1.html">ggt.wat</embed-browser>
-    </example-tab>
+    </tab-element>
 
-</example-tabs>
+</tab-view>
 
 
 <h2>Aufgabe 11.2 - Performanz-Messungen und -Vergleich</h2>
 
-<example-tabs>
-    <example-tab title="&#9432;">
+<tab-view>
+    <tab-element tab-title="&#9432;">
         <h3>Performanz-Vergleich zwischen WAT und JS</h3>
         <p>
             In dieser Aufgabe sollte ein Performanz-Vergleich zwischen JS und Webassembly durchgeführt werden. Dazu sollte ein Algorithmus zur Berechnung von Primzahlen in den beiden Varianten entwickelt werden. Um es etwas einfacher zu machen, wurde der Algorthmus nicht in WAT, sondern in C geschrieben und mit einem Compiler in wasm übersetz. Den Performanztest können Sie im Vorschau-Tab selber einmal ausführen. Die von mir gemessenen Ergebnisse finden Sie etwas weiter unten in der Auswertung.</p>
-    </example-tab>
+    </tab-element>
 
-    <example-tab title="Code WAT">
+    <tab-element tab-title="Code WAT">
         <file-viewer src="tasks/u11/a2.wat">a2.wat</file-viewer>
-    </example-tab>
+    </tab-element>
 
-    <example-tab title="Code JS">
+    <tab-element tab-title="Code JS">
         <file-viewer src="tasks/u11/a2.js">a2.js</file-viewer>
-    </example-tab>
+    </tab-element>
 
-    <example-tab title="Code C">
+    <tab-element tab-title="Code C">
         <file-viewer src="tasks/u11/a2.c">a2.c</file-viewer>
-    </example-tab>
+    </tab-element>
 
-    <example-tab title="Code HTML">
+    <tab-element tab-title="Code HTML">
         <file-viewer src="tasks/u11/a2.html">a2.html</file-viewer>
-    </example-tab>
+    </tab-element>
 
-    <example-tab title="Vorschau">
+    <tab-element tab-title="Vorschau">
         <embed-browser src="tasks/u11/a2.html">a2.html</embed-browser>
-    </example-tab>
+    </tab-element>
 
-</example-tabs>
+</tab-view>
 
 <details class="question-box">
     <summary>Wie viele Primzahlen gibt es bis 100.000?</summary>

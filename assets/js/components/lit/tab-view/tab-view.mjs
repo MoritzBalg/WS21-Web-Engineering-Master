@@ -47,7 +47,9 @@ customElements.define("tab-view", class extends LitElement{
         #display{
             background-color: var(--secondary-color);
             padding: var(--padding);
+            overflow: auto;
         }
+
 
         ::slotted(:not(*[selected])) {
             display: none;

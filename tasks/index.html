@@ -12,7 +12,7 @@
         const json  = await load();
 
         for(let topic in json.aufgaben){
-            if (json.aufgaben[topic].headline === "Aufgaben Liste") continue;
+            if (json.aufgaben[topic].headline === "Aufgabenliste") continue;
             const tk = document.createElement("task-card");
             tk.setAttribute("img", json.aufgaben[topic].image);
             tk.setAttribute("tags", json.aufgaben[topic].tags);

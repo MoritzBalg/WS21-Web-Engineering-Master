@@ -7,9 +7,9 @@
     },
 
     "aufgaben": {
-        "Aufgaben Liste": {
+        "Aufgabenliste": {
             "tags": [],
-            "headline": "Aufgaben Liste",
+            "headline": "Aufgabenliste",
             "content": "./tasks/index.html"
         },
         "Aufgabe 1": {

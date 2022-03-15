@@ -3,14 +3,6 @@
         "Willkommen": {
             "headline": "Herzlich Willkommen",
             "content": "./home/welcome/"
-        },
-        "Übersicht": {
-            "headline": "Übersicht",
-            "content": "./home/overview/"
-        },
-        "Allgemeine Informationen": {
-            "headline": "Allgemeine Informationen",
-            "content": "./home/info/"
         }
     },
 

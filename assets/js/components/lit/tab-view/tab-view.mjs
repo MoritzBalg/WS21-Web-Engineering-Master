@@ -18,7 +18,7 @@ customElements.define("tab-view", class extends LitElement{
         #tabs{
             display: flex;
             flex-direction: row;
-
+            flex-wrap: wrap;
         }
 
         #tabs span{

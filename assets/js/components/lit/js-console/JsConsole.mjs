@@ -27,7 +27,7 @@ customElements.define("js-console", class extends LitElement{
         #input_section{
             height: 70%;
             white-space: pre;
-            overflow-y: scroll;
+            overflow-y: auto;
             padding: 1rem;
         }
 
@@ -41,7 +41,7 @@ customElements.define("js-console", class extends LitElement{
             height: 30%;
             background-color: rgba(255, 255, 255, 0.8);
             color: black;
-            overflow-y: scroll;
+            overflow-y: auto;
             padding: 1rem;
 
         }
@@ -104,7 +104,7 @@ ${this.code}
                 <div id="button-section">
                     <button id="clearButton" @click="${()=>{
                         const orig_function = console.clear;
-                        console.clear = ()=>{this.result = ">\n"}; 
+                        console.clear = ()=>{this.result = ""}; 
                         console.clear();
                         console.clear = orig_function;
                     }
